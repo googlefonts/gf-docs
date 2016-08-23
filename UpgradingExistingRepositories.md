@@ -105,9 +105,7 @@ Below is typically how I approach upgrading a repository so it is ready for desi
 ### Tidyup
 The following section is each commit I made to my forked repo.
 
-commit 609126c3a11cf5cddc243c86349b63db8a799b0c
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 11:26:05 2016 +0200
+#### commit 1
 
 *gitignore: Added, ignore glyphsapp autosaved files*
 
@@ -117,110 +115,77 @@ Date:   Tue Aug 23 11:26:48 2016 +0200
 
 *old: Moved old v1.005 sources into old folder. Version number was discovered by opening ttf binary in fontlab. Ttf binaries can also be opened in Glyphsapp.*
 
-commit e7047e0fed51a3efc92cd0c90efacab7aa99f49e
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 11:28:22 2016 +0200
+#### commit 2
 
 *txt files: Readded mandatory txt files to top level of directory. These will need further updating to reflect the new state of the project*
 
-commit d025ffb4aee5f390b3a35b5ef90107d035c449f5
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 11:35:34 2016 +0200
+#### commit 3
 
 *Generated .glyphs files from the extremes of MM .vfb file, using this script in [FL](https://github.com/schriftgestalt/Glyphs-Scripts/blob/master/Glyphs%20Export.py). '_' in file name to denote it is a temporary file. We will delete these later, once we have them combined into 1 glyphs file'*
 
-commit 1129934409ff4deec6798c1c6eadf7aec9b85b8c
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 11:38:11 2016 +0200
+#### commit 4
 
 *Cabin: Both temporary glyphs files have been combined into 1 master .glyphs file. Temp files also deleted*
 ![alt tag](UpgradingExistingRepositories-combined-masters.png)
 
-commit 3c51ee43104cd77a89077dbce28d8e2142e0be9a
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 11:53:58 2016 +0200
+#### commit 5
 
 *Cabin.glyphs: The script **Test repo matches gf-checklist structure** was run. The script returned there were errors in the font file, fsType, copyright... These errors have been fixed in this commit. I still need to fix errors in the txt files. We will proceed to run the script then fix any errors reported in an interative manner, until the script reports no errors.*
 ![alt tag](UpgradingExistingRepositories-report1.png)
 
-commit c1ec7cfd2d4ccd0b6307e42178bcc1628c252cbc
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 11:57:12 2016 +0200
+#### commit 6
 
 *CONTRIBUTORS: added, Test repo matches gf-checklist reported this file was missing. The contributors were found by looking in the fonts meta data*
 
-commit 5b304ebfe7452c176b521ac846a0323549c2ff7c
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:01:21 2016 +0200
+#### commit 7
 
 *OFL.txt | Cabin.glyphs: Updated first line of OFL.txt and .glyphs file copyright field*
 
-commit 761f256a126b1ec17034bc4fe55e95f8de25138e
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:07:13 2016 +0200
+#### commit 8
 
 *Cabin.glyphs: Added vendorID. I had to find this by looking at a [Libre Franklin](https://github.com/impallari/Libre-Franklin) which was also made by the same author. We're getting closer ;)*
 
-commit 29924c852849544afa442363b08f601dfa302bc1
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:19:49 2016 +0200
+#### commit 9
 
 *TRADEMARKS.md: added, Script reported this file was missing. Text for this file came from the trademarks field in the font metadata. I am skeptical if this is correct so I will include an issue for it on the repo. I have now successfully made all the checks pass for the script*
 ![alt tag](UpgradingExistingRepositories-report2.png)
 
 *We still need to check the vertical metrics, MM compatibility and see if we need to complete some steps from the other cleanup checklist*
 
-commit 6a8c37d788aa1aaa60a515bb4cad86e061008d25
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:21:20 2016 +0200
+#### commit 10
 
 *Cabin.glyphs: removed panose and glyph order family values. I removed te panose because the panose should be unique for each weight. This field will be included in each instance later. The glyph order was removed because Glyphsapp has its own order function*
 
-commit ff16905147edf22d7326b17670229b9bebc3216e
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:28:13 2016 +0200
+#### commit 11
 
 *Cabin.glyphs: Both masters now have weight values. The weight values come from the vertical stem width of the 'H'. We need these values so we can generate instances. In the next step, we'll add the instances*
 ![alt tag](UpgradingExistingRepositories-measure-h.png)
 ![alt tag](UpgradingExistingRepositories-stem-value.png)
 
-commit b673471802ef13c92ec6e34f72c9e0f622c478bc
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:34:53 2016 +0200
+#### commit 12
 
 *Cabin.glyphs: instances added. To get the correct weight for each instance. We need to measure the 'H' for each weight from the old fonts. The names of each instance have to match this [document](https://docs.google.com/spreadsheets/d/1ckHigO7kRxbm9ZGVQwJ6QJG_HjV_l_IRWJ_xeWnTSBg/edit#gid=0).*
 ![alt tag](UpgradingExistingRepositories-instances-added.png)
 
-commit 852064c9e3d259c541137ee54dcb2311d7122c0e
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:40:00 2016 +0200
+#### commit 13
 
 *Cabin.glyphs: Added vertical metrics to each instance. The script 'Test vertical metrics match Khaled's approach' was used in order to check they are correct. For this font it was very easy. Unfortunately most people do not understand how the three sets of vertical metrics work very well. Refer to [Kalapi's work log on the Google Fonts Group](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/Uvxm1qj6AgAJ) for an indepth discussion on how it works. It is worth reading all posts on this.*
 ![alt tag](UpgradingExistingRepositories-metrics-instances)
 Each instance and master should have the same Vertical Metrics values!
 
-commit 1dca9fef83430dcdab23bebf2f121414b8e0414a
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:41:18 2016 +0200
+#### commit 14
 
 *Cabin.glyphs: ran update glyph info. This should rename glyphs according to Glyphsapp internal naming scheme. We can now use Glyphsapp's auto OT features etc*
 
-commit 973d1c108f8bc8f0cecffef23c718cffd5c99c61
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:46:26 2016 +0200
+#### commit 15
 
 *Cabin.glyphs: Added auto OT features and reintroduced smcp feature. Glyphsapp allows us to use auto OT features. The original sources only included smcp and kern. We now have ordn, subs, sups, frac etc*
 
-commit cc5111be221a989b11427ff21fc1e943289c541a
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:49:42 2016 +0200
+#### commit 16
 
 *Cabin.glyphs: added 'http://' to meta data fields which need urls. This was reported with the Preflight Fonts script*
 ![alt tag](UpgradingExistingRepositories-font-preflight-test.png)
-
-commit de2e655e90353f9bf46aae2777e2d06eebfb4328
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:56:19 2016 +0200
+#### commit 17
 
 *Cabin.glyphs: Fixed all errors reported in Preflight font script.*
 ![alt tag](UpgradingExistingRepositories-font-preflight-test2.png)
@@ -229,9 +194,7 @@ Date:   Tue Aug 23 12:56:19 2016 +0200
 
 *I will need to repeat all the steps we did on the fonts for the Italics and Condensed files which existed in the old repo. I will also need to generate some tests fonts and run them through font bakery. I leave the font bakery step till the designers have finished working on the repo.*
 
-commit ccc9bc75cd87f879120911ddb7afcf4609d4f739
-Author: Marc Foley <m.foley.88@gmail.com>
-Date:   Tue Aug 23 12:57:11 2016 +0200
+#### commit 18
 
 *Cabin.glyphs: increased version number from 1.005 to 2.005*
 
