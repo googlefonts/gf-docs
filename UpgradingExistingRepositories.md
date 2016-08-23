@@ -80,15 +80,17 @@ The last option should be used as a last resort only.
 - Every file/folder with an asterisk is essential. Every folder should should be lowercase only.
 - **Source** folder should have 1 .glyphs file for Roman weights and 1 for Italics. Condensed, Expanded weights should also have their own .glyphs file as well.
 - Incrememnt the .glyphs file version number by += 1.000. eg v2.1000 -> v3.1000
-- Implement everything from **[ProjectChecklist.md]**(https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
-- To test your repo matches the steps mentioned in **PrjectChecklist.md**, run the script **Test repo matches gf-structure**. ![alt tag](UpgradingExistingRepositories-mf-glyph-scripts-test-gf-structure.png)
+- Implement everything from [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
+- To test your repo matches the steps mentioned in **ProjectChecklist.md**, run the script **Test repo matches gf-structure**. Fix all the errors until the script passes. 
+![alt tag](UpgradingExistingRepositories-mf-glyph-scripts-test-gf-structure.png)
+
 - Implement everything which is not design intensive from the [Cleanup Checklist](https://docs.google.com/spreadsheets/d/1vFNVR1lf14S1cthPQ59Mav5uZCnWw8_nS3ehKwueUz0/edit#gid=1988585029)
 *- MM compatiblity, anchors, kerning can take several days to implement. These should be fixed by the designer if there is enough time.*
 - Check [github for issues](https://github.com/google/fonts/issues) on font family and fix them. Again, some issues involving design or extensions will take too long to implement.
 - Check and fix vertical metrics. Khaled proposed a [schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MpyLLY4jAwAJ). We use this schema for older repos. Run the script **Test vertical metrics match Khaled's approach**
 - Push repo to your github account
 - Send repo link to designer to work on. Link should be included in your daily work log on the [Google Fonts Group Discussion board](https://groups.google.com/forum/#!forum/googlefonts-discuss).
-- Designer should send you back a pull request when finished. You should merge it back into your repo.
+- Designer should send you back a pull request when they're finished. You should merge it back into your repo.
 - If you originally forked the project from a Github repo. Ssend the author a PR of the upgraded project, with a note explaining the changes you've made as well as the designers changes. Since the upgrades are quite significant, the author usually accept the PR. By getting the original author to merge our changes, we have consolidated all forks back into the original repo.
 
 
