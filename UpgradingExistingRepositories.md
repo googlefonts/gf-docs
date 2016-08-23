@@ -1,28 +1,32 @@
-# Preparing old Font repositories
-Getting repositories to the same standard has to be done on a case by case basis. Here are some examples of good repositories. It is worth studying these first before you begin:
-[Neuton](https://github.com/m4rc1e/Neuton)
-[Mirza](https://github.com/Tarobish/Mirza)
-[Nunito](https://github.com/m4rc1e/NunitoFont)
+# Updating Existing Font Repositories
+Updating repositories to the same standard has to be done on a case by case basis. Here are some examples of good repositories:
+- [Neuton](https://github.com/m4rc1e/Neuton)
+- [Mirza](https://github.com/Tarobish/Mirza)
+- [Nunito](https://github.com/m4rc1e/NunitoFont)
 
-Each project differs greatly in quality so it is very difficult to script a workflow which does everything automatically. Fortunately, we have written some scripts to check the most important parts. 
+It's worth studying these before you begin.
+
+Older Font repositories vary greatly in quality. It is also very difficult to automate the upgrade process. There are too many variables to take into consideration. Fortunately, we have written some GlyphsApp scripts to check the most important/tedious parts. The repository can be found here.
 
 
 ## Finding sources.
-Locating sources is the most crucial step. Without decent sources, more effort will be required. The following approaches below are listed in priority. The last option should be used as a last resort only
+Locating sources is the most crucial step. Without decent sources, more effort will be required. The following approaches below are listed in priority:
 
-1. Find repository on Github
-2. Browse old [repository](https://bitbucket.org/lassefister/old-googlefontdirectory/src/21142f3bf7ad39d89c1c682d30830494ef1c905c/tools/nonhinting/setnonhinting-fonttools.py?at=default&fileviewer=file-view-default)
+1. Find repository on [Github](https://github.com)
+2. Browse old [Google Fonts repositories](https://bitbucket.org/lassefister/old-googlefontdirectory/src/21142f3bf7ad39d89c1c682d30830494ef1c905c/tools/nonhinting/setnonhinting-fonttools.py?at=default&fileviewer=file-view-default)
 3. Contact Author and ask for sources
 4. Rebuild sources from binary ttfs
 
+The last option should be used as a last resort only.
+
 ### Other considerations to keep in mind:
-- Do the version numbers match the family on [Google Fonts?](https://fonts.google.com)?
+- Do the version numbers match the family which is downloadable from [Google Fonts?](https://fonts.google.com)
     - An [md5 checksum](https://www.youtube.com/watch?v=dzdom0Objq4) comparison between the Google Font binary ttfs and your discovered repos ttfs will check if the files are identical.
-- Are the newest sources unreleased?
-    - This means they may be a work in progress. You must decide whether it is best to work on these or rollback to a previous version.
+- If they don't match, is the repository ahead of the fonts available on Google Fonts?
+    - This means the repository you discovered could be a work in progress. You must decide whether it is best to work on these or rollback/find a previous version.
 
 
-## High level overview of workflow
+## High level overview of Upgrading a repository
 
 - Reorganise repo into the following folder heirachy (example [Maven Pro](https://github.com/m4rc1e/Maven-Pro)):
 
@@ -71,20 +75,20 @@ Locating sources is the most crucial step. Without decent sources, more effort w
             └── instances.yml
 ```
 
-- The old folder should contain the original files from the repo you are working on. They should be subfoldered with the sources version number.
-- Every file/folder with an asterisk is essential.
-- Source folder should have 1 .glyphs file for Roman weights and 1 for Italics
-- Upgrade the .glyphs file version number by += 1.000. eg v2.1000 -> v3.1000
-- Implement everything from this [checklist](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
-- A glyphs script exists to [test the above checklist steps](MY SCRIPT)
+- The 'old' folder should contain the original files from the repo you are working on. They should be subfoldered with the sources version number.
+- Every file/folder with an asterisk is essential. Every should should be lowercase only.
+- Source folder should have 1 .glyphs file for Roman weights and 1 for Italics. Condensed, Expanded weights should also have their own .glyphs file as well.
+- Incrememnt the .glyphs file version number by += 1.000. eg v2.1000 -> v3.1000
+- Implement everything from [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
+- A GlyphsApp script exists to [test the above checklist steps](https://github.com/m4rc1e/mf-glyphs-scripts/blob/master/Google%20Fonts/test_gf_spec.py).
 - Implement everything which is not design intensive from the [Cleanup Checklist](https://docs.google.com/spreadsheets/d/1vFNVR1lf14S1cthPQ59Mav5uZCnWw8_nS3ehKwueUz0/edit#gid=1988585029)
     - MM compatiblity, anchors, kerning can take several days to implement. These should be fixed by the designer if there is enough time.
 - Check [github for issues](https://github.com/google/fonts/issues) on font family and fix them. Again, some issues involving design or extensions will take too long to implement.
-- Check and fix vertical metrics. Khaled proposed a [schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MpyLLY4jAwAJ), we use this for these repos. A [GlyphsApp script](My script) exists to check if it fulfils his spec.
+- Check and fix vertical metrics. Khaled proposed a [schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MpyLLY4jAwAJ), we use this for these repos. A [GlyphsApp script](https://github.com/m4rc1e/mf-glyphs-scripts/blob/master/Google%20Fonts/test_khaled_metrics.py) exists to check if it fulfils his spec.
 - Push repo to your github account
 - Send repo link to designer to work on. Link should be included in your daily work log on the [Google Fonts Group Discussion board](https://groups.google.com/forum/#!forum/googlefonts-discuss).
 - Designer should send you back a pull request when finished. You should merge it back into your repo.
-- If you originally forked the project from a repo. It may be nice to send them a PR of the upgraded project, with a note explaining the project and changes made. By doing this, we have consolidated all forks back into the original repo.
+- If you originally forked the project from a Gtihu repo. It will be nice to send them a PR of the upgraded project, with a note explaining the changes you've made as well as the designers. Since the upgrades are quite significant the original authors usually accept the PR. By getting the original author to merge our changes, we have consolidated all forks back into the original repo.
 
 
 ## Case Study: Step by step log of Upgrading Cabin
@@ -93,8 +97,8 @@ by Marc Foley
 Below is typically how I approach upgrading a repository so it is ready for designers to work on. The final repo can be found [here](https://github.com/m4rc1e/Cabin)
 
 ### Retrieve sources
-- Project has [github repo](https://github.com/impallari/Cabin)
-- Project gets forked to my [github account](https://github.com/m4rc1e/Cabin)
+- Luckily, the project already exists on [github](https://github.com/impallari/Cabin)
+- I fork the project to my own [github account](https://github.com/m4rc1e/Cabin)
 - I clone my fork to my local system
 
 ### Tidyup
