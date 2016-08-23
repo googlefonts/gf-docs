@@ -105,7 +105,7 @@ Below is typically how I approach upgrading a repository so it is ready for desi
 - I clone my fork to my local system
 
 ### Tidyup
-The following section is each commit I made to my forked repo.
+The following section details each commit I made to my forked repo.
 
 #### commit 1
 
