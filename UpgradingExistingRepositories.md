@@ -172,7 +172,7 @@ Date:   Tue Aug 23 11:26:48 2016 +0200
 #### commit 13
 
 *Cabin.glyphs: Added vertical metrics to each instance. The script 'Test vertical metrics match Khaled's approach' was used in order to check they are correct. For this font it was very easy. Unfortunately most people do not understand how the three sets of vertical metrics work. Refer to [Kalapi's work log on the Google Fonts Group](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/Uvxm1qj6AgAJ) for an indepth discussion on how it works. It is worth reading all posts on this.*
-![alt tag](UpgradingExistingRepositories-metrics-instances)
+![alt tag](UpgradingExistingRepositories-metrics-instances.png)
 Each instance and master should have the same Vertical Metrics values!
 
 #### commit 14
