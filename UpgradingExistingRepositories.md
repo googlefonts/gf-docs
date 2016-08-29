@@ -42,44 +42,44 @@ The last option should be used as a last resort only.
 │   ├── MavenPro-Medium.ttf
 │   └── MavenPro-Regular.ttf
 ├── old 
-│   └── version-1.000 
-│   ├── DESCRIPTION.en_us.html
-│   ├── METADATA.json
-│   ├── MavenPro-Black.ttf
-│   ├── MavenPro-Bold.ttf
-│   ├── MavenPro-Medium.ttf
-│   ├── MavenPro-Regular.ttf
-│   ├── OFL.txt
-│   └── src
-│   ├── METADATA_comments.txt
-│   ├── MavenPro-Black-VTT.ttf
-│   ├── MavenPro-Black.glyphs
-│   ├── MavenPro-Black.otf
-│   ├── MavenPro-Black.vfb
-│   ├── MavenPro-Bold-VTT.ttf
-│   ├── MavenPro-Bold.glyphs
-│   ├── MavenPro-Bold.otf
-│   ├── MavenPro-Bold.vfb
-│   ├── MavenPro-Medium-VTT.ttf
-│   ├── MavenPro-Medium.glyphs
-│   ├── MavenPro-Medium.otf
-│   ├── MavenPro-Medium.vfb
-│   ├── MavenPro-Regular-VTT.ttf
-│   ├── MavenPro-Regular.glyphs
-│   ├── MavenPro-Regular.otf
-│   ├── MavenPro-Regular.vfb
-│   ├── VERSIONS.txt
-│   └── fontsquirrel_generator_config.txt
+│   └── version-1.000 
+│       ├── DESCRIPTION.en_us.html
+│       ├── METADATA.json
+│       ├── MavenPro-Black.ttf
+│       ├── MavenPro-Bold.ttf
+│       ├── MavenPro-Medium.ttf
+│       ├── MavenPro-Regular.ttf
+│       ├── OFL.txt
+│       └── src
+│           ├── METADATA_comments.txt
+│           ├── MavenPro-Black-VTT.ttf
+│           ├── MavenPro-Black.glyphs
+│           ├── MavenPro-Black.otf
+│           ├── MavenPro-Black.vfb
+│           ├── MavenPro-Bold-VTT.ttf
+│           ├── MavenPro-Bold.glyphs
+│           ├── MavenPro-Bold.otf
+│           ├── MavenPro-Bold.vfb
+│           ├── MavenPro-Medium-VTT.ttf
+│           ├── MavenPro-Medium.glyphs
+│           ├── MavenPro-Medium.otf
+│           ├── MavenPro-Medium.vfb
+│           ├── MavenPro-Regular-VTT.ttf
+│           ├── MavenPro-Regular.glyphs
+│           ├── MavenPro-Regular.otf
+│           ├── MavenPro-Regular.vfb
+│           ├── VERSIONS.txt
+│           └── fontsquirrel_generator_config.txt
 └── sources 
-├── MavenPro.glyphs 
-└── build
-└── instances.yml
+    ├── MavenPro.glyphs 
+    └── build
+        └── instances.yml
 ```
 
 - The **old** folder should contain the original files from the repo you are working on. They should be subfoldered with the sources version number.
 - Every file/folder with an asterisk is essential. Every folder should should be lowercase only.
 - **Source** folder should have 1 .glyphs file for Roman weights and 1 for Italics. Condensed, Expanded weights should also have their own .glyphs file as well.
-- Incrememnt the .glyphs file version number by += 1.000. eg v2.1000 -> v3.1000
+- Round up the .glyph's file version number by +1.000. eg v2.1000 -> v3.000
 - Implement everything from [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
 - To test your repo matches the steps mentioned in **ProjectChecklist.md**, run the script **Test repo matches gf-structure**. Fix all the errors until the script passes. 
 ![alt tag](UpgradingExistingRepositories-mf-glyph-scripts-test-gf-structure.png)
@@ -132,12 +132,12 @@ Date:   Tue Aug 23 11:26:48 2016 +0200
 
 #### commit 5
 
-*Cabin.glyphs: The script **Test repo matches gf-checklist structure** was run. The script returned there were errors in the font file, fsType, copyright... These errors have been fixed in this commit. I still need to fix errors in the txt files. We will proceed to run the script then fix any errors reported in an interative manner, until the script reports no errors.*
+*Cabin.glyphs: The script **Test repo matches gf-checklist structure** was run. The script returned there were errors in the font file, fsType, copyright... etc. These errors have been fixed in this commit. I still need to fix errors in the txt files. We will proceed to run the script then fix any errors reported in an interative manner, until the script reports no errors.*
 ![alt tag](UpgradingExistingRepositories-report1.png)
 
 #### commit 6
 
-*CONTRIBUTORS: added, Test repo matches gf-checklist reported this file was missing. The contributors were found by looking in the fonts meta data*
+*CONTRIBUTORS: added, script reported this file was missing. The contributors were found by looking in the fonts meta data*
 
 #### commit 7
 
@@ -149,14 +149,14 @@ Date:   Tue Aug 23 11:26:48 2016 +0200
 
 #### commit 9
 
-*TRADEMARKS.md: added, Script reported this file was missing. Text for this file came from the trademarks field in the font metadata. I am skeptical if this is correct so I will include an issue for it on the repo. I have now successfully made all the checks pass for the script*
+*TRADEMARKS.md: added, script reported this file was missing. Text for this file came from the trademarks field in the font metadata. I am skeptical if this is correct so I will include an issue for it on the repo. I have now successfully made all the checks pass for the script*
 ![alt tag](UpgradingExistingRepositories-report2.png)
 
 *We still need to check the vertical metrics, MM compatibility and see if we need to complete some steps from the other cleanup checklist*
 
 #### commit 10
 
-*Cabin.glyphs: removed panose and glyph order family values. I removed te panose because the panose should be unique for each weight. This field will be included in each instance later. The glyph order was removed because Glyphsapp has its own order function*
+*Cabin.glyphs: removed Panose and glyph order family values. I removed the Panose because the Panose should be unique for each weight. This field will be included in each instance later. The glyph order was removed because Glyphsapp has its own Glyph ordering function*
 
 #### commit 11
 
@@ -171,7 +171,7 @@ Date:   Tue Aug 23 11:26:48 2016 +0200
 
 #### commit 13
 
-*Cabin.glyphs: Added vertical metrics to each instance. The script 'Test vertical metrics match Khaled's approach' was used in order to check they are correct. For this font it was very easy. Unfortunately most people do not understand how the three sets of vertical metrics work very well. Refer to [Kalapi's work log on the Google Fonts Group](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/Uvxm1qj6AgAJ) for an indepth discussion on how it works. It is worth reading all posts on this.*
+*Cabin.glyphs: Added vertical metrics to each instance. The script 'Test vertical metrics match Khaled's approach' was used in order to check they are correct. For this font it was very easy. Unfortunately most people do not understand how the three sets of vertical metrics work. Refer to [Kalapi's work log on the Google Fonts Group](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/Uvxm1qj6AgAJ) for an indepth discussion on how it works. It is worth reading all posts on this.*
 ![alt tag](UpgradingExistingRepositories-metrics-instances)
 Each instance and master should have the same Vertical Metrics values!
 
@@ -181,12 +181,13 @@ Each instance and master should have the same Vertical Metrics values!
 
 #### commit 15
 
-*Cabin.glyphs: Added auto OT features and reintroduced smcp feature. Glyphsapp allows us to use auto OT features. The original sources only included smcp and kern. We now have ordn, subs, sups, frac etc*
+*Cabin.glyphs: Added auto OT features and reintroduced smcp feature. Glyphsapp allows us to use auto OT features. The original sources only included smcp and kern. We now have ordn, subs, sups, frac...*
 
 #### commit 16
 
 *Cabin.glyphs: added 'http://' to meta data fields which need urls. This was reported with the Preflight Fonts script*
 ![alt tag](UpgradingExistingRepositories-font-preflight-test.png)
+
 #### commit 17
 
 *Cabin.glyphs: Fixed all errors reported in Preflight font script.*
@@ -198,5 +199,10 @@ Each instance and master should have the same Vertical Metrics values!
 
 #### commit 18
 
-*Cabin.glyphs: increased version number from 1.005 to 2.005*
+*Cabin.glyphs: increased version number from 1.005 to 2.000*
 
+#### commit 19
+
+*Cabin.glpyhs: Updated metrics on Roman and Italic sources*
+
+*Unfortunately, the original author noticed that the fonts metrics didn't match those of the released fonts. We discovered that the MM file in the original sources didn't match the released fonts. I decided to overwrite the metrics on our files, with the metrics from the previously released binary files.*
