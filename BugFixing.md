@@ -24,7 +24,7 @@ We want each commit to be as granular as possible. This makes it easier for us t
 
 ## 2. Fix must be done at source
 
-Google/fonts holds font binaries, it does not contain any sources. 
+[Google/fonts](https://github.com/google/fonts) holds font binaries, it does not contain any sources. 
 
 Sources are usually other upstream git repositories which are hosted by their authors e.g [Montserrat](https://github.com/JulietaUla/Montserrat), [Amiri](https://github.com/alif-type/amiri), [Work Sans](https://github.com/weiweihuanghuang/Work-Sans).
 
@@ -32,7 +32,7 @@ The Github group [googlefonts](https://github.com/googlefonts) containts several
 
 Many older projects are not on Github yet. The [old Google Fonts repository](https://bitbucket.org/lassefister/old-googlefontdirectory) may contain sources for these missing families. If this is the case, the person commiting the fix should create a new repo for the family in the [googlefonts](https://github.com/googlefonts) group.
 
-If the family is not hosted on Github or in the old Google Fonts repository. It is advisable to contact the author to ask for sources. The last resort is to rebuild the sources from the binaries hosted on fonts.google.com. This has many risks and is not advisable.
+If the family is not hosted on Github or in the old Google Fonts repository, it is advisable to contact the author to ask for sources. The last resort is to rebuild the sources from the binaries hosted on [fonts.google.com](https://fonts.google.com). This has many risks and is not advisable.
 
 
 ## 3. Post processing and hotfixes must be repeatable
@@ -87,7 +87,7 @@ Changes implemented in upstream,
 
 ## 6. METADATA.pb must be regenerated for each PR if a font has been modified
 
-Each family folder contains a [METADATA.pb](https://github.com/google/fonts/blob/master/ofl/montserrat/METADATA.pb) file, which uses the [Protobuf format](https://developers.google.com/protocol-buffers/). These metadata files are used for each family on [fonts.google.com](https://fonts.google.com). They contain information about which codepages the family supports, what category the family is, who the author is etc. For further information on the file, see [METADATA.md](https://github.com/googlefonts/gf-docs/blob/master/METADATA.md).
+Each family folder contains a [METADATA.pb](https://github.com/google/fonts/blob/master/ofl/montserrat/METADATA.pb) file, which uses the [Protobuf format](https://developers.google.com/protocol-buffers/). These metadata files are used on [fonts.google.com](https://fonts.google.com). They contain information about which codepages the family supports, what category the family is, who the author is etc. For further information on the file, see [METADATA.md](https://github.com/googlefonts/gf-docs/blob/master/METADATA.md).
 
 The script [./tools/add_font.py](https://github.com/google/fonts/blob/master/tools/add_font.py) will generate these files. Once you've replaced the fonts in the family folder, execute the script:
 
