@@ -9,7 +9,7 @@ For adding new families see [ProjectChecklist.md](https://github.com/googlefonts
 
 1. PR must contain only one family
 2. Fix must be done at source
-3. Fix must be repeatable
+3. Post processing and hotfixes must be repeatable
 4. PR title must mention family folder
 5. PR message must mention which bug is fixed
 6. METADATA.pb must be regenerated for each PR if a font has been modified
@@ -34,9 +34,11 @@ Many older projects are not on Github yet. The [old Google Fonts repository](htt
 If the family is not hosted on Github or in the old Google Fonts repository. It is advisable to contact the author to ask for sources. The last resort is to rebuild the sources from the binaries hosted on fonts.google.com. This has many risks and is not advisable.
 
 
-## 3. Fix must be repeatable
+## 3. Post processing and hotfixes must be repeatable
 
-We can ignore this if we have made the fix to the source files. If the fix is a hot fix, the result must be repeatable. In order to acheive this, we must use tools which have a CLI; this rules out VTT, VOLT, DTL OT Master. The hotfix should also have its own repo e.g [https://github.com/m4rc1e/archivo-hotfix](https://github.com/m4rc1e/archivo-hotfix). Hotfixes are not an ideal solution but may be needed in some circumstances.
+If generated fonts need post processing e.g adding a dummy DSIG table, it should be repeatable. In order to acheive this we must use tools which have a CLI; this rules out VTT, VOLT, DTL OT Master. Shell scripts combined with [Font Bakery's](https://github.com/googlefonts/fontbakery) fix scripts are a good approach.
+
+If an update is a hotfix, it should also have its own repo e.g [https://github.com/m4rc1e/archivo-hotfix](https://github.com/m4rc1e/archivo-hotfix). Hotfixes are not an ideal solution but may be needed in some circumstances.
 
 
 ## 4. PR title must mention family folder
