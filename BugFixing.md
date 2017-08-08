@@ -14,6 +14,7 @@ For adding new families see [ProjectChecklist.md](https://github.com/googlefonts
 5. PR message must mention which bug is fixed
 6. METADATA.pb must be regenerated for each PR if a font has been modified
 7. Version number must advance since previous release
+8. Fonts must be run through [Font Bakery](https://github.com/googlefonts/fontbakery)
 
 
 ## 1. PR must contain only one family
@@ -111,3 +112,8 @@ $ fontbakery update-version [fonts] <old number> <new number>
 ---
 $ fontbakery update-version ./MavenPro-Regular.ttf ./MavenPro-Bold.ttf 1.000 1.001
 ```
+
+
+## 8. Fonts must be run through [Font Bakery](https://github.com/googlefonts/fontbakery)
+
+Before sending a PR, make sure the updated fonts are run through [Font Bakery](https://github.com/googlefonts/fontbakery). There should not be any regression errors, name errors, fsSelection, macStyle usWeightClass bit errors. If there are more than 10 errors, the font most likely contains serious issues.
