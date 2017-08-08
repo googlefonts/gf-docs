@@ -87,19 +87,18 @@ Changes implemented in upstream,
 
 ## 6. METADATA.pb must be regenerated for each PR if a font has been modified
 
-Each family folder contains a [METADATA.pb](https://github.com/google/fonts/blob/master/ofl/montserrat/METADATA.pb) file, which uses the [Protobuf format](https://developers.google.com/protocol-buffers/). These metadata files are used for each family on [fonts.google.com](https://fonts.google.com). They contain information about which codepages the family supports, what category the family is, who the author is etc.
+Each family folder contains a [METADATA.pb](https://github.com/google/fonts/blob/master/ofl/montserrat/METADATA.pb) file, which uses the [Protobuf format](https://developers.google.com/protocol-buffers/). These metadata files are used for each family on [fonts.google.com](https://fonts.google.com). They contain information about which codepages the family supports, what category the family is, who the author is etc. For further information on the file, see [METADATA.md](https://github.com/googlefonts/gf-docs/blob/master/METADATA.md).
 
 The script [./tools/add_font.py](https://github.com/google/fonts/blob/master/tools/add_font.py) will generate these files. Once you've replaced the fonts in the family folder, execute the script:
 
 ```
-$ python add_font.py /path/to/family folder
+$ python add_font.py /path/to/family folder --update
 ---
-$ python add_font.py ./ofl/mavenpro
+$ python add_font.py ./ofl/mavenpro --update
 ```
 
-Unfortunately, the 'designer', 'category', 'date_added' will get overwritten with place holder data. These fields must be replaced with the old fields *--update flag added in https://github.com/google/fonts/pull/951, get this merged*
-
 If the codepages differ from the previous file, make sure the glyph counts are similiar to the current family hosted on [fonts.google.com](https://fonts.google.com). We can't release fonts where the codepages have regressed. This means we'll lose support for those languages and users will complain.
+
 
 ## 7. Version number must advance since previous release
 
