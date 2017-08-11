@@ -2,15 +2,15 @@
 
 Throughout countless threads and discussions, the following rules have been established.
 
-### I. Vertical metrics must not be calculated by the font editor automatically
+### 1. Vertical metrics must not be calculated by the font editor automatically
 We don't want this because they all do it differently. 
 
-### II. Vertical metrics must be consistent across a family
+### 2. Vertical metrics must be consistent across a family
 Every font in a family must share the same vertical metric values.
 
 This rule can be voided if a font is being upgraded and previously had inconsistent family metrics. If this is the case, the aim should be to visually match the linespacing of each font, but fix any clipping issues caused by incorrect Win Ascent, Win Descent values.
 
-### III. The following vertical metric parameters must be set for each font in a family
+### 3. The following vertical metric parameters must be set for each font in a family
 
 | Ms Spec ttf spec      | Glyphsapp Master customParameter | FontLab              | ufo3 fontinfo.plist      |
 | --------------------- | -------------------------------- | -------------------- | ------------------------ |
@@ -28,7 +28,7 @@ This rule can be voided if a font is being upgraded and previously had inconsist
 
 *For brevity, we'll refer to the 3 sets of metrics as Typo, Hhea, Win.* 
 
-### IIII. Win Ascent and Win Descent values must be the same as the family's tallest/deepest yMin and yMax bbox values
+### 4. Win Ascent and Win Descent values must be the same as the family's tallest/deepest yMin and yMax bbox values
 The Microsoft [OpenType specification](https://www.microsoft.com/typography/otspec/os2.htm#wa). Recommends the following:
 >If any clipping is unacceptable, then the value should be set to yMax’.
 
@@ -36,13 +36,13 @@ The Microsoft [OpenType specification](https://www.microsoft.com/typography/otsp
 
 By changing these values, the line height will be increased in MS applications. This is can lead to very loose line heights if the bbox is exceedingly tall. This mainly occurs in families featuring Vietnamese, Devanagari and Arabic or other tall scripts. To counteract this, we enable [Use Typo Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) and set the Typo values to match the previous Win values. By swapping the sets, we should retain the previous line heights in Windows as well as remove the clipping.
 
-### IV. [Use_Typo_Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) must be enabled
+### 5. [Use_Typo_Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) must be enabled
 This will force MS Applications to use the OS/2 Typo values instead of the Win values. By doing this, we can freely set the Win values to avoid clipping and control the line height with the typo values. It has the added benefit of future line height compatibility. When a new script is added, we simply change the Win values to the new yMin and yMax, without needing to worry if the line height have changed.
 
-### V. If the family is being updated, the line height must visually match the previous release.
+### 6. If the family is being updated, the line height must visually match the previous release.
 Some applications do not allow users to control the line height/leading of their fonts. Word processors and text editors are common culprits. It is essential their documents do not reflow.
 
-### VI. Hhea and Typo metrics should match
+### 7. Hhea and Typo metrics should match
 Hhea metrics are used in Mac OS X, whilst Microsoft uses Typo when Use_Typo_Metrics is enabled. They should ideally be identical.
 
 This rule can be voided if a font is being upgraded and previously had inconsistent values.
@@ -53,11 +53,11 @@ This rule can be voided if a font is being upgraded and previously had inconsist
 
 Setting vertical metrics usually falls into the following two categories:
 
-I. Calculating the vertical metrics for a new family
-II. Recalculating the vertical metrics for an upgraded family
+1. Calculating the vertical metrics for a new family
+2. Recalculating the vertical metrics for an upgraded family
 
 
-### I. Calculating the vertical metrics for a new family
+### 1. Calculating the vertical metrics for a new family
 
 Kalapi Gajjar-Bordawekar outlined a [vertical metric schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/KoMyM2CfAwAJ). The GF team adopted this for new releases only:
 
@@ -100,7 +100,7 @@ Our new family has the following specification:
 4. Enable Use_Typo_Metrics
 
 
-### II. Recalculating the vertical metrics for an upgraded family
+### 2. Recalculating the vertical metrics for an upgraded family
 
 Many font families receive upgrades, either by the original author or a 3rd party. When character extensions occur which modify the font's bounding box, the vertical metrics will need to be recalculated. 
 
