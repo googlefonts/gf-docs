@@ -167,9 +167,8 @@ Useful Links:
 - [Vertical metrics recommendations](VerticalMetricsRecommendations.md)
 
 ## Useful Tools:
-### Glyphsapp Scripts (Will updated when the complete QA script is released)
-- [Test vertical metrics match Kalapi's approach](https://github.com/m4rc1e/mf-glyphs-scripts/blob/master/Google%20Fonts/test_kalapi_metrics.py): Check old fonts fulfill old metrics schema
-- [Test vertical metrics match Khaled's approach](https://github.com/m4rc1e/mf-glyphs-scripts/blob/master/Google%20Fonts/test_khaled_metrics.py): Check new fonts fulfill new metrics schema
+### Glyphsapp Scripts
+- [gf-glyphs-scripts](https://github.com/googlefonts/gf-glyphs-scripts) 'QA' script includes several vertical metrics checks. 'Fix fonts for GF spec' will automatically update a family's vertical metrics so they visually match a previous release (if it exists). It will also set the values so no clipping will occur on Windows platforms.
 
 ### Testing:
 - [Impallari/testing](http://www.impallari.com/testing/): Font tester which has no css line-height property set
