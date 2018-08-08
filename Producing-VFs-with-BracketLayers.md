@@ -47,8 +47,6 @@ C) On a duplicated file, run scripts to add bracket layers for components. Expor
 
 D) In .ttx, correct fvar values, calculate avar mappings, and convert back to .ttf
 
-E) Exporting with an extended kerning lookup
-
 F) Recommended post processing steps/scripts
 
 G) Known issues and STAT patch for italic fonts
@@ -86,6 +84,11 @@ G) Known issues and STAT patch for italic fonts
     1. Script: [Add-VF-Bracket-Layers.py ](https://github.com/mjlagattuta/Hepta-Slab/blob/master/sources/tools/Add-VF-Bracket-Layers.py)(Use only on a copy of your source file) (May take a while to run, cycles through all glyphs and all components multiple times)
 
 3. If everything was done correctly thus far, Glyphs App should be able to successfully generate the variable font and all glyphs with components should behave like the glyph they reference
+
+4. If your design does not export from Glyphs App due to a subtable overflow, there may be too many kerns. Add the font-level custom parameter for an extended kerning lookup.
+
+5. You will need to use Glyphs Cutting Edge to export the font, as Glyphs does not support the extended lookup parameter yet. 
+	1. When opening your file in the Cutting Edge version, you may be prompted to update the position of glyphs or components, to prevent modifications to your design make sure to click the “select all“ button and then click “keep selected”
 
 ### D) Avar mapping
 
@@ -126,14 +129,7 @@ G) Known issues and STAT patch for italic fonts
 
 6. Test to make sure the static instances match up to the variable font
 
-### E) Kerning Interpolation (if design needs an extended kern lookup table)
-
-1. If your design does not export from Glyphs App due to a subtable overflow, there may be too many kerns. Add font-level custom parameter for an extended kerning lookup.
-
-2. You will need to use Glyphs Cutting Edge to export the font, as Glyphs does not support the extended lookup parameter yet. 
-	3. When opening your file in the Cutting Edge version, you may be prompted to update the position of glyphs or components, to prevent modifications to your design make sure to click the “select all“ button and then click “keep selected”
-
-### F) Post Processing
+### E) Post Processing
 Post processing should be done as needed depending on the specific project, but I usually run these three on every project, especially those coming from a Glyphs App export.
 
 1. Run gftools fix-nonhinting
@@ -142,7 +138,7 @@ Post processing should be done as needed depending on the specific project, but 
 
 3. Run gftools fix-gasp
 
-### G) Issues
+### F) Issues
 
 1. Variable fonts exported from Glyphs App lack hinting data
 
