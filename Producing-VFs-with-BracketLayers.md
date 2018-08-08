@@ -47,7 +47,11 @@ C) On a duplicated file, run scripts to add bracket layers for components. Expor
 
 D) In .ttx, correct fvar values, calculate avar mappings, and convert back to .ttf
 
-E) Exported binary lacks hinting and fails some Font Bakery tests (detailed below)
+E) Exporting with an extended kerning lookup
+
+F) Recommended post processing steps/scripts
+
+G) Known issues and STAT patch for italic fonts
 
 <br>
 
