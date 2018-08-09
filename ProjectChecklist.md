@@ -90,7 +90,7 @@ Many Windows users install fonts to use them in Microsoft Word or LibreOffice, s
 
 * Windows installation
 * Microsoft Word
-* Libre Office 5.1
+* LibreOffice 5.3
 
 ### GNU+Linux
 
