@@ -88,9 +88,9 @@ Microsoft offers zero-price virtual machine images at [modern.ie](https://dev.mo
 
 Many Windows users install fonts to use them in Microsoft Word or LibreOffice, so check that your fonts can be installed and set paragraphs normally in
 
-* Windows installation
+* Windows
 * Microsoft Word
-* Libre Office 5.1
+* LibreOffice 5.3 (5.3 introduced a new layout engine, based on HarfBuzz)
 
 ### GNU+Linux
 
@@ -113,6 +113,16 @@ Install the python module with
     apt-get install python-fontforge;
 
 ### Mac
+
+#### Automation
+
+You can automate any application with these tools:
+
+* https://folivora.ai
+* http://www.sikuli.org/
+* http://www.hammerspoon.org/
+* https://www.bluem.net/en/projects/cliclick/
+* https://pqrs.org/osx/karabiner/document.html
 
 #### Font Installation/Management
 
@@ -378,6 +388,8 @@ Make sure to always use ssh:
     git config --global url.ssh://git@github.com/.insteadOf https://github.com/
     git config --global url.ssh://git@bitbucket.org/.insteadOf https://bitbucket.org/
 
+<http://www.git-legit.org> is helpful
+
 #### Git on Mac
 
 On Mac OS X, the filesystem is "case insensitive" which means these two file names access the same file data:
@@ -398,6 +410,14 @@ You can reply via email to these messages, but note that your email replies **wi
 
 It is a good idea to set up an email filter to label github emails as such, to be sure you know when your reply will become public.
 See [GMail Filter and Label Documentation](https://support.google.com/mail/answer/6579?hl=en)
+
+#### Commit on Save
+
+Some tools are available to use Git more closely with your font editor:
+
+* https://glyphsapp.com/tools/commitglyphs for Glyphs, easy to use
+* https://github.com/simoncozens/GlyphsGit for Glyphs, needs some more familiarity with Git
+* https://bitbucket.org/BlackFoundry/commitatsave for RoboFont
 
 ### Your Repository
 
@@ -916,6 +936,12 @@ FIXME TODO which one exactly, and how to use it
 
 You must comment all feature code that is not automatically generated.
 It’s not always obvious what OpenType code in a font does, particularly with non-Latin scripts where the features that are specific to a font can be entangled with features that are required for language support.
+
+#### Ligature Caret positions
+
+Set the ligature caret positions for all ligatures that need them.
+
+* https://github.com/FAlthausen/LigatureCaret
 
 #### fractions, superscript and subscript numerals
 
