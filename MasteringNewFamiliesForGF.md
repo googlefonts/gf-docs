@@ -61,9 +61,9 @@ Ensure copyright, author names etc are correct.
 
 ![Glyphs app font info window](assets/MasteringNewFamiliesForGF/Mastering2.png 'Glyphs app font info window')
 
-### Generate ttfs and check with Fontbakery
+### Generate TTFs and check with Fontbakery
 
-![Checking TTF font files with FontBakery in the command line](assets/MasteringNewFamiliesForGF/Mastering2.png 'Checking TTF font files with FontBakery in the command line')
+![Checking TTF font files with FontBakery in the command line](assets/MasteringNewFamiliesForGF/Mastering3.png 'Checking TTF font files with FontBakery in the command line')
 
 Fix all FAILS/ERRORs until capcake appears. If error cannot be cleared, post issue to [https://github.com/googlefonts/fontbakery](https://github.com/googlefonts/fontbakery)
 
