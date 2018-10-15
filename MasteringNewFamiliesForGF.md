@@ -5,12 +5,12 @@
 ### Tools
 
 - [Font Bakery](http://github.com/googlefonts/fontbakery)
-- [GF-Glyphs-Scripts](https://github.com/googlefonts/gf-glyphs-scripts)
+- [gf-glyphs-scripts](https://github.com/googlefonts/gf-glyphs-scripts)
 
 ### Docs
 
-- [Project Checklist](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
-- [Glyphs Quick Start](https://github.com/googlefonts/gf-docs/blob/master/QuickStartGlyphs.md)
+- [Project Checklist](ProjectChecklist.md)
+- [GlyphsApp Quick Start](QuickStartGlyphs.md)
 
 ## Mastering process
 
@@ -18,34 +18,30 @@
 
 Arrange your repo into the following folder structure - the following are **mandatory**:
 
-```
-.
-├── AUTHORS.txt
-├── CONTRIBUTORS.txt
-├── OFL.txt
-├── README.md
-├── fonts
-│   └── Notable-Regular.ttf
-└── sources
-    └── Notable.glyphs
-```
+    .
+    ├── AUTHORS.txt
+    ├── CONTRIBUTORS.txt
+    ├── OFL.txt
+    ├── README.md
+    ├── fonts
+    │   └── Notable-Regular.ttf
+    └── sources
+        └── Notable.glyphs
 
-A good project to study is [https://github.com/googlefonts/mavenproFont](https://github.com/googlefonts/mavenproFont)
+A good project to study is [github.com/googlefonts/mavenproFont](https://github.com/googlefonts/mavenproFont)
 
-This has additional **optional** parts, like the /docs folder, which is a good place to put automatically generated content, or image files used in the README. Eg,
+This has additional **optional** parts, like the `/docs` folder, which is a good place to put automatically generated content, or image files used in the README. Eg,
 
-```
-├── docs
-│   └── sample.png
-```
+    ├── docs
+    │   └── sample.png
 
-Note that the /docs folder is special, because its contents is directly available to web browsers.
+Note that the `/docs` folder is special, because its contents is directly available to web browsers.
 
 ### Design Inspection
 
-Check each glyph is good. A simple way to do this is copy all glyphs in Glyphsapp into a tab.
+Check each glyph is good. A simple way to do this is copy all glyphs in GlyphsApp into a tab.
 
-![All glyphs of a font open in a tab of Glyphs app](assets/MasteringNewFamiliesForGF/Mastering0.png 'All glyphs of a font open in a tab of Glyphs app')
+![All glyphs of a font open in a tab of GlyphsApp](assets/MasteringNewFamiliesForGF/Mastering0.png 'All glyphs of a font open in a tab of GlyphsApp')
 
 ### Update Metadata so it's correct
 
@@ -59,7 +55,7 @@ Run Script > Google Fonts > QA. Fix everything until it clears
 
 Ensure copyright, author names etc are correct.
 
-![Glyphs app font info window](assets/MasteringNewFamiliesForGF/Mastering2.png 'Glyphs app font info window')
+![GlyphsApp font info window](assets/MasteringNewFamiliesForGF/Mastering2.png 'GlyphsApp font info window')
 
 ### Generate TTFs and check with Fontbakery
 
