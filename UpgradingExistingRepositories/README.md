@@ -83,7 +83,7 @@ The last option should be used as a last resort only.
 - Implement everything from [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
 - To test your repo matches the steps mentioned in **[ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)**, run the script **Google Fonts > QA**. Fix all the errors until the script passes.
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-gf-glyphs-scripts-qa.png)
+![alt tag](assets/UpgradingExistingRepositories-gf-glyphs-scripts-qa.png)
 
 - To automatically fix a lot of errors and to make sure the project conforms to the **[ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)**, run the script **Google Fonts > Fix fonts for GF spec**.
 
@@ -143,7 +143,7 @@ _Cabin: Both temporary glyphs files have been combined into 1 master .glyphs fil
 
 _Temp files also deleted_
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-combined-masters.png)
+![alt tag](assets/UpgradingExistingRepositories-combined-masters.png)
 
 #### commit 6
 
@@ -153,7 +153,7 @@ _The script reported errors in the Glyphs files which included problems with the
 
 _We keep running the QA script each time we have made a fix to confirm it has passed. Think of it as a feedback loop._
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-report1.png)
+![alt tag](assets/UpgradingExistingRepositories-report1.png)
 
 #### commit 7
 
@@ -175,7 +175,7 @@ _Script reported this file was missing. Text for this file came from the tradema
 
 _I have now successfully made all the checks pass for the script_
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-report2.png)
+![alt tag](assets/UpgradingExistingRepositories-report2.png)
 
 _We still need to check the MM compatibility and if we need to complete some steps from the other cleanup checklist_
 
@@ -191,9 +191,9 @@ _Cabin.glyphs: Both masters now have weight values._
 
 _The weight values come from the vertical stem width of the 'H'. We need these values so we can generate instances. In the next step, we'll add the instances_
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-measure-h.png)
+![alt tag](assets/UpgradingExistingRepositories-measure-h.png)
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-stem-value.png)
+![alt tag](assets/UpgradingExistingRepositories-stem-value.png)
 
 #### commit 12
 
@@ -201,7 +201,7 @@ _Cabin.glyphs: instances added._
 
 _To get the correct weight for each instance. We need to measure the a stem of the 'H' for each style from the old fonts. The names of each instance have to match this [document](https://docs.google.com/spreadsheets/d/1ckHigO7kRxbm9ZGVQwJ6QJG_HjV_l_IRWJ_xeWnTSBg/edit#gid=0). **Google Fonts > QA** will check that each instance is named correctly._
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-instances-added.png)
+![alt tag](assets/UpgradingExistingRepositories-instances-added.png)
 
 #### commit 13
 
@@ -219,7 +219,7 @@ _Glyphsapp allows us to use auto OT features. The original sources only included
 
 _Cabin.glyphs: Fixed all errors reported in Preflight font script._
 
-![alt tag](assets/UpgradingExistingRepositories/UpgradingExistingRepositories-font-preflight-test2.png)
+![alt tag](assets/UpgradingExistingRepositories-font-preflight-test2.png)
 
 _We now have a clean repo, 1 master .glyphs file with all masters and instances, correct vertical metrics, Better OT features. Luckily the original font was very good quality. Most fonts are not this easy to work on._
 

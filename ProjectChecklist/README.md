@@ -691,19 +691,19 @@ Here is a quick reference table (but note that CSS font-weight is not the same a
 
 Here is the default value in FontLab 5:
 
-![Regular PSName Setting in FontLab - default](assets/ProjectChecklist/ProjectChecklist-FL-regular-default.png)
+![Regular PSName Setting in FontLab - default](assets/ProjectChecklist-FL-regular-default.png)
 
 Here is the corrected value:
 
-![Regular PSName Setting in FontLab - fixed](assets/ProjectChecklist/ProjectChecklist-FL-regular-fixed.png)
+![Regular PSName Setting in FontLab - fixed](assets/ProjectChecklist-FL-regular-fixed.png)
 
 #### fsType
 
 The `fsType` embedding bits must be set to 0.
 
-![Set fsType to 0 in Glyphs](assets/ProjectChecklist/ProjectChecklist-G-fstype.png)
+![Set fsType to 0 in Glyphs](assets/ProjectChecklist-G-fstype.png)
 
-![Set fsType to 0 in FontLab 5](assets/ProjectChecklist/ProjectChecklist-FL-fstype.png)
+![Set fsType to 0 in FontLab 5](assets/ProjectChecklist-FL-fstype.png)
 
 #### VendorID
 
@@ -835,11 +835,11 @@ Must be set to the __family's__ y-axis bbox values, with linegaps of 0.
 
 This is where to find these values for each font in FontLab 5:
 
-![BBox values in FontLab 5](assets/ProjectChecklist/ProjectChecklist-FL-vertical-metrics-id.png)
+![BBox values in FontLab 5](assets/ProjectChecklist-FL-vertical-metrics-id.png)
 
 This is where to set the vertical metrics in FontLab 5:
 
-![Vertical Metrics set correctly in FontLab 5](assets/ProjectChecklist/ProjectChecklist-FL-vertical-metrics-set.png)
+![Vertical Metrics set correctly in FontLab 5](assets/ProjectChecklist-FL-vertical-metrics-set.png)
 
 #### PostScript Hinting
 
