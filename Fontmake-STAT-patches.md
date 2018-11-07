@@ -1,8 +1,10 @@
 # Fontmake STAT Patch Process
-This is the process as of 8/8/18 since the current fix-vf-meta.py script does not work on fonts with more than one axis.
+*This is the process as of 8/8/18 since the current fix-vf-meta.py script does not work on fonts with more than one axis.*
 
+
+## Process
 0. Change `STAT` minor version number to 1. In `name` table, check that all entries and variations of the font name are “Font Italic” or “Font Regular”, and not some odd combo like “Font Regular Italic”
-1. (Fonts will work without doing this step) Copy Windows name records 1–14 to Mac name records, change all IDs after nameID to: `platformID="1" platEncID="0" langID="0x0" unicode="True"`
+1. **OPTIONAL** (Fonts are fine without this step) Copy Windows name records 1–14 to Mac name records, change all IDs after nameID to: `platformID="1" platEncID="0" langID="0x0" unicode="True"`
 2. If the family has italic styles, add a `name` table entry “Italic” if there is not already one present
 3. If the family has a width axis, add the `name` table entries to address the different widths of instances. Entries should address only one axis
 	1. *Example: “Condensed” and “Normal”*
@@ -20,3 +22,77 @@ This is the process as of 8/8/18 since the current fix-vf-meta.py script does no
 	1. *For the `nameID` I like to use the Regular from `nameId` 2 since that one is for the family rather than referring to a single style, even though it really makes no difference, a string is a string :)*
 	2. *Remember to set `<Flags value="2"/>` if this is the roman font*
 8. For the italic VF ad an `Axis value` `Format=1` to the `STAT` table, set it to `1.0` and have the flag set to `0` since the italic style is not the default and should be visible in the name of the font
+
+
+## Example ttx from Cabin Roman VF
+```
+  <STAT>
+    <Version value="0x00010001"/>
+    <DesignAxisRecordSize value="8"/>
+    <!-- DesignAxisCount=3 -->
+    <DesignAxisRecord>
+      <Axis index="0">
+        <AxisTag value="wght"/>
+        <AxisNameID value="256"/>  <!-- Weight -->
+        <AxisOrdering value="0"/>
+      </Axis>
+      <Axis index="1">
+        <AxisTag value="wdth"/>
+        <AxisNameID value="257"/>  <!-- Width -->
+        <AxisOrdering value="1"/>
+      </Axis>
+      <Axis index="2">
+        <AxisTag value="wdth"/>
+        <AxisNameID value="266"/>  <!-- Italic -->
+        <AxisOrdering value="2"/>
+      </Axis>
+    </DesignAxisRecord>
+    <!-- AxisValueCount=7 -->
+    <AxisValueArray>
+      <AxisValue index="0" Format="1">
+        <AxisIndex value="0"/>
+        <Flags value="0"/>
+        <ValueNameID value="258"/>  <!-- Regular -->
+        <Value value="400.0"/>
+      </AxisValue>
+      <AxisValue index="1" Format="1">
+        <AxisIndex value="0"/>
+        <Flags value="0"/>
+        <ValueNameID value="259"/>  <!-- Medium -->
+        <Value value="500.0"/>
+      </AxisValue>
+      <AxisValue index="2" Format="1">
+        <AxisIndex value="0"/>
+        <Flags value="0"/>
+        <ValueNameID value="260"/>  <!-- SemiBold -->
+        <Value value="600.0"/>
+      </AxisValue>
+      <AxisValue index="3" Format="1">
+        <AxisIndex value="0"/>
+        <Flags value="0"/>
+        <ValueNameID value="261"/>  <!-- Bold -->
+        <Value value="700.0"/>
+      </AxisValue>
+      <AxisValue index="4" Format="3">
+        <AxisIndex value="2"/>
+        <Flags value="2"/>
+        <ValueNameID value="2"/>  <!-- Regular -->
+        <Value value="0.0"/>
+        <LinkedValue value="1.0"/>
+      </AxisValue>
+      <AxisValue index="5" Format="1">
+        <AxisIndex value="1"/>
+        <Flags value="0"/>
+        <ValueNameID value="267"/>  <!-- Condensed -->
+        <Value value="50.0"/>
+      </AxisValue>
+      <AxisValue index="6" Format="1">
+        <AxisIndex value="1"/>
+        <Flags value="2"/>
+        <ValueNameID value="268"/>  <!-- Normal -->
+        <Value value="100.0"/>
+      </AxisValue>
+    </AxisValueArray>
+    <ElidedFallbackNameID value="2"/>  <!-- Regular -->
+  </STAT>
+```
