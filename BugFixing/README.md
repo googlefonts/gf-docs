@@ -87,7 +87,7 @@ Changes implemented in upstream,
 Each family folder contains a [METADATA.pb](https://github.com/google/fonts/blob/master/ofl/montserrat/METADATA.pb) file, which uses the [Protobuf format](https://developers.google.com/protocol-buffers/).
 These metadata files are used for each family on [fonts.google.com](https://fonts.google.com). They contain information about which codepages the family supports, what category the family is, who the author is etc.
 
-The script [./tools/add_font.py](https://github.com/google/fonts/blob/master/tools/add_font.py) will generate these files.
+The script [gftools/add_font.py](https://github.com/googlefonts/gftools/blob/e936d3ddb0b1e4bd1972900fac0c911c793ddd2e/add_font.py) will generate these files.
 Once you've replaced the fonts in the family folder, execute the script:
 
     python add_font.py /path/to/familyfolder --update
