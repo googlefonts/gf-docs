@@ -861,7 +861,7 @@ FIXME TODO research this topic more to find out what essential kerning should be
 
 There are currently 3 milestones for Latin glyphs:
 
-* Support the 219 "base Latin" glyphs ([latin_unique-glyphs.nam](https://github.com/google/fonts/blob/master/tools/encodings/latin_unique-glyphs.nam))
+* Support the 219 "base Latin" glyphs ([latin_unique-glyphs.nam](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/latin-ext_unique-glyphs.nam))
 * Support Abode Latin 3 (http://davelab6.github.io/abode-latin-charsets)
 * Support Abode Latin 4 (mainly Vietnamese)
 
