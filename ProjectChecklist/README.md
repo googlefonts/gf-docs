@@ -362,6 +362,12 @@ These 2 tools are probably the best way to keep your work committed into git as 
 Doing so helps keep a journal of your progress with the project.
 If you have a habit of saving every few minutes, a good tempo for making commits is when you make a proof (either with a print layout application, or a web tester like the Impallari Testing page)
 
+As you work, make commits with messages along the way. These tend to be simple statements of what value you add at a given stage, like, "rebuild fonts with new style names" or "add inktraps to lowercase," etc. I think of commits like "checkpoints" in a video game – if I mess up, I can always reset at the last commit, without losing much work.
+
+Push relatively frequently – several times a day, at the end of work sessions, etc. This gives added redundancy, and helps potential collaborators or visitors to get a fresh state of the project.
+
+If you happen to keep design work synced to Dropbox or Google Drive, I strongly advise making a separate, non-syncing area for git projects (e.g. "type-repos" or whatever is memorable for you). Keep the Kufam git project in a folder in that area – and make sure if you move it from a Dropbox folder, the syncing doesn't follow you. Dropbox and Git can interfere with one another in strange ways. That said, if you want to have easily-accessible versions of your project, it doesn't hurt to periodically duplicate and timestamp your source into a cloud-synced folder. This isn't an "orthodox" way to work, but font files are tiny, so it can be a helpful layer of personal security to add on top of a Git workflow. 
+
 When working with font projects on Github, it is typical to work with several "forks" of the same project, each owned by different people or organizations.
 To keep things simple you should repeat the github.com site structure on your harddisk:
 Create a folder in your projects directory called `github.com`, inside that make a directory for each username/organization you work with, and clone each repo inside its correpsonding folder.
