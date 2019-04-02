@@ -390,6 +390,8 @@ Some tools are available to use Git more closely with your font editor, if usefu
 * https://github.com/simoncozens/GlyphsGit for Glyphs, needs some more familiarity with Git
 * https://bitbucket.org/BlackFoundry/commitatsave for RoboFont
 
+However, these tools are not recommended for every project – they will end up committing more often than may be helpful, diluting the project history with many small updates. If you have some familiarity with Git and you generally remember to commit your work after meaningful changes, these tools are probably unnecessary for you. If you don't remember to commit often, then it might be worth giving these plugins a try as you become familiar with managing your project versions.
+
 #### Issues
 
 If you run into a bug, question, or have a feature request for a project on GitHub, you can file an Issue on that repo to alert the owners and get help. You should practice good etiquette by first searching for existing issues or answers, but if you report an unknown issue, project owners will value your input.
