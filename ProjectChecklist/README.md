@@ -340,7 +340,7 @@ Install it with homebrew, simply run:
 <https://github.com/Jolg42/awesome-typography> lists many tools for working with fonts.
 If you use actively use a tool in your work, please consider contacting @davelab6 to add it to this document.
 
-## Project Repository
+## Using GitHub for your project
 
 ### Learning Github
 
@@ -356,23 +356,58 @@ There are many good guides for learning how to use Github around the web, includ
 * [Articles about Github in Wired.com](https://www.google.com/search?q=github+everything+site:wired.com)
 * <https://github.com/sindresorhus/refined-github> adds power user features to the website
 
+#### Using Git for type design – a summary
+
+##### What is Git?
+
+Git is a powerful tool that allows you to save precise versions of a project as you work, and makes it possible for collaborators to work together on code-based projects (including type!) in a controlled manner. There are various cloud providers of Git services which further simplify work and collaboration via Git. Google Fonts uses GitHub. When you work with Git, you will work in a local repository (a Git project folder on your computer), which you will frequently sync with a connected remote repo on GitHub.
+
+##### Software for working with Git
+
 Github provides a proprietary-freeware desktop Git GUI, <https://desktop.github.com>.
-If you use Glyphs, the [github.com/simoncozens/GlyphsGit](https://github.com/simoncozens/GlyphsGit) plugin changes the 'save' function to integrate with Git, so that as you save like normal within the app, you are prompted for a git commit message.
-These 2 tools are probably the best way to keep your work committed into git as you go.
-Doing so helps keep a journal of your progress with the project.
-If you have a habit of saving every few minutes, a good tempo for making commits is when you make a proof (either with a print layout application, or a web tester like the Impallari Testing page)
+There are also plugins for Glyphs and RoboFont which allow you commit on save (see below).
+These 2 tools are an accessible way to keep your work committed into git as you go.
+
+##### A Typical Git workflow
+
+As you work, make commits with messages along the way – you can tie these to existing habits like printing proofs, if that helps you remember. Doing so helps keep a journal of your progress with the project. Commit messages should be concise statements of what value you add to your project at a given stage, such as "rebuild fonts with new style names" or "improve spacing in basic lowercase." You can think of commits like "checkpoints" in a video game – if you mess up, you can always go back to a previous commit, without losing much work (using features such as `git checkout` or `git reset` – see more in-depth Git guides if you want to work with these features).
+
+Push relatively frequently – several times a day, at the end of work sessions, etc. This gives added redundancy to your data, and it helps keep a fresh state of the project available to users and potential collaborators.
+
+##### Organizing Git repos on your computer
 
 When working with font projects on Github, it is typical to work with several "forks" of the same project, each owned by different people or organizations.
-To keep things simple you should repeat the github.com site structure on your harddisk:
-Create a folder in your projects directory called `github.com`, inside that make a directory for each username/organization you work with, and clone each repo inside its correpsonding folder.
+To keep things simple, you should repeat the github.com site structure on your harddisk:
+Create a folder in your projects directory called `github.com` (or `git-repos`, etc). Inside that, make a directory for each username/organization you work with, then clone each repo into its corresponding org folder.
 
-When addressing an issue, do not close it when you think it is done;
-ask for the person who reported it to verify it is resolved and then close their issue.
+If you tend to keep design work synced to Dropbox or Google Drive, it is strongly advisable to *exclude* your git repos folder from this type of cloud syncing. If you start a project inside a cloud-synced area, then move that work into your git-repos area, make sure the syncing doesn't follow your content. General-purpose cloud syncing and Git have different purposes, and can interfere with one another in strange ways. That said, if you want to have easily-accessible past versions of your project, it doesn't hurt to periodically duplicate and timestamp your source into a cloud-synced folder. This isn't an "orthodox" way to work, but font files are tiny, so it can be a helpful layer of personal security to add on top of a Git workflow. Plus, if you later want to quickly view a past version of your project, you can easily open these archived files. Of course, you can also access old versions of your project through Git, but especially if you are a newcomer to Git, it can be helpful to keep things simple.
+
+#### Commit on Save
+
+Some tools are available to use Git more closely with your font editor, if useful:
+
+* https://glyphsapp.com/tools/commitglyphs for Glyphs, easy to use
+* https://github.com/simoncozens/GlyphsGit for Glyphs, needs some more familiarity with Git
+* https://bitbucket.org/BlackFoundry/commitatsave for RoboFont
+
+However, these tools are not recommended for every project – they will end up committing more often than may be helpful, diluting the project history with many small updates. If you have some familiarity with Git and you generally remember to commit your work after meaningful changes, these tools are probably unnecessary for you. If you don't remember to commit often, then it might be worth giving these plugins a try as you become familiar with managing your project versions.
+
+#### Issues
+
+If you run into a bug, question, or have a feature request for a project on GitHub, you can file an Issue on that repo to alert the owners and get help. You should practice good etiquette by first searching for existing issues or answers, but if you report an unknown issue, project owners will value your input.
+
+When addressing an issue on your own project, do not close it when you think it is done; ask for the person who reported it whether it is resolved, and close the issue once they verify.
+
+#### Pull Requests
+
+Pull Requests (PRs) allow changes to a project to be merged into another fork of the project. Typically, someone who wishes to contribute a change to a project will make a fork under their own org, make a branch where they make a change, and then PR that branch to the upstream repo. If a contributor has write access to a repo, they can usually skip the forking step, though different projects have different workflows.
 
 When posting a Pull Request, do not merge your own PR; ask for someone to review it.
-Open PRs can be updated in-place (sometimes requiring a 'forced push' with `git push -f`) and the Github PR pages offer line-by-line commenting.
+Open PRs can be updated in-place (sometimes requiring a 'forced push' with `git push -f`). Github PR pages offer line-by-line commenting, to allow highly specific discussions when necessary.
 
-Be sure to set git to record commits with your name, and the email you signed the Googel CLA with, otherwise your pull requests will trigger a CLA-checker warning ([example](https://github.com/google/fonts/pull/297).)
+#### The Google Contributor License Agreement (CLA)
+
+Be sure to set git to record commits with your name, and the email you signed the Google CLA with, otherwise your pull requests will trigger a CLA-checker warning ([example](https://github.com/google/fonts/pull/297).)
 To set this metadata, run:
 
      git config --global user.name "Your Name" ;
@@ -391,6 +426,7 @@ Make sure to always use ssh:
 
 <http://www.git-legit.org> is helpful
 
+
 #### Git on Mac
 
 On Mac OS X, the filesystem is "case insensitive" which means these two file names access the same file data:
@@ -406,19 +442,11 @@ To configure git to be case-sensitive, run:
 #### Github "Watch" Discussions
 
 Github also has an email discussion feature:
-clicks 'watch' at the top of your project page, and github will email you (and all other watchers) each comment posted on the issue tracker, pull requests, or commits.
+clicks 'watch' at the top of your project page, and GitHub will email you (and all other watchers) each comment posted on the issue tracker, pull requests, or commits.
 You can reply via email to these messages, but note that your email replies **will** be posted publicly on the Github issue tracker (although attachments will be dropped.)
 
-It is a good idea to set up an email filter to label github emails as such, to be sure you know when your reply will become public.
+It is a good idea to set up an email filter to label GitHub emails as such, to be sure you know when your reply will become public.
 See [GMail Filter and Label Documentation](https://support.google.com/mail/answer/6579?hl=en)
-
-#### Commit on Save
-
-Some tools are available to use Git more closely with your font editor:
-
-* https://glyphsapp.com/tools/commitglyphs for Glyphs, easy to use
-* https://github.com/simoncozens/GlyphsGit for Glyphs, needs some more familiarity with Git
-* https://bitbucket.org/BlackFoundry/commitatsave for RoboFont
 
 ### Your Repository
 
