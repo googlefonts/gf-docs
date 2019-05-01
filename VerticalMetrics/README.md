@@ -164,7 +164,6 @@ If the font was previously hosted on fonts.google.com, you can test the upgraded
 Useful Links:
 - [Kalapi vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/KoMyM2CfAwAJ)
 - [Khaled vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MYgVlQMjAwAJ)
-- [Vertical metrics recommendations](VerticalMetricsRecommendations.md)
 
 ## Useful Tools:
 ### Glyphsapp Scripts
