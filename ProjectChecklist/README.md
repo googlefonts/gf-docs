@@ -889,11 +889,11 @@ FIXME TODO research this topic more to find out what essential kerning should be
 
 There are currently 3 milestones for Latin glyphs:
 
-* Support the 219 "base Latin" glyphs ([latin_unique-glyphs.nam](https://github.com/google/fonts/blob/master/tools/encodings/latin_unique-glyphs.nam))
-* Support Abode Latin 3 (http://davelab6.github.io/abode-latin-charsets)
-* Support Abode Latin 4 (mainly Vietnamese)
+* Support the 219 "Google Latin Core" set
+* Support the 600 "Google Latin Plus" set
+* Support the 1,000 "Google Latin Pro" set
 
-FIXME TODO Come up with a definitive `latin-ext` glyph set
+See <https://github.com/googlefonts/gftools/tree/master/Lib/gftools/encodings/GF%20Glyph%20Sets> for more details
 
 #### Figure Sets
 
