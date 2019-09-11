@@ -33,6 +33,8 @@ This enables the public to see work in progress and point out issues during deve
 Github is a public project collaboration platform that is somewhat similar to Dropbox, but more fine-grained.
 It provides the best and most well-designed experience for public project development.
 
+In 2019, a feature to link your Github projects to funding services and show them via a prominent button was added ([learn more](https://github.com/typotheque/text-shaping/commit/afe6eaf3d391b9114f5b5a1329760f8d63ae0f5f)).
+
 Please see the Github section further below for tips on learning Github.
 
 ### The Google Fonts Discuss mailing list
