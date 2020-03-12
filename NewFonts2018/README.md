@@ -1,7 +1,6 @@
 # Uploading fonts to google/fonts
 
-This guide will assist users in uploading fonts to the [google/fonts](https://github.com/google/fonts) repository.
-
+This guide from May 2018 explains how to upload new font families to Google Fonts, by contributing via Pull Request to the [google/fonts](https://github.com/google/fonts) repository.
 
 ## Uploading
 
