@@ -59,45 +59,42 @@ Setting vertical metrics usually falls into the following two categories:
 
 ### 1. Calculating the vertical metrics for a new family
 
-Kalapi Gajjar-Bordawekar outlined a [vertical metric schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/KoMyM2CfAwAJ). The GF team adopted this for new releases only:
+Marc Foley (@m4rc1e) has outlined a [vertical metric schema](https://github.com/googlefonts/fontbakery/issues/2164#issuecomment-436595886) which is ideal for new releases (see further below for vertical metrics in upgraded families).
 
-- Typo Ascender = either Cap Height or Ascender height, whichever is tallest
-- Typo Descender = Typo Ascender - UPM
-- Typo LineGap = 0.25 * UPM
-- Hhea Ascender = Typo Ascender
-- Hhea Descender = Typo Descender
-- Hhea LineGap = Typo LineGap
-- Win Ascent = Font bbox yMax
-- Win Descent = Font bbox yMin
+Set these values to be the same across all masters to ensure that output instances have equal vertical metrics:
 
+- `TypoAscender` and `hheaAscender` are set to height of tallest uppercase glyph with single accent (probably Â or Å)
+- `typoLineGap` and `hheaLineGap` set to 0
+- `TypoDescender` and `hheaDescender` set to lowest a-z letter (p, j, q)
+- `winAscent` and `winDecent` set to `yMax` and `yMin` (absolute highest and lowest point in the font)
+- `fsSelection` bit 7 enabled 
+  - In GlyphsApp, set `Use Typo Metrics` custom parameter set to `true` in the **Font** tab of **Font Info**.
+  - In RoboFont, this is under **Font Info > OpenType > OS/2 Table > fsSelection > USE_TYPO_METRICS**.
 
-Our new family has the following specification:
-- upm is 1000
-- yMax is 1050
-- yMin is -250
-- Cap height of 'H' is 700
-- Descender is -245
+Expected result: vertical metrics should be around 130% of UPM. Anything greater, and the metrics may look too loose.
 
-1. Set the default values, following Kalapi's schema:
+**Example**
 
-    - Typo Ascender = 700. Set to our Cap height
-    - Typo Descender = -300. Typo Ascender - upm
-    - Typo LineGap = 250. 0.25 * upm
-    - Hhea Ascender = 700. Typo Ascender
-    - Hhea Descender = -300. Typo Descender
-    - Hhea LineGap = 250. Typo LineGap
-    - Win Ascent = 1050. Font bbox yMax
-    - Win Descent = 250. Font bbox yMin (positive integer)
+A new family has the following qualities:
+- UPM is 1000
+- Tallest uppercase glyph (Bold Å, in this family) has a height of `1092`
+- Lowest lowercase glyph a-z (Bold g, in this family) has a lowest point of `-216`
+- yMax is `1116`
+- yMin is `-320`
 
+1. Set the default values, following Marc's schema:
 
-2. Adjust the Typo/Hhea values visually.
+    - Typo Ascender = `1092`. Set to our Cap height
+    - Typo Descender = `-216`. Typo Ascender - upm
+    - Typo LineGap = `0`
+    - Hhea Ascender = `1092` (Typo Ascender)
+    - Hhea Descender = `-216` (Typo Descender)
+    - Hhea LineGap = `0`. (Typo LineGap)
+    - Win Ascent = `1116`. (Font bbox yMax)
+    - Win Descent = `320`. (*absolute value* of Font bbox yMin – a positive integer)
 
-    Often, the default values are sufficient, sometimes it helps to tweak them a little.
-
-    Use either Notepad or Text Edit to establish the perfect visual balance. Both the hhea and typo values should always match each other.
-
-3. Copy metric values to rest of the styles/weights in the family
-4. Enable Use_Typo_Metrics
+2. Be sure to copy these same metric values to all of the masters in the family
+3. Enable Use_Typo_Metrics
 
 
 ### 2. Recalculating the vertical metrics for an upgraded family
@@ -155,7 +152,7 @@ The Typo Metrics need to inherit the v1.000 Win values. The Win Ascent and Win D
 3. Enable Use_Typo_Metrics
 
 
-If the font was previously hosted on fonts.google.com, you can test the upgraded vertical metrics visually match by using [GF Regression](http://45.55.138.144).
+If the font was previously hosted on fonts.google.com, you can test the upgraded vertical metrics visually match by using [GF Regression](https://github.com/googlefonts/gfregression).
 
 
 ![GF Regression vertical metrics test](assets/VerticalMetrics-gfregression-test.png)
@@ -164,12 +161,11 @@ If the font was previously hosted on fonts.google.com, you can test the upgraded
 Useful Links:
 - [Kalapi vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/KoMyM2CfAwAJ)
 - [Khaled vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MYgVlQMjAwAJ)
-- [Vertical metrics recommendations](VerticalMetricsRecommendations.md)
 
 ## Useful Tools:
 ### Glyphsapp Scripts
 - [gf-glyphs-scripts](https://github.com/googlefonts/gf-glyphs-scripts) 'QA' script includes several vertical metrics checks. 'Fix fonts for GF spec' will automatically update a family's vertical metrics so they visually match a previous release (if it exists). It will also set the values so no clipping will occur on Windows platforms.
 
 ### Testing:
-- [Impallari/testing](http://www.impallari.com/testing/): Font tester which has no css line-height property set
-- [GF Regression](http://45.55.138.144): Check local fonts against currently hosted versions on fonts.google.com
+- [Impallari/testing](https://github.com/impallari/Font-Testing-Page): Font tester which has no css line-height property set ([live site](http://cyreal.org/Font-Testing-Page))
+- [GF Regression](https://github.com/googlefonts/gfregression): Check local fonts against currently hosted versions on fonts.google.com

@@ -4,7 +4,7 @@ A guide for users of [Glyphs](https://glyphsapp.com) who want to create/contribu
 
 ## Repo Structure
 
-- There should be one definitive set of sources. [This](https://github.com/EbenSorkin/Merriweather/tree/master/sources), not [this](https://github.com/VanillaandCream/Catamaran-Tamil/tree/master/Instances)
+- There should be one definitive set of sources. [This](https://github.com/EbenSorkin/Merriweather/tree/master/sources), not [this](https://github.com/VanillaandCream/Catamaran-Tamil/tree/7559b4906f9c9148fb22c6f89508c3053a78a296/Instances)
 - One click builds are essential. Generating from Glyphs is sufficient in most cases
 - Repositories should have the following structure:
 ```
