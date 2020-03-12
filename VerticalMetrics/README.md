@@ -155,7 +155,7 @@ The Typo Metrics need to inherit the v1.000 Win values. The Win Ascent and Win D
 3. Enable Use_Typo_Metrics
 
 
-If the font was previously hosted on fonts.google.com, you can test the upgraded vertical metrics visually match by using [GF Regression](http://45.55.138.144).
+If the font was previously hosted on fonts.google.com, you can test the upgraded vertical metrics visually match by using [GF Regression](https://github.com/googlefonts/gfregression).
 
 
 ![GF Regression vertical metrics test](assets/VerticalMetrics-gfregression-test.png)
@@ -164,12 +164,11 @@ If the font was previously hosted on fonts.google.com, you can test the upgraded
 Useful Links:
 - [Kalapi vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/KoMyM2CfAwAJ)
 - [Khaled vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MYgVlQMjAwAJ)
-- [Vertical metrics recommendations](VerticalMetricsRecommendations.md)
 
 ## Useful Tools:
 ### Glyphsapp Scripts
 - [gf-glyphs-scripts](https://github.com/googlefonts/gf-glyphs-scripts) 'QA' script includes several vertical metrics checks. 'Fix fonts for GF spec' will automatically update a family's vertical metrics so they visually match a previous release (if it exists). It will also set the values so no clipping will occur on Windows platforms.
 
 ### Testing:
-- [Impallari/testing](http://www.impallari.com/testing/): Font tester which has no css line-height property set
-- [GF Regression](http://45.55.138.144): Check local fonts against currently hosted versions on fonts.google.com
+- [Impallari/testing](https://github.com/impallari/Font-Testing-Page): Font tester which has no css line-height property set ([live site](http://cyreal.org/Font-Testing-Page))
+- [GF Regression](https://github.com/googlefonts/gfregression): Check local fonts against currently hosted versions on fonts.google.com
