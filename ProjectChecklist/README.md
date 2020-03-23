@@ -342,6 +342,10 @@ Install it with homebrew, simply run:
 <https://github.com/Jolg42/awesome-typography> lists many tools for working with fonts.
 If you use actively use a tool in your work, please consider contacting @davelab6 to add it to this document.
 
+## Printing
+
+Get a HP 2055 LaserJet ([reference](https://twitter.com/cjtype/status/1242096205804470278))
+
 ## Using GitHub for your project
 
 ### Learning Github
