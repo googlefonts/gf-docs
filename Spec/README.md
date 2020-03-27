@@ -183,18 +183,19 @@ TODO
 CJK vertical metrics are based on Source Han Sans and Noto CJK fonts.
 
 
-The following metrics must be applied to all CJK fonts
+The following vertical metric values must be applied to all CJK fonts
 
-- OS/2.sTypoAscender = `0.88 * font upm` e.g `0.88 * 1000 = 880`
-- OS/2.sTypoDescender = `-0.12 * font upm` e.g `-0.12 * 1000 = -120`
-- OS/2.sTypoLineGap = `0`
-
-- hhea.ascent = `Set to look comfortable. Source Han Sans uses 1160`
-- hhhea.descent = `Set to look comfortable. Source Han Sans uses -288`
-- hhea.lineGap = `0`
-
-- OS/2.winAscent =  `Same value as hhea.ascent` e.g `hhea.ascent = 1000, OS/2.winAscent = 1000`
-- OS/2.winDescent = `abs value of hhea.descent` e.g `hhea.descent = -150, OS/2.winDescent = 150`
+| Attrib                 | Value                                              | Example using 1000upm font |
+|------------------------|----------------------------------------------------|----------------------------|
+| OS/2.sTypoAscender     | 0.88 * font upm                                    | 880                        |
+| OS/2.sTypoDescender    | -0.12 * font upm                                   | -120                       |
+| OS/2.sTypoLineGap      | 0                                                  | 0                          |
+| hhea.ascender          | Set to look comfortable (~1.16 * upm)              | 1160                       |
+| hhea.descender         | Set to look comfortable (~0.288 * upm)             | -288                       |
+| hhea.lineGap           | 0                                                  | 0                          |
+| OS/2.usWinAscent       | Same as hhea.ascent                                | 1160                       |
+| OS/2.usWinDescent      | abs(value) of hhea.descent                         | 288                        |
+| OS/2.fsSelection bit 7 | Do not set                                         |                            |
 
 Our decision to follow the Adobe schema was based on dr Ken Lunde's comments and his release notes on Source Han Sans 
 
@@ -220,7 +221,6 @@ CJK fonts have the following additional requirements:
 
 - Font format should be `.otf` not `.ttf`
 - Vertical metrics should follow the [CJK vertical metrics](#cjk-vertical-metrics) guide
-- Developers should check their fonts using the `googlefonts-cjk` fontbakery profile. This can be done using the following cli command`fontbakery check-googlefonts-cjk`.
 
 
 ## Static Fonts
@@ -337,7 +337,7 @@ Google Fonts supports all [Microsoft registered axes](https://docs.microsoft.com
 
 We only support the following axes ranges:
 
-**wght**: 100-900
+**wght**: 100-1000
 
 **wdth**: 50-200
 
@@ -516,4 +516,4 @@ If the source file is .designspace. Inspect the designspace and see if the Axis 
 
 *Fontbakery keeps reporting that the usWeightClass is incorrect?*
 
-...
+Are 
