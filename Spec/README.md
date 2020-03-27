@@ -219,7 +219,6 @@ Developers can set these automatically by using the following gftools command:
 
 CJK fonts have the following additional requirements:
 
-- Font format should be `.otf` not `.ttf`
 - Vertical metrics should follow the [CJK vertical metrics](#cjk-vertical-metrics) guide
 
 
