@@ -34,6 +34,9 @@
 - [STAT table](#stat-table)
 - [VF Hinting](#vf-hinting)
 
+**[Upstream Repos](#upstream-repos)**
+- [Upstream Repo Structure](#upstream-repo-structure)
+
 **[The google/fonts repo](#the-googlefonts-repo)**
 - [Repository structure](#repository-structure)
 
@@ -111,6 +114,8 @@ Font developers may find the above requirements overkill but our scale requires 
 - Fonts and sources are available on Github
 - There should only be one set of sources
 - Fonts are built using fontmake and can be built in one step
+- Project is on Github
+- Project follows the [upstream repository structure](#upstream-repo-structure)
 
 
 ### Updating an existing family
@@ -433,6 +438,58 @@ Release unhinted. Run fonts through `gftools fix-nonhinting` e.g
 `gftools fix-nonhinting Savant[wght].ttf`
 
 
+## Upstream repos
+
+Font projects must be hosted on Github and must not be private. We don't mind if wip projects are private but once completed they must be public.
+
+
+### Upstream Repo Structure
+
+Font projects must have the following structure.
+
+```
+.
+├── AUTHORS.txt
+├── CONTRIBUTORS.txt
+├── DESCRIPTION.en_us.html
+├── FONTLOG.txt
+├── OFL.txt
+├── README.md
+├── fonts
+│   ├── otf
+│   │   ├── FontFamily-Regular.otf
+│   └── ttf
+│       └── FontFamily-Regular.ttf
+└── sources
+    ├── FontFamily-sources.ext
+    └── build.sh
+
+```
+Each file/dir has the following purpose:
+
+**An example is included for each file. It is better to use these as templates and just modify what you need. TODO make a template repo or a cookie cutter script**
+
+**[AUTHORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/AUTHORS.txt):** Includes contact information for the project's authors. Contributors must not be included in this file.
+
+**[CONTRIBUTORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/CONTRIBUTORS.txt):** Includes contact information for the project's contributors.
+
+**[DESCRIPTION.en_us.html](https://github.com/googlefonts/OswaldFont/blob/master/DESCRIPTION.en_us.html):** A small html snippet which describes the family. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald
+
+**[FONTLOG.txt](https://github.com/googlefonts/OswaldFont/blob/master/FONTLOG.txt):** A log file which lists changes to each release.
+
+**[OFL.txt](https://github.com/googlefonts/OswaldFont/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string.
+
+**[README.md](https://github.com/TypeNetwork/Roboto):** contains information about the font family and instructions on how to build the family.
+
+**[fonts](https://github.com/googlefonts/OswaldFont/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`.
+
+**[sources](https://github.com/googlefonts/OswaldFont/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
+
+**[sources/build.sh](https://github.com/googlefonts/OswaldFont/blob/master/sources/build.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
+
+The files/folders listed above are mandatory. However, we don't mind if you include further folders but they should have a clear purpose e.g `docs`
+
+
 ## The google/fonts repo
 
 The [google/fonts](https://github.com/google/fonts) repository is used as a staging area which allows font developers to upload their families to our website, [Google Fonts](https://fonts.google.com). When font developers push families, they are reviewed by a member of the team. If the family meets our quality criteria, the family will be pushed into production. We aim to push families into production every fortnight.
@@ -516,3 +573,4 @@ If the source file is .designspace. Inspect the designspace and see if the Axis 
 *Fontbakery keeps reporting that the usWeightClass is incorrect?*
 
 Are 
+
