@@ -78,6 +78,7 @@ Our tools can be installed using the following terminal commands:
 pip install gftools
 pip install fontbakery
 pip install fontmake
+pip install fdiff
 ```
 
 We recommend installing our tools inside a Python virtualenv.
