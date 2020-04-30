@@ -105,7 +105,7 @@ Google Fonts is used in approximately a third of all websites (citation needed, 
 - Since we only release Open Source fonts, we expect every family we release to have its own upstream github repository.
 - Our main repository [github.com/google/fonts](https://github.com/google/fonts) uses CI. When new fonts are pushed, the CI will run our test suite and the results will be reviewed.
 
-Font developers may find the above requirements overkill but our scale requires them. Joel Spolsky's classic article *[The 12 steps to better code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)* illustrates why these requirements are beneficial.
+Joel Spolsky's classic article *[The 12 steps to better code](https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/)* illustrates why these requirements are beneficial.
 
 ## Contributing
 
@@ -146,7 +146,7 @@ e.g
 
 If the project is OFL licensed, the first line of the OFL.txt file should be identical to the font copyright string.
 
-Project authors can be specified in an [AUTHORS.txt](https://github.com/JulietaUla/Montserrat/blob/master/AUTHORS.txt) file. Project contributors can be specified in a [CONTRIBUTERS.txt](https://github.com/JulietaUla/Montserrat/blob/master/CONTRIBUTORS.txt) file. Please duplicate and modify these files instead of reinventing the wheel.
+Project authors can be specified in an [AUTHORS.txt](https://github.com/JulietaUla/Montserrat/blob/master/AUTHORS.txt) file. Project contributors can be specified in a [CONTRIBUTERS.txt](https://github.com/JulietaUla/Montserrat/blob/master/CONTRIBUTORS.txt) file.
 
 
 ### Font versioning
