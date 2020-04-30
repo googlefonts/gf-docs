@@ -540,7 +540,7 @@ Each file has the following purpose:
 
 ## QA
 
-The quality assurance process if fairly strict in comparison most foundries and for good reasons. The Google Fonts font apis are non-versioned. This means that all users will recieve the same fonts. If we make an update to an existing family and radically alter it, it will affect existing users. The following general rules apply:
+The quality assurance process is fairly strict in comparison to most foundries, and for good reasons. The Google Fonts font APIs are non-versioned. This means that all users receive the same fonts. If we make an update to an existing family, and radically alter it, it will affect existing users. The following general rules apply:
 
 **Family is already on Google Fonts**
 
