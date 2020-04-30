@@ -217,7 +217,10 @@ We require the post table `isFixedPitch` to be set, and the OS/2 `panose` table 
 For monospace fonts:
 - Set `post.isFixedPitch` to 1
 - If `OS/2.panose.bFamilyType` is 2 (Latin Text), set `OS/2.panose.bProportion` to 9.
-- If `OS/2.panose.bFamilyType` is 3 (Latin Script) OR 4 (Latin Picture), set `OS/2.panose.bProportion` to 3.
+- If `OS/2.panose.bFamilyType` is 3 (Latin Script), set `OS/2.panose.bProportion` to 3.
+- If `OS/2.panose.bFamilyType` is 5 (Latin Picture), set `OS/2.panose.bProportion` to 3.
+- If you are unsure what to set `OS/2.panose.bFamilyType` to, use 2 for "normal" fonts.
+- If `OS/2.panose.bFamilyType` is 4, you do not need to worry about `OS/2.panose.bProportion`.
 
 Developers can set these automatically by using the following gftools command:
 
