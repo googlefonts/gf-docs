@@ -212,9 +212,12 @@ Our decision to follow the Adobe schema was based on dr Ken Lunde's comments and
 
 ## Monospace fonts
 
-We require the OS/2 `panose` and post table `isFixedPitch` to be set. If neither of these are set, users may get fallback glyphs which are not monospaced, if they type a character which doesn't exist in the font.
+We require the post table `isFixedPitch` to be set, and the OS/2 `panose` table to have `OS/2.panose.bProportion` (bit 4) set correctly. If either of these is set incorrectly, users may get fallback glyphs which are not monospaced, if they type a character which doesn't exist in the font.
 
-Set `OS/2.panose.bProportion` to 9 and `post.isFixedPitch` to 1.
+For monospace fonts:
+- Set `post.isFixedPitch` to 1
+- If `OS/2.panose.bFamilyType` is 2 (Latin Text), set `OS/2.panose.bProportion` to 9.
+- If `OS/2.panose.bFamilyType` is 3 (Latin Script) OR 4 (Latin Picture), set `OS/2.panose.bProportion` to 3.
 
 Developers can set these automatically by using the following gftools command:
 
