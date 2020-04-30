@@ -93,7 +93,7 @@ Google Fonts is used in approximately a third of all websites (citation needed, 
 - Fonts can be built on any platform since we use opensource tools
 - Projects are kept in version control
 - We fix issues before upgrading
-- We use CI for build and testing purposes
+- We use CI ([Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)) for build and testing purposes.
 - We have testers with font domain knowledge
 
 #### How we achieve this
