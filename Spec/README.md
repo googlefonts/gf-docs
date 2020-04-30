@@ -54,8 +54,8 @@ TODO
 We expect font developers to understand the following:
 
 - Basic understanding of how OpenType fonts work.
-- A commercial font editor such as Fontlab VI, Glyphsapp, Robofont or Fontforge
-- Version control, specifically git. Use of desktop clients such as Github desktop is acceptable
+- A commercial font editor such as Fontlab 7, Glyphsapp, Robofont or Fontforge
+- Version control, specifically git. Use of desktop clients such as Github desktop is acceptable.
 - Shell scripting
 - Managing python packages/tools using pip
 
@@ -70,7 +70,7 @@ The following resources should bring you up to speed.
 
 ### Tooling
 
-Google Fonts has its own tooling which will help you master and check your families. All our tools are written in Python.
+Google Fonts has its own freely-available tools, which will help you master (generate from source files) and check/test your families. All our tools are written in Python.
 
 Our tools can be installed using the following terminal commands:
 
@@ -81,7 +81,7 @@ pip install fontmake
 pip install fdiff
 ```
 
-We recommend installing our tools inside a Python virtualenv.
+We recommend installing our tools inside a Python [virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
 
 ### Scalable font production
