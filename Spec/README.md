@@ -447,7 +447,7 @@ Release unhinted. Run fonts through `gftools fix-nonhinting` e.g
 
 ## Upstream repos
 
-Font projects must be hosted on Github and must not be private. We don't mind if wip projects are private but once completed they must be public.
+Font projects must be hosted on Github and must not be private. We don't mind if work-in-progress projects are private but once completed they must be public.
 
 
 ### Upstream Repo Structure
