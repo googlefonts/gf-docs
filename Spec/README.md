@@ -146,7 +146,7 @@ e.g
 
 If the project is OFL licensed, the first line of the OFL.txt file should be identical to the font copyright string.
 
-Project authors can be specified in an [AUTHORS.txt](https://github.com/JulietaUla/Montserrat/blob/master/AUTHORS.txt) file. Project contributors can be specified in a [CONTRIBUTERS.txt](https://github.com/JulietaUla/Montserrat/blob/master/CONTRIBUTORS.txt) file.
+Project authors can be specified in an [AUTHORS.txt](https://github.com/JulietaUla/Montserrat/blob/master/AUTHORS.txt) file. Project contributors can be specified in a [CONTRIBUTORS.txt](https://github.com/JulietaUla/Montserrat/blob/master/CONTRIBUTORS.txt) file.
 
 
 ### Font versioning
