@@ -247,7 +247,7 @@ The filename must not contain anything else.
 
 ### Supported Styles
 
-The static fonts api supports 18 styles which consist of 9 weights, Thin-Black + Italics. The table below lists each style its font specific settings. *TODO MF convert integers to bits*
+Google’s static fonts API supports up to 18 styles in one family: up to  9 weights (Thin–Black), + their matching Italics. The table below lists each style its font specific settings. *TODO MF convert integers to bits*
 
 | Filename                        | Family Name (nameID 1) | Subfamily Name (nameID 2) | Typographic Family Name (nameID 16) | Typo Subfamily Name (nameID 17) | OS/2.usWeightClass | OS/2.fsSelection | hhea.macStyle |
 |---------------------------------|------------------------|---------------------------|-------------------------------------|---------------------------------|--------------------|------------------|---------------|
@@ -272,7 +272,7 @@ The static fonts api supports 18 styles which consist of 9 weights, Thin-Black +
 | FamilyName-Black.ttf            | Family Name Black      | Italic                    | Family Name                         | Black Italic                    | 900                | 1                | 2             |
 
 
-If a family has styles which are not in the above table, they should be released as a new family. To do this is, append the Unsupported style e.g Condensed to the family name. We frequently use this approach for [Condensed](https://fonts.google.com/?query=condensed) and [smallcap](https://fonts.google.com/?query=sc) sibling families.
+If a family has styles which are not in the above table, they should be released as a separate/new family. To do this, append any Unsupported style (e.g Condensed) to the family name, so it becomes part of the family name, rather than part of the style name. We frequently use this approach for [Condensed](https://fonts.google.com/?query=condensed) and [smallcap](https://fonts.google.com/?query=sc) sibling families.
 
 For projects which use glyphsapp, we have an example [repository](https://github.com/davelab6/glyphs-export) which contains glyphs files that are set correctly.
 
