@@ -298,9 +298,11 @@ Once the fonts have been hinted, run the fonts through `gftools fix-hinting`. If
 ## Variable Fonts
 
 
-### Font origin
+### Font (zero) origin
 
-A variable font is simply a static font which has some additional tables FVAR, GVAR etc These new tables allow text clients to visually alter the font so it has a different appearance to end users.  Often font developers are unaware what the font origin is within their fonts. They'll then complain that fontbakery is failing many checks. It is recommended that font developers read the [Microsoft OpenType Font Variations Overview](https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview) to understand how a variable works.
+A variable font is simply a static font which has some additional tables FVAR, GVAR etc These new tables allow text clients to visually alter the font so it has a different appearance to end users. Type designers tend to conceive of the variable font as consisting of a bunch of “master fonts” which can then be interpolated between. But in fact, there is only a single master, and what the designer thinks of as additional masters are just sets of instructions to move points around. That single master is the font origin, or in the OpenType Specification the “zero origin.”
+
+Often font developers are unaware what the font origin is within their fonts. They'll then complain that fontbakery is failing many checks. It is recommended that font developers read the [Microsoft OpenType Font Variations Overview](https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview) to better understand how a variable font works.
 
 
 ### Variable font requirements
