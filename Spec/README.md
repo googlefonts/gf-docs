@@ -182,7 +182,7 @@ Set to `0` (Installable embedding)
 
 ## Font Vertical Metrics
 
-TODO
+See https://github.com/googlefonts/gf-docs/tree/master/VerticalMetrics
 
 ### CJK Vertical Metrics
 
