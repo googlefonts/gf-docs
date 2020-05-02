@@ -309,12 +309,12 @@ Often font developers are unaware what the font origin is within their fonts. Th
 
 ### Variable font requirements
 
-#### Family is new and isn't on Google Fonts
+#### Family is new and wasn't already on Google Fonts
 
 - `VF` must not be appended to the family name.
 - Fonts should be unhinted and have `gftools fix-nonhinting` applied to them
-- The `wght` axis range must include `400` e.g 100-900, 400-900, 100-400 etc
-- Fonts must conform to the sections listed below
+- The `wght` axis range must include `400`. e.g. 100-900, 400-900, 100-400 etc
+- Other than the above, fonts must conform to the requirements below, for pre-existing fonts
 
 #### Family already exists on Google Fonts
 
@@ -382,6 +382,7 @@ Instance names and fvar coordinates must relate to the following tables.
 | Black      | 900                   |
 | ExtraBlack | 1000                  |
 
+Weight values are purely nominal, and do not necessarily reflect actual measurements. A 'stat' table is required if you wish to make the relationship between actual font stroke thicknesses and weight coordinates non-linear. For example, if you want the effective difference between wght 400-500 to be less than that going from 800-900.
 
 **wdth**
 
@@ -397,6 +398,7 @@ Instance names and fvar coordinates must relate to the following tables.
 | ExtraExpanded  | 150.0                 |
 | UltraExpanded  | 200.0                 |
 
+Width values are supposed to relate to the actual width of glyphs in the font, as a percentage of “normal” at 100. Since the reaction of different glyphs to width variation may itself vary, this will almost always be an approximation. 
 
 **opsz**
 
