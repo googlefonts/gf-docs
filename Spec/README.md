@@ -236,6 +236,8 @@ CJK fonts have the following additional requirements:
 
 ## Static Fonts
 
+“Static” fonts is a way of saying traditional, _non-variable_ fonts.
+
 ### Static font filenames
 
 Font filenames must be based on the following schema:
