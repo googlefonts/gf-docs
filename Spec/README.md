@@ -307,22 +307,22 @@ A variable font is simply a static font which has some additional tables FVAR, G
 Often font developers are unaware what the font origin is within their fonts. They'll then complain that fontbakery is failing many checks. It is recommended that font developers read the [Microsoft OpenType Font Variations Overview](https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview) to better understand how a variable font works.
 
 
-### Variable font requirements
+### New vs Pre-existing variable font requirements
 
-#### Family is new and wasn't already on Google Fonts
-
+#### Family is new
+If the family wasn't already on Google Fonts:
 - `VF` must not be appended to the family name.
 - Fonts should be unhinted and have `gftools fix-nonhinting` applied to them
 - The `wght` axis range must include `400`. e.g. 100-900, 400-900, 100-400 etc
-- Other than the above, fonts must conform to the requirements below, for pre-existing fonts
+- Other than the above, fonts must conform to the requirements below, like pre-existing fonts
 
 #### Family already exists on Google Fonts
 
 - Family name must be the same
 - Hinting should match as closely as possible. If ttfautohint-vf produces bad results, we can release the family unhinted
-- Every style that is available on Google Fonts must be included as an fvar instance
-- There should be no missing glyphs
-- Visual regressions should be as minimal as possible
+- Every style that was already available on Google Fonts must be included as an fvar instance
+- It should include all glyphs present in the previous version 
+- Visual changes should be as minimal as possible
 - Fonts must conform to the sections listed below
 
 A good rule to consider is that users should be able to swap the old family with the new VFs and not notice any differences.
@@ -359,7 +359,7 @@ We only support the following axes ranges:
 **opsz**: 0-∞
 
 
-Developers can include their own axes but FontBakery will warn users that we cannot determine if the values are correct.
+Developers can include their own axes, but FontBakery will warn users that we cannot determine if the values are correct.
 
 
 ### Instances
@@ -382,7 +382,7 @@ Instance names and fvar coordinates must relate to the following tables.
 | Black      | 900                   |
 | ExtraBlack | 1000                  |
 
-Weight values are purely nominal, and do not necessarily reflect actual measurements. A 'stat' table is required if you wish to make the relationship between actual font stroke thicknesses and weight coordinates non-linear. For example, if you want the effective difference between wght 400-500 to be less than that going from 800-900.
+Weight values are purely nominal, and do not necessarily reflect actual measurements. A 'stat' table is required if you wish to make the relationship between actual font stroke thicknesses and weight coordinates non-linear. For example, if you want the effective difference between wght 400-500 to be less than that going from 800-900, you will need to use a 'stat' table.
 
 **wdth**
 
