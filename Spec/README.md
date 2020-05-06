@@ -307,7 +307,7 @@ A variable font is simply a static font which has some additional tables FVAR, G
 Often font developers are unaware what the font origin is within their fonts. They'll then complain that fontbakery is failing many checks. It is recommended that font developers read the [Microsoft OpenType Font Variations Overview](https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview) to better understand how a variable font works.
 
 
-### New vs Pre-existing variable font requirements
+### New vs Pre-existing
 
 #### Family is new
 If the family wasn't already on Google Fonts:
@@ -328,7 +328,7 @@ If the family wasn't already on Google Fonts:
 A good rule to consider is that users should be able to swap the old family with the new VFs and not notice any differences.
 
 
-### VF Font filenames
+### Variable Font filenames
 
 Font filenames must be based on the following schema:
 
