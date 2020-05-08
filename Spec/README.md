@@ -572,8 +572,12 @@ The quality assurance process is fairly strict in comparison to most foundries, 
 
 ### Our process
 
-*TODO*
+See here:
 
+* https://github.com/googlefonts/gf-docs/tree/master/GoogleFontsDispatchQAProcess
+* https://github.com/googlefonts/gf-docs/tree/master/NewFonts2018#how-gf-dispatcher-works
+
+*TODO M Foley, copy those inliine and integrate them and then update those 2 docs to point here.*
 
 ### FAQ
 
