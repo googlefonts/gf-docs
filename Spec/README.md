@@ -493,7 +493,7 @@ This file must include:
 - A hypertext link to the repository where the font project files are made available (designer’s GitHub repository).
 - It should have more than 200 characters and less than 1000.
 - All links in it must be properly working.
-- Families with variable should always mention that in their descriptions.
+- Families with VF axes should always mention which axes they offer in their descriptions.
 
 **[FONTLOG.txt](https://github.com/googlefonts/OswaldFont/blob/master/FONTLOG.txt):** A log file which lists changes to each release.
 
