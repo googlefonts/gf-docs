@@ -486,11 +486,18 @@ Each file/dir has the following purpose:
 
 **[CONTRIBUTORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/CONTRIBUTORS.txt):** Includes contact information for the project's contributors.
 
-**[DESCRIPTION.en_us.html](https://github.com/googlefonts/OswaldFont/blob/master/DESCRIPTION.en_us.html):** A small html snippet which describes the family. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald
+**[DESCRIPTION.en_us.html](https://github.com/googlefonts/OswaldFont/blob/master/DESCRIPTION.en_us.html):** A small html snippet which describes the family. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
+
+This file must include: 
+
+- A hypertext link to the repository where the font project files are made available (designer’s GitHub repository).
+- It should have more than 200 characters and less than 1000.
+- All links in it must be properly working.
+- Families with variable should always mention that in their descriptions.
 
 **[FONTLOG.txt](https://github.com/googlefonts/OswaldFont/blob/master/FONTLOG.txt):** A log file which lists changes to each release.
 
-**[OFL.txt](https://github.com/googlefonts/OswaldFont/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string.
+**[OFL.txt](https://github.com/googlefonts/OswaldFont/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string. Copyright notices should match a pattern similar to: "Copyright 2019 The Familyname Project Authors (git url)". It must not include © copyright sign since the CFF table copyright notice key is ascii only.
 
 **[README.md](https://github.com/TypeNetwork/Roboto):** contains information about the font family and instructions on how to build the family.
 
