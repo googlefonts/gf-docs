@@ -306,6 +306,16 @@ A variable font is simply a static font which has some additional tables FVAR, G
 
 Often font developers are unaware what the font origin is within their fonts. They'll then complain that fontbakery is failing many checks. It is recommended that font developers read the [Microsoft OpenType Font Variations Overview](https://docs.microsoft.com/en-us/typography/opentype/spec/otvaroverview) to better understand how a variable font works.
 
+For example, your `nameID 1` string should match the name of the Master used for the `glyf` table outlines.
+If this is not what you want, you can choose another master to be used instead.
+In GlyphsApp, do this 'implicitly' by going to Font Info, Masters (second tab), and move your preferred master to the first position in the list.
+Typically this is a Regular, but if you don't have a Regular master, use the closest; 
+eg, a opsz-min wght-min such as `14pt Light`.
+
+Or, if you want to keep the order, then go to Font Info, Font (first tab), and add a Custom Parameter `Variable Font Origin` and give it the name of the master you want to be used. 
+
+You should also always set a font-level Custom Parameter, `Variable Font Family Name`, and add your family name there, without any style particles. Eg, `Merriweather`.
+
 
 ### New vs Pre-existing
 
