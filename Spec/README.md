@@ -30,7 +30,7 @@
 - [Variable font requirements](#variable-font-requirements)
 - [VF Font filenames](#vf-font-filenames)
 - [Axes](#axes)
-- [Instances](#instances)
+- [Instances](#fvar-instances)
 - [STAT table](#stat-table)
 - [VF Hinting](#vf-hinting)
 
@@ -249,7 +249,7 @@ The filename must not contain anything else.
 
 ### Supported Styles
 
-Google’s static fonts API supports up to 18 styles in one family: up to  9 weights (Thin–Black), + their matching Italics. The table below lists each style its font specific settings. *TODO MF convert integers to bits*
+Google’s static fonts API supports up to 18 styles in one family: up to 9 weights (Thin–Black), + their matching Italics. The table below lists each style its font specific settings. *TODO MF convert integers to bits*
 
 | Filename                        | Family Name (nameID 1) | Subfamily Name (nameID 2) | Typographic Family Name (nameID 16) | Typo Subfamily Name (nameID 17) | OS/2.usWeightClass | OS/2.fsSelection | hhea.macStyle |
 |---------------------------------|------------------------|---------------------------|-------------------------------------|---------------------------------|--------------------|------------------|---------------|
@@ -309,8 +309,7 @@ Often font developers are unaware what the font origin is within their fonts. Th
 
 ### New vs Pre-existing
 
-#### Family is new
-If the family wasn't already on Google Fonts:
+#### Family doesn't exist on Google Fonts:
 - `VF` must not be appended to the family name.
 - Fonts should be unhinted and have `gftools fix-nonhinting` applied to them
 - The `wght` axis range must include `400`. e.g. 100-900, 400-900, 100-400 etc
@@ -350,22 +349,10 @@ If the family consists of two VFs, one for Italic, the other for Roman. The font
 
 Google Fonts supports all [Microsoft registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg).
 
-We only support the following axes ranges:
 
-**wght**: 100-1000
+### Axis particles
 
-**wdth**: 50-200
-
-**opsz**: 0-∞
-
-
-Developers can include their own axes, but FontBakery will warn users that we cannot determine if the values are correct.
-
-
-### Instances
-
-Instance names and fvar coordinates must relate to the following tables.
-
+fvar instances and STAT entry particles must be based on the following tables.
 
 **wght**
 
@@ -382,7 +369,7 @@ Instance names and fvar coordinates must relate to the following tables.
 | Black      | 900                   |
 | ExtraBlack | 1000                  |
 
-Weight values are purely nominal, and do not necessarily reflect actual measurements. A 'stat' table is required if you wish to make the relationship between actual font stroke thicknesses and weight coordinates non-linear. For example, if you want the effective difference between wght 400-500 to be less than that going from 800-900, you will need to use a 'stat' table.
+[MS Spec wght info](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wght)
 
 **wdth**
 
@@ -398,7 +385,7 @@ Weight values are purely nominal, and do not necessarily reflect actual measurem
 | ExtraExpanded  | 150.0                 |
 | UltraExpanded  | 200.0                 |
 
-Width values are supposed to relate to the actual width of glyphs in the font, as a percentage of “normal” at 100. Since the reaction of different glyphs to width variation may itself vary, this will almost always be an approximation. 
+[MS Spec wdth info](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wdth)
 
 **opsz**
 
@@ -406,28 +393,54 @@ Width values are supposed to relate to the actual width of glyphs in the font, a
 |-------|-----------------------|
 | XXpt  | XX                    |
 
-*XX can be any value*
+*XX can be any value* 
+
+[MS Spec opsz info](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_opsz)
+
+**slnt/ital**
+
+We've disabled these axes due to browser support. Stephen Nixon has [documented](https://arrowtype.github.io/vf-slnt-test/) the issues.
 
 
+### Fvar instances
 
-#### Instance names
+We are still revising how we name our instances and which particles we should/must include in instance names. At the moment (2020-06-30), Google Fonts only allows the following named instances:
 
-Instance names must mention the axes in the following order:
+| | |
+|-|-|
+| Thin       | Thin Italic       |
+| ExtraLight | ExtraLight Italic |
+| Light      | Light Italic      |
+| Regular    | Italic            |
+| Medium     | Medium Italic     |
+| SemiBold   | SemiBold Italic   |
+| Bold       | Bold Italic       |
+| ExtraBold  | ExtraBold Italic  |
+| Black      | Black Italic      |
 
-opsz wdth wght 
 
-e.g `10pt Expanded Regular`
+We only allow weight and italic particles. If a font contains additional axes, they must not be mentioned in the instance names and the coordinates for each instance must be set to reasonable default e.g if your font contains a wdth axis, you don't want every instance's wdth coordinate value to be set to Condensed (75) you would set it to Normal (100).
 
-The order of the axes cannot be changed e.g `Regular Expanded 10pt` is not valid.
+We have imposed this restriction for the following reasons:
 
-If a font doesn't include an axis which is listed above, it is simply skipped but the order kept e.g `10pt Regular`.
+- Backwards compatibility with static fonts. Documents won't break if users swap static fonts for variable fonts.
+- We don't lock ourselves into an implementation we may want to change in the future. The specs are constantly evolving so it's best we wait for these to mature.
+- DTP applications do not properly support variable fonts yet. Variable font support is [experimental in Adobe applications](https://community.adobe.com/t5/indesign/variable-fonts-in-indesign/td-p/10718647).
 
 
 ### STAT Table
 
-All variable fonts should contain a STAT table (style attributes table). This table makes sure that instances are selectable in DTP apps. We recommend reading the [MS Spec](https://docs.microsoft.com/en-us/typography/opentype/spec/stat).
+All variable fonts must contain a STAT table (style attributes table). This table has several features but a key benefit is it will enable desktop applications to have better font menus. Currently, most font menus only offer a single drop down menu to select a font style. A STAT table enables us to have a drop down menu for each variable font axis. This allows users to select fonts styles which are much more complex than our named instances allow.
 
-We use DaMa [statmake](https://github.com/daltonmaag/statmake) to generate this table. Marc Foley has written a python helper [script](https://github.com/googlefonts/Inconsolata/pull/44/files#diff-6cfd30d43aea19fb31ba7be6c7fb9b7c) that will generate the STAT table for Inconsolata. *TODO (M Foley) may be worth making a more general STAT table generator or include templates that can be altered. The prerequisite knowledge section is fairly advanced due to these types of requirements.*
+Creating good STAT tables is complex. Fortunately we have created a gftools script called `gftools fix-vf-meta` which will create STAT tables for the following types of variable font families:
+- A family which consists of a single font which only has a weight axis e.g [Maven Pro](https://fonts.google.com/specimen/Maven+Pro?query=maven+pro)
+- A family which consists of two fonts, Roman and Italic, which both only contain a weight axis e.g [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mo)
+
+If you need to create a STAT table for a font which has multplie axes, you must use DaMa [statmake](https://github.com/daltonmaag/statmake) or write a Python script. We have used statmake on [Roboto](https://github.com/TypeNetwork/Roboto/blob/master/sources/Roboto.stylespace) and [Inconsolata](https://github.com/googlefonts/Inconsolata/blob/master/sources/stat.stylespace). We recommend studying their .stylespace files in order to better understand their implementation. If you would like to write a Python script instead, you can study [Literata's](https://github.com/googlefonts/literata/blob/master/sources/gen_stat.py).
+
+At the time of writing (2020-06-20), no desktop applications use the STAT table. However, Indesign, Sketch and other pro type setting applications provide sliders for users to select individual axis locations.
+
+We recommend reading the [MS STAT table spec](https://docs.microsoft.com/en-us/typography/opentype/spec/stat).
 
 
 ## VF Hinting
