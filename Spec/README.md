@@ -406,26 +406,18 @@ We've disabled these axes due to browser support. Stephen Nixon has [documented]
 
 We are still revising how we name our instances and which particles we should/must include in instance names. At the moment (2020-06-30), Google Fonts only allows the following named instances:
 
-| name                |
-|---------------------|
-| Thin                |
-| ExtraLight          |
-| Light               |
-| Regular             |
-| Medium              |
-| SemiBold            |
-| Bold                |
-| ExtraBold           |
-| Black               |
-| Thin Italic         |
-| ExtraLight Italic   |
-| Light Italic        |
-| Italic              |
-| Medium Italic       |
-| SemiBold Italic     |
-| Bold Italic         |
-| ExtraBold Italic    |
-| Black Italic        |
+| | |
+|-|-|
+| Thin       | Thin Italic       |
+| ExtraLight | ExtraLight Italic |
+| Light      | Light Italic      |
+| Regular    | Italic            |
+| Medium     | Medium Italic     |
+| SemiBold   | SemiBold Italic   |
+| Bold       | Bold Italic       |
+| ExtraBold  | ExtraBold Italic  |
+| Black      | Black Italic      |
+
 
 We only allow weight and italic particles. If a font contains additional axes, they must not be mentioned in the instance names and the coordinates for each instance must be set to reasonable default e.g if your font contains a wdth axis, you don't want every instance's wdth coordinate value to be set to Condensed (75) you would set it to Normal (100).
 
