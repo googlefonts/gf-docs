@@ -436,7 +436,7 @@ Creating good STAT tables is complex. Fortunately we have created a gftools scri
 - A family which consists of a single font which only has a weight axis e.g [Maven Pro](https://fonts.google.com/specimen/Maven+Pro?query=maven+pro)
 - A family which consists of two fonts, Roman and Italic, which both only contain a weight axis e.g [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mo)
 
-If you need to create a STAT table for a font which has multplie axes, you must use DaMa [statmake](https://github.com/daltonmaag/statmake). We have used statmake on [Roboto](https://github.com/TypeNetwork/Roboto/blob/master/sources/Roboto.stylespace) and [Inconsolata](https://github.com/googlefonts/Inconsolata/blob/master/sources/stat.stylespace). We recommend studying their .stylespace files in order to better understand their implementation.
+If you need to create a STAT table for a font which has multplie axes, you must use DaMa [statmake](https://github.com/daltonmaag/statmake) or write a Python script. We have used statmake on [Roboto](https://github.com/TypeNetwork/Roboto/blob/master/sources/Roboto.stylespace) and [Inconsolata](https://github.com/googlefonts/Inconsolata/blob/master/sources/stat.stylespace). We recommend studying their .stylespace files in order to better understand their implementation. If you would like to write a Python script instead, you can study [Literata's](https://github.com/googlefonts/literata/blob/master/sources/gen_stat.py).
 
 At the time of writing (2020-06-20), no desktop applications use the STAT table. However, Indesign, Sketch and other pro type setting applications provide sliders for users to select individual axis locations.
 
