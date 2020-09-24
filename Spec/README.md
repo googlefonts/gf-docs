@@ -292,7 +292,7 @@ The single weight families must have the following font specific settings:
 
 ### Hinting
 
-Static fonts should be hinted using the latest version of [ttfautohint](https://www.freetype.org/ttfautohint/). If the results look poor on Windows browsers, it's better to release the fonts unhinted. Ttfautohint often struggles to hint display or handwritten typefaces.
+Static fonts should be hinted using the latest version of [ttfautohint](https://www.freetype.org/ttfautohint/). If the results look poor on Windows browsers, it's better to release the fonts unhinted with GASP table set to "grayscale / symmetric smoothing" (0x000A) across the full PPEM range. Ttfautohint often struggles to hint display or handwritten typefaces.
 
 Once the fonts have been hinted, run the fonts through `gftools fix-hinting`. If the fonts are unhinted, run the fonts through `gftools fix-nonhinting`.
 
@@ -451,7 +451,7 @@ Variable Font hinting still doesn't have a clear policy. Marc Foley has been app
 
 If the family has over a billion weekly views, use [VTT](https://docs.microsoft.com/en-us/typography/tools/vtt/). *TODO Marc Foley. Write more about this. Also include example to Inconsolata once it is finished.*
 
-If the family has under a billion weekly views, try [ttfautohint-vf](https://groups.google.com/d/msg/googlefonts-discuss/WJX1lrzcwVs/SIzaEvntAgAJ). If the results are bad, release unhinted.
+If the family has under a billion weekly views, try [ttfautohint-vf](https://groups.google.com/d/msg/googlefonts-discuss/WJX1lrzcwVs/SIzaEvntAgAJ). If the results are bad, release unhinted with GASP table set to "grayscale / symmetric smoothing" (0x000A) across the full PPEM range.
 
 If the font has been hinted using VTT or ttfautohint-vf, run the fonts through `gftools fix-hinting` e.g
 
