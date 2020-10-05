@@ -507,6 +507,9 @@ This file must include:
 - It should have more than 200 characters and less than 1000.
 - All links in it must be properly working.
 - Families with VF axes should always mention which axes they offer in their descriptions.
+- Allowed tag list: a, b, div, em, i, ol, p, strong, ul. Check the screenshot below to see the styles.
+![Description HTML Styles Sample](DESCRIPTION_HTML_STYLES.png)
+- Please do not include any customized inline CSS or classes since they will be removed.
 
 **[FONTLOG.txt](https://github.com/googlefonts/OswaldFont/blob/master/FONTLOG.txt):** A log file which lists changes to each release.
 
