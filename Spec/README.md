@@ -507,9 +507,11 @@ This file must include:
 - It should have more than 200 characters and less than 1000.
 - All links in it must be properly working.
 - Families with VF axes should always mention which axes they offer in their descriptions.
-- Allowed tag list: a, b, div, em, i, ol, p, strong, ul. Check the screenshot below to see the styles.
-![Description HTML Styles Sample](DESCRIPTION_HTML_STYLES.png)
-- Please do not include any customized inline CSS or classes since they will be removed.
+- Allowed HTML elements: `a`, `em`, `i`, `strong`, `b`, `p`, `ol`, `ul`, `li`. 
+- Other HTML elements, especiallly inline CSS, classes, or attributes, are not allowed and will be removed by the catalog web app. 
+
+Sample rendering:
+![Description HTML Styles Sample Rendering](DESCRIPTION_HTML_STYLES.png)
 
 **[FONTLOG.txt](https://github.com/googlefonts/OswaldFont/blob/master/FONTLOG.txt):** A log file which lists changes to each release.
 
