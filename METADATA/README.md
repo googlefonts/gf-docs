@@ -103,6 +103,7 @@ axes {
 }
 axes {
   tag: "opsz"
+  default_value: 24
   min_value: 10
   max_value: 144
 }
@@ -289,7 +290,7 @@ If multiple ID 0s exist, they must match.
 
 ### `subsets`
 
-List of all character subsets available in Google Fonts API for the given font family. 
+Repeated for each character subsets available in Google Fonts API for the given font family. 
 29 possible values:
 
 * `arabic`
@@ -321,3 +322,29 @@ List of all character subsets available in Google Fonts API for the given font f
 * `thai`
 * `tibetan`
 * `vietnamese`
+
+### `axes`
+
+Repeated for each axis available in the GooglE fonts API for the given family.
+
+Contains 3 required child values: 
+
+* 1st, `tag`, with a string value for the 4 character axis tag code.
+* `min_value` and `max_value` as `int` or `float` values
+* And 1 optional (`default_value`), ordered 2nd.
+
+Example:
+
+```
+axes {
+  tag: "wght"
+  min_value: 300.0
+  max_value: 700.0
+}
+axes {
+  tag: "opsz"
+  default_value: 24
+  min_value: 10
+  max_value: 144
+}
+```
