@@ -290,7 +290,7 @@ If multiple ID 0s exist, they must match.
 
 ### `subsets`
 
-Repeated for each character subsets available in Google Fonts API for the given font family. 
+Repeated for each character subset to be available in Google Fonts API for the given font family. 
 29 possible values:
 
 * `arabic`
@@ -325,7 +325,7 @@ Repeated for each character subsets available in Google Fonts API for the given 
 
 ### `axes`
 
-Repeated for each axis available in the GooglE fonts API for the given family.
+Repeated for each axis to be available in the Google Fonts API for the given family.
 
 Contains 3 required child values: 
 
