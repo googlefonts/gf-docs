@@ -331,7 +331,7 @@ Contains 3 required child values:
 
 * 1st, `tag`, with a string value for the 4 character axis tag code.
 * `min_value` and `max_value` as `int` or `float` values
-* And 1 optional (`default_value`), ordered 2nd.
+
 
 Example:
 
@@ -343,8 +343,25 @@ axes {
 }
 axes {
   tag: "opsz"
-  default_value: 24
   min_value: 10
   max_value: 144
+}
+```
+
+### `registry_default_overrides`
+
+Repeated for each axis with a default value different to the axis' registered default.
+
+Contains 2 required child values: 
+
+* `key`, with a string value for the 4 character axis tag code.
+* `value`, as `int` or `float` values
+
+Example:
+
+```
+registry_default_overrides {
+  key: "opsz"
+  value: 18
 }
 ```
