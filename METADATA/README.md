@@ -350,7 +350,9 @@ axes {
 
 ### `registry_default_overrides`
 
-Repeated for each axis with a default value different to the axis' registered default.
+This is required when axis min and max values do not match the registry default, or when the default value different to the axis' registered default.
+
+Repeated for each axis.
 
 Contains 2 required child values: 
 
