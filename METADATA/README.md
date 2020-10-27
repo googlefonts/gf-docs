@@ -123,8 +123,13 @@ Example:
 
 ### `date_added`
 
-Date in `YYYY-MM-DD` format that the font was first published by Google Fonts, so can be in the future. 
-It used to order the "Date added" sort in the [directory](http://www.google.com/fonts/). 
+Date in `YYYY-MM-DD` format that the font was first published by Google Fonts.
+It is used to order the front page of the [GF catalog](https://fonts.google.com), both obviously the "date added" sort mode, and also the default "trending mode."
+
+If you set the date added into the future, then the family will stay at the top of the 'trending' sort until that date passes and it trails off like normal.
+
+Once pushed to production, updating it is generally not allowed, although exceptions can be made in limited cases.
+
 Example:
 
 * `date_added: "2012-09-30"`
