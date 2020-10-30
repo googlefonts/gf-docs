@@ -26,9 +26,9 @@
 - [Hinting](#hinting)
 
 **[Variable Fonts](#variable-fonts)**
-- [Font Origin](#font-origin)
-- [Variable font requirements](#variable-font-requirements)
-- [VF Font filenames](#vf-font-filenames)
+- [Font Origin](#font-zero-origin)
+- [New vs Preexisting](#new-vs-pre-existing)
+- [Variable Font filenames](#variable-font-filenames)
 - [Axes](#axes)
 - [Instances](#fvar-instances)
 - [STAT table](#stat-table)
