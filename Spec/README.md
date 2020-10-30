@@ -492,17 +492,17 @@ Each file/dir has the following purpose:
 
 **An example is included for each file. It is better to use these as templates and just modify what you need.**
 
-**[AUTHORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/AUTHORS.txt):** Includes contact information for the project's authors. Contributors must not be included in this file.
+**[AUTHORS.txt](https://github.com/Omnibus-Type/Texturina/blob/master/AUTHORS.txt):** Includes contact information for the project's authors. Contributors must not be included in this file.
 
-**[CONTRIBUTORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/CONTRIBUTORS.txt):** Includes contact information for the project's contributors.
+**[CONTRIBUTORS.txt](https://github.com/Omnibus-Type/Texturina/blob/master/CONTRIBUTORS.txt):** Includes contact information for the project's contributors.
 
-**[OFL.txt](https://github.com/googlefonts/OswaldFont/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string. Copyright notices should match a pattern similar to: "Copyright 2019 The Familyname Project Authors (git url)". It must not include © copyright sign since the CFF table copyright notice key is ascii only.
+**[OFL.txt](https://github.com/Omnibus-Type/Texturina/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string. Copyright notices should match a pattern similar to: "Copyright 2019 The Familyname Project Authors (git url)". It must not include © copyright sign since the CFF table copyright notice key is ascii only.
 
-**[README.md](https://github.com/TypeNetwork/Roboto):** Contains information about the font family and instructions on how to build the family.
+**[README.md](https://github.com/Omnibus-Type/Texturina/blob/master/README.md):** Contains information about the font family and instructions on how to build the family.
 
-**[documentation](https://github.com/indestructible-type/Bodoni/tree/master/documentation)**: Directory which contains informations about the Family. You can eventually store there your specimen, the pictures you use for the README.md etc.
+**[documentation](https://github.com/Omnibus-Type/Texturina/tree/master/documentation)**: Directory which contains informations about the Family. You can eventually store there your specimen, the pictures you use for the README.md etc.
 
-**[DESCRIPTION.en_us.html](https://github.com/googlefonts/OswaldFont/blob/master/DESCRIPTION.en_us.html):** A small html snippet which describes the family. The text should be concise. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
+**[DESCRIPTION.en_us.html](https://github.com/Omnibus-Type/Texturina/blob/master/documentation/DESCRIPTION.en_us.html):** A small html snippet which describes the family. The text should be concise. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
 
 This file must include: 
 
@@ -516,13 +516,13 @@ This file must include:
 Sample rendering:
 ![Description HTML Styles Sample Rendering](DESCRIPTION_HTML_STYLES.png)
 
-**[promo.png](https://github.com/indestructible-type/Bodoni/tree/master/documentation)**: In order to tweet about a new release, Google Fonts needs 2-3 pictures, different from the ones used in the README.md. If the Family is variable, an animation is welcome.
+**[promo.zip](https://github.com/Omnibus-Type/Texturina/tree/master/documentation)**: In order to tweet about a new release, Google Fonts needs 2-3 pictures, different from the ones used in the README.md. If the Family is variable, an animation is welcome.
 
-**[fonts](https://github.com/googlefonts/OswaldFont/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`, `fonts/woff2`.
+**[fonts](https://github.com/Omnibus-Type/Texturina/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`, `fonts/woff2`.
 
-**[sources](https://github.com/googlefonts/OswaldFont/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
+**[sources](https://github.com/Omnibus-Type/Texturina/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
 
-**[sources/build.sh](https://github.com/googlefonts/OswaldFont/blob/master/sources/build.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
+**[sources/build.sh](https://github.com/Omnibus-Type/Texturina/blob/master/sources/build-vf.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
 
 **[requirements.txt](https://github.com/Omnibus-Type/Texturina/blob/master/requirements.txt):** File listing the python packages (and there version if necessary) stored in the virtual env.
 
