@@ -78,10 +78,8 @@ Our tools can be installed using the following terminal commands:
 pip install gftools
 pip install fontbakery
 pip install fontmake
-pip install fdiff
 ```
-
-We recommend installing our tools inside a Python [virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
+We recommend installing our tools inside a Python [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
 
 ### Scalable font production
@@ -126,9 +124,6 @@ Joel Spolsky's classic article *[The 12 steps to better code](https://www.joelon
 - No glyphs should be missing
 - No styles should be missing
 - Visual regressions must be avoided as much as possible.
-
-*TODO MF: expand this section*
-
 
 ## Universal
 
@@ -490,6 +485,7 @@ Font projects must have the following structure.
 ├── sources
 │   ├── FontFamily-sources.ext
 │   └── build.sh
+├── requirements.txt
 └── .gitignore
 ```
 Each file/dir has the following purpose:
@@ -527,6 +523,8 @@ Sample rendering:
 **[sources](https://github.com/googlefonts/OswaldFont/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
 
 **[sources/build.sh](https://github.com/googlefonts/OswaldFont/blob/master/sources/build.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
+
+**[requirements.txt](https://github.com/Omnibus-Type/Texturina/blob/master/requirements.txt):** File listing the python packages (and there version if necessary) stored in the virtual env.
 
 **[.gitignore](https://github.com/Omnibus-Type/Texturina/blob/master/.gitignore):** File specifying untracked files that Git should ignore. Sinces fontmake, gftools, fontbakery (and any other python tools you need to build your Family) should be in a virtual environment dedicated to this repository: the .gitignore should contain `env`. Indeed it is better not to push your virtual env and to keep it local. If you use .glyphs sources, `*(Autosave)*` is also a relevant addition.
 
