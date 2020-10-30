@@ -487,10 +487,10 @@ Font projects must have the following structure.
 │   │   └── FontFamily-Regular.ttf
 │   └── variable
 │       └── FontFamily-[wdth,wght].ttf
-└── sources
-    ├── FontFamily-sources.ext
-    └── build.sh
-
+├── sources
+│   ├── FontFamily-sources.ext
+│   └── build.sh
+└── .gitignore
 ```
 Each file/dir has the following purpose:
 
@@ -527,6 +527,8 @@ Sample rendering:
 **[sources](https://github.com/googlefonts/OswaldFont/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
 
 **[sources/build.sh](https://github.com/googlefonts/OswaldFont/blob/master/sources/build.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
+
+**[.gitignore](https://github.com/Omnibus-Type/Texturina/blob/master/.gitignore):** File specifying untracked files that Git should ignore. Sinces fontmake, gftools, fontbakery (and any other python tools you need to build your Family) should be in a virtual environment dedicated to this repository: the .gitignore should contain `env`. Indeed it is better not to push your virtual env and to keep it local. If you use .glyphs sources, `*(Autosave)*` is also a relevant addition.
 
 The files/folders listed above are mandatory. However, we don't mind if you include further folders but they should have a clear purpose e.g `scripts`
 
