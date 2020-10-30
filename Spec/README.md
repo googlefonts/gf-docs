@@ -477,15 +477,16 @@ Font projects must have the following structure.
 .
 ├── AUTHORS.txt
 ├── CONTRIBUTORS.txt
-├── DESCRIPTION.en_us.html
-├── FONTLOG.txt
 ├── OFL.txt
 ├── README.md
+├── documentation
+│   ├── DESCRIPTION.en_us.html
+│   └── promo.png
 ├── fonts
-│   ├── otf
-│   │   ├── FontFamily-Regular.otf
-│   └── ttf
-│       └── FontFamily-Regular.ttf
+│   ├── ttf
+│   │   └── FontFamily-Regular.ttf
+│   └── variable
+│       └── FontFamily-[wdth,wght].ttf
 └── sources
     ├── FontFamily-sources.ext
     └── build.sh
@@ -493,13 +494,19 @@ Font projects must have the following structure.
 ```
 Each file/dir has the following purpose:
 
-**An example is included for each file. It is better to use these as templates and just modify what you need. TODO make a template repo or a cookie cutter script**
+**An example is included for each file. It is better to use these as templates and just modify what you need.**
 
 **[AUTHORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/AUTHORS.txt):** Includes contact information for the project's authors. Contributors must not be included in this file.
 
 **[CONTRIBUTORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/CONTRIBUTORS.txt):** Includes contact information for the project's contributors.
 
-**[DESCRIPTION.en_us.html](https://github.com/googlefonts/OswaldFont/blob/master/DESCRIPTION.en_us.html):** A small html snippet which describes the family. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
+**[OFL.txt](https://github.com/googlefonts/OswaldFont/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string. Copyright notices should match a pattern similar to: "Copyright 2019 The Familyname Project Authors (git url)". It must not include © copyright sign since the CFF table copyright notice key is ascii only.
+
+**[README.md](https://github.com/TypeNetwork/Roboto):** Contains information about the font family and instructions on how to build the family.
+
+**[documentation](https://github.com/indestructible-type/Bodoni/tree/master/documentation)**: Directory which contains informations about the Family. You can eventually store there your specimen, the pictures you use for the README.md etc.
+
+**[DESCRIPTION.en_us.html](https://github.com/googlefonts/OswaldFont/blob/master/DESCRIPTION.en_us.html):** A small html snippet which describes the family. The text should be concise. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
 
 This file must include: 
 
@@ -513,20 +520,15 @@ This file must include:
 Sample rendering:
 ![Description HTML Styles Sample Rendering](DESCRIPTION_HTML_STYLES.png)
 
-**[FONTLOG.txt](https://github.com/googlefonts/OswaldFont/blob/master/FONTLOG.txt):** A log file which lists changes to each release.
+**[promo.png](https://github.com/indestructible-type/Bodoni/tree/master/documentation)**: In order to tweet about a new release, Google Fonts needs 2-3 pictures, different from the ones used in the README.md. If the Family is variable, an animation is welcome.
 
-**[OFL.txt](https://github.com/googlefonts/OswaldFont/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string. Copyright notices should match a pattern similar to: "Copyright 2019 The Familyname Project Authors (git url)". It must not include © copyright sign since the CFF table copyright notice key is ascii only.
-
-**[README.md](https://github.com/TypeNetwork/Roboto):** contains information about the font family and instructions on how to build the family.
-
-**[fonts](https://github.com/googlefonts/OswaldFont/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`.
+**[fonts](https://github.com/googlefonts/OswaldFont/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`, `fonts/woff2`.
 
 **[sources](https://github.com/googlefonts/OswaldFont/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
 
 **[sources/build.sh](https://github.com/googlefonts/OswaldFont/blob/master/sources/build.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
 
-The files/folders listed above are mandatory. However, we don't mind if you include further folders but they should have a clear purpose e.g `docs`
-
+The files/folders listed above are mandatory. However, we don't mind if you include further folders but they should have a clear purpose e.g `scripts`
 
 ## The google/fonts repo
 
@@ -557,23 +559,30 @@ The `ofl`, `ufl` and `apache` directories contain font families which we refer t
 ```
 .
 ├── DESCRIPTION.en_us.html
-├── FONTLOG.txt
 ├── METADATA.pb
 ├── License (OFL.txt, UFL.txt, License.txt)
-├── FontFamily-Regular.ttf
+└── FontFamily-Regular.ttf
 ```
-
-If the family is a variable font family, another directory called "static must be included. This directory contains static fonts for the family.
-
-
 Each file has the following purpose:
 
 - DESCRIPTION.en_us.html: describes the font family
-- FONTLOG.txt: (optional) lists all the changes which have happened to the family
 - METADATA.pb: contains metadata related to the family
 - License: License for the font family. Valid choices are OFL.txt, UFL.txt, License.txt. If you're unsure what license to use, we recommend OFL.txt
-- \*.ttfs: Family font files.
+- \*.ttf: Family font files.
 
+If the family is a variable font family, another directory called "static" can be included to contain the static fonts for the family: 
+
+```
+.
+├── DESCRIPTION.en_us.html
+├── METADATA.pb
+├── License (OFL.txt, UFL.txt, License.txt)
+├── FontFamily-[wght].ttf
+└── static
+    └── FontFamily-Regular.ttf
+```
+
+This static directory is mandatory *if the statics are manually hinted*, otherwise, adding them is optional.
 
 ## QA
 
@@ -581,34 +590,16 @@ The quality assurance process is fairly strict in comparison to most foundries, 
 
 **Family is already on Google Fonts**
 
+If the Family is already on Google Fonts, the upgrade shouldn't contain regression:
+
 - Family name must be the same
 - No missing encoded glyphs
 - No missing styles/instances
 - Vertical metrics must have the same visual appearance to end users
-
+- Spacing can be improved but it must not create an obvious change of line lenth to end users
 
 **Family is not on Google Fonts**
 
 - Family name must be original. Use https://namecheck.fontdata.com/
 - Family must contain the following [glyphs](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/latin_unique-glyphs.nam)
-- Vertcal metrics should comply to our guide
-
-*TODO M Foley, include these requirements as individual sections.*
-
-### Our process
-
-*TODO*
-
-
-### FAQ
-
-*Fontbakery keeps reporting that my masters are not named correctly?*
-
-If the source file is .glyphs, ...
-
-If the source file is .designspace. Inspect the designspace and see if the Axis map elements are set correctly
-
-*Fontbakery keeps reporting that the usWeightClass is incorrect?*
-
-Are 
-
+- Vertcal metrics should comply to [our guide](https://github.com/googlefonts/gf-docs/tree/master/VerticalMetrics)
