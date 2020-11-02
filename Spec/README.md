@@ -26,11 +26,11 @@
 - [Hinting](#hinting)
 
 **[Variable Fonts](#variable-fonts)**
-- [Font Origin](#font-origin)
-- [Variable font requirements](#variable-font-requirements)
-- [VF Font filenames](#vf-font-filenames)
+- [Font Origin](#font-zero-origin)
+- [New vs Preexisting](#new-vs-pre-existing)
+- [Variable Font filenames](#variable-font-filenames)
 - [Axes](#axes)
-- [Instances](#instances)
+- [Instances](#fvar-instances)
 - [STAT table](#stat-table)
 - [VF Hinting](#vf-hinting)
 
@@ -54,7 +54,7 @@ TODO
 We expect font developers to understand the following:
 
 - Basic understanding of how OpenType fonts work.
-- A commercial font editor such as Fontlab 7, Glyphsapp, Robofont or Fontforge
+- A fully featured font editor such as Fontlab 7, Glyphsapp, Robofont or Fontforge; not a toy editor like a "handwriting page scan to font" tool fix 
 - Version control, specifically git. Use of desktop clients such as Github desktop is acceptable.
 - Shell scripting
 - Managing python packages/tools using pip
@@ -78,10 +78,8 @@ Our tools can be installed using the following terminal commands:
 pip install gftools
 pip install fontbakery
 pip install fontmake
-pip install fdiff
 ```
-
-We recommend installing our tools inside a Python [virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
+We recommend installing our tools inside a Python [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
 
 ### Scalable font production
@@ -126,9 +124,6 @@ Joel Spolsky's classic article *[The 12 steps to better code](https://www.joelon
 - No glyphs should be missing
 - No styles should be missing
 - Visual regressions must be avoided as much as possible.
-
-*TODO MF: expand this section*
-
 
 ## Universal
 
@@ -249,7 +244,7 @@ The filename must not contain anything else.
 
 ### Supported Styles
 
-Google’s static fonts API supports up to 18 styles in one family: up to  9 weights (Thin–Black), + their matching Italics. The table below lists each style its font specific settings. *TODO MF convert integers to bits*
+Google’s static fonts API supports up to 18 styles in one family: up to 9 weights (Thin–Black), + their matching Italics. The table below lists each style its font specific settings. *TODO MF convert integers to bits*
 
 | Filename                        | Family Name (nameID 1) | Subfamily Name (nameID 2) | Typographic Family Name (nameID 16) | Typo Subfamily Name (nameID 17) | OS/2.usWeightClass | OS/2.fsSelection | hhea.macStyle |
 |---------------------------------|------------------------|---------------------------|-------------------------------------|---------------------------------|--------------------|------------------|---------------|
@@ -292,7 +287,7 @@ The single weight families must have the following font specific settings:
 
 ### Hinting
 
-Static fonts should be hinted using the latest version of [ttfautohint](https://www.freetype.org/ttfautohint/). If the results look poor on Windows browsers, it's better to release the fonts unhinted. Ttfautohint often struggles to hint display or handwritten typefaces.
+Static fonts should be hinted using the latest version of [ttfautohint](https://www.freetype.org/ttfautohint/). If the results look poor on Windows browsers, it's better to release the fonts unhinted with GASP table set to "grayscale / symmetric smoothing" (0x000A) across the full PPEM range. Ttfautohint often struggles to hint display or handwritten typefaces.
 
 Once the fonts have been hinted, run the fonts through `gftools fix-hinting`. If the fonts are unhinted, run the fonts through `gftools fix-nonhinting`.
 
@@ -309,8 +304,7 @@ Often font developers are unaware what the font origin is within their fonts. Th
 
 ### New vs Pre-existing
 
-#### Family is new
-If the family wasn't already on Google Fonts:
+#### Family doesn't exist on Google Fonts:
 - `VF` must not be appended to the family name.
 - Fonts should be unhinted and have `gftools fix-nonhinting` applied to them
 - The `wght` axis range must include `400`. e.g. 100-900, 400-900, 100-400 etc
@@ -350,22 +344,10 @@ If the family consists of two VFs, one for Italic, the other for Roman. The font
 
 Google Fonts supports all [Microsoft registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg).
 
-We only support the following axes ranges:
 
-**wght**: 100-1000
+### Axis particles
 
-**wdth**: 50-200
-
-**opsz**: 0-∞
-
-
-Developers can include their own axes, but FontBakery will warn users that we cannot determine if the values are correct.
-
-
-### Instances
-
-Instance names and fvar coordinates must relate to the following tables.
-
+fvar instances and STAT entry particles must be based on the following tables.
 
 **wght**
 
@@ -382,7 +364,7 @@ Instance names and fvar coordinates must relate to the following tables.
 | Black      | 900                   |
 | ExtraBlack | 1000                  |
 
-Weight values are purely nominal, and do not necessarily reflect actual measurements. A 'stat' table is required if you wish to make the relationship between actual font stroke thicknesses and weight coordinates non-linear. For example, if you want the effective difference between wght 400-500 to be less than that going from 800-900, you will need to use a 'stat' table.
+[MS Spec wght info](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wght)
 
 **wdth**
 
@@ -398,7 +380,7 @@ Weight values are purely nominal, and do not necessarily reflect actual measurem
 | ExtraExpanded  | 150.0                 |
 | UltraExpanded  | 200.0                 |
 
-Width values are supposed to relate to the actual width of glyphs in the font, as a percentage of “normal” at 100. Since the reaction of different glyphs to width variation may itself vary, this will almost always be an approximation. 
+[MS Spec wdth info](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_wdth)
 
 **opsz**
 
@@ -406,28 +388,54 @@ Width values are supposed to relate to the actual width of glyphs in the font, a
 |-------|-----------------------|
 | XXpt  | XX                    |
 
-*XX can be any value*
+*XX can be any value* 
+
+[MS Spec opsz info](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_opsz)
+
+**slnt/ital**
+
+We've disabled these axes due to browser support. Stephen Nixon has [documented](https://arrowtype.github.io/vf-slnt-test/) the issues.
 
 
+### Fvar instances
 
-#### Instance names
+We are still revising how we name our instances and which particles we should/must include in instance names. At the moment (2020-06-30), Google Fonts only allows the following named instances:
 
-Instance names must mention the axes in the following order:
+| | |
+|-|-|
+| Thin       | Thin Italic       |
+| ExtraLight | ExtraLight Italic |
+| Light      | Light Italic      |
+| Regular    | Italic            |
+| Medium     | Medium Italic     |
+| SemiBold   | SemiBold Italic   |
+| Bold       | Bold Italic       |
+| ExtraBold  | ExtraBold Italic  |
+| Black      | Black Italic      |
 
-opsz wdth wght 
 
-e.g `10pt Expanded Regular`
+We only allow weight and italic particles. If a font contains additional axes, they must not be mentioned in the instance names and the coordinates for each instance must be set to reasonable default e.g if your font contains a wdth axis, you don't want every instance's wdth coordinate value to be set to Condensed (75) you would set it to Normal (100).
 
-The order of the axes cannot be changed e.g `Regular Expanded 10pt` is not valid.
+We have imposed this restriction for the following reasons:
 
-If a font doesn't include an axis which is listed above, it is simply skipped but the order kept e.g `10pt Regular`.
+- Backwards compatibility with static fonts. Documents won't break if users swap static fonts for variable fonts.
+- We don't lock ourselves into an implementation we may want to change in the future. The specs are constantly evolving so it's best we wait for these to mature.
+- DTP applications do not properly support variable fonts yet. Variable font support is [experimental in Adobe applications](https://community.adobe.com/t5/indesign/variable-fonts-in-indesign/td-p/10718647).
 
 
 ### STAT Table
 
-All variable fonts should contain a STAT table (style attributes table). This table makes sure that instances are selectable in DTP apps. We recommend reading the [MS Spec](https://docs.microsoft.com/en-us/typography/opentype/spec/stat).
+All variable fonts must contain a STAT table (style attributes table). This table has several features but a key benefit is it will enable desktop applications to have better font menus. Currently, most font menus only offer a single drop down menu to select a font style. A STAT table enables us to have a drop down menu for each variable font axis. This allows users to select fonts styles which are much more complex than our named instances allow.
 
-We use DaMa [statmake](https://github.com/daltonmaag/statmake) to generate this table. Marc Foley has written a python helper [script](https://github.com/googlefonts/Inconsolata/pull/44/files#diff-6cfd30d43aea19fb31ba7be6c7fb9b7c) that will generate the STAT table for Inconsolata. *TODO (M Foley) may be worth making a more general STAT table generator or include templates that can be altered. The prerequisite knowledge section is fairly advanced due to these types of requirements.*
+Creating good STAT tables is complex. Fortunately we have created a gftools script called `gftools fix-vf-meta` which will create STAT tables for the following types of variable font families:
+- A family which consists of a single font which only has a weight axis e.g [Maven Pro](https://fonts.google.com/specimen/Maven+Pro?query=maven+pro)
+- A family which consists of two fonts, Roman and Italic, which both only contain a weight axis e.g [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mo)
+
+If you need to create a STAT table for a font which has multplie axes, you must use DaMa [statmake](https://github.com/daltonmaag/statmake) or write a Python script. We have used statmake on [Roboto](https://github.com/TypeNetwork/Roboto/blob/master/sources/Roboto.stylespace) and [Inconsolata](https://github.com/googlefonts/Inconsolata/blob/master/sources/stat.stylespace). We recommend studying their .stylespace files in order to better understand their implementation. If you would like to write a Python script instead, you can study [Literata's](https://github.com/googlefonts/literata/blob/master/sources/gen_stat.py).
+
+At the time of writing (2020-06-20), no desktop applications use the STAT table. However, Indesign, Sketch and other pro type setting applications provide sliders for users to select individual axis locations.
+
+We recommend reading the [MS STAT table spec](https://docs.microsoft.com/en-us/typography/opentype/spec/stat).
 
 
 ## VF Hinting
@@ -438,7 +446,7 @@ Variable Font hinting still doesn't have a clear policy. Marc Foley has been app
 
 If the family has over a billion weekly views, use [VTT](https://docs.microsoft.com/en-us/typography/tools/vtt/). *TODO Marc Foley. Write more about this. Also include example to Inconsolata once it is finished.*
 
-If the family has under a billion weekly views, try [ttfautohint-vf](https://groups.google.com/d/msg/googlefonts-discuss/WJX1lrzcwVs/SIzaEvntAgAJ). If the results are bad, release unhinted.
+If the family has under a billion weekly views, try [ttfautohint-vf](https://groups.google.com/d/msg/googlefonts-discuss/WJX1lrzcwVs/SIzaEvntAgAJ). If the results are bad, release unhinted with GASP table set to "grayscale / symmetric smoothing" (0x000A) across the full PPEM range.
 
 If the font has been hinted using VTT or ttfautohint-vf, run the fonts through `gftools fix-hinting` e.g
 
@@ -464,28 +472,31 @@ Font projects must have the following structure.
 .
 ├── AUTHORS.txt
 ├── CONTRIBUTORS.txt
-├── DESCRIPTION.en_us.html
-├── FONTLOG.txt
 ├── OFL.txt
 ├── README.md
+├── documentation
+│   ├── DESCRIPTION.en_us.html
+│   └── promo.png
 ├── fonts
-│   ├── otf
-│   │   ├── FontFamily-Regular.otf
-│   └── ttf
-│       └── FontFamily-Regular.ttf
-└── sources
-    ├── FontFamily-sources.ext
-    └── build.sh
-
+│   ├── ttf
+│   │   └── FontFamily-Regular.ttf
+│   └── variable
+│       └── FontFamily-[wdth,wght].ttf
+├── sources
+│   ├── FontFamily-sources.ext
+│   └── build.sh
+├── requirements.txt
+└── .gitignore
 ```
 Each file/dir has the following purpose:
 
-**An example is included for each file. It is better to use these as templates and just modify what you need. TODO make a template repo or a cookie cutter script**
+**An example is included for each file. It is better to use these as templates and just modify what you need.**
 
-**[AUTHORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/AUTHORS.txt):** Includes contact information for the project's authors. Contributors must not be included in this file.
+**[AUTHORS.txt](https://github.com/Omnibus-Type/Texturina/blob/master/AUTHORS.txt):** Includes contact information for the project's authors. Contributors must not be included in this file.
 
-**[CONTRIBUTORS.txt](https://github.com/googlefonts/OswaldFont/blob/master/CONTRIBUTORS.txt):** Includes contact information for the project's contributors.
+**[CONTRIBUTORS.txt](https://github.com/Omnibus-Type/Texturina/blob/master/CONTRIBUTORS.txt):** Includes contact information for the project's contributors.
 
+<<<<<<< HEAD
 **[DESCRIPTION.en_us.html](https://github.com/googlefonts/OswaldFont/blob/master/DESCRIPTION.en_us.html):** A small html snippet which describes the family. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
 
 This file must include: 
@@ -494,21 +505,45 @@ This file must include:
 - It should have more than 200 characters and less than 1000.
 - All links in it must be properly working.
 - Families with VF axes should always mention which axes they offer in their descriptions.
+=======
+**[OFL.txt](https://github.com/Omnibus-Type/Texturina/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string. Copyright notices should match a pattern similar to: "Copyright 2019 The Familyname Project Authors (git url)". It must not include © copyright sign since the CFF table copyright notice key is ascii only.
+>>>>>>> bfdf68496e78ef458c1f110ae9aeab079ee34753
 
-**[FONTLOG.txt](https://github.com/googlefonts/OswaldFont/blob/master/FONTLOG.txt):** A log file which lists changes to each release.
+**[README.md](https://github.com/Omnibus-Type/Texturina/blob/master/README.md):** Contains information about the font family and instructions on how to build the family.
 
+<<<<<<< HEAD
 **[OFL.txt](https://github.com/googlefonts/OswaldFont/blob/master/OFL.txt):** The OFL license file. The first line of the license file must contain the font family's copyright string. Copyright notices should match a pattern similar to: "Copyright 2019 The Familyname Project Authors (git url)". It must not include © copyright sign since the CFF table copyright notice key is ascii only.
+=======
+**[documentation](https://github.com/Omnibus-Type/Texturina/tree/master/documentation)**: Directory which contains informations about the Family. You can eventually store there your specimen, the pictures you use for the README.md etc.
+>>>>>>> bfdf68496e78ef458c1f110ae9aeab079ee34753
 
-**[README.md](https://github.com/TypeNetwork/Roboto):** contains information about the font family and instructions on how to build the family.
+**[DESCRIPTION.en_us.html](https://github.com/Omnibus-Type/Texturina/blob/master/documentation/DESCRIPTION.en_us.html):** A small html snippet which describes the family. The text should be concise. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
 
-**[fonts](https://github.com/googlefonts/OswaldFont/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`.
+This file must include: 
 
-**[sources](https://github.com/googlefonts/OswaldFont/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
+- A hypertext link to the repository where the font project files are made available (designer’s GitHub repository).
+- It should have more than 200 characters and less than 1000.
+- All links in it must be properly working.
+- Families with VF axes should always mention which axes they offer in their descriptions.
+- Allowed HTML elements: `a`, `em`, `i`, `strong`, `b`, `p`, `ol`, `ul`, `li`. 
+- Other HTML elements, especiallly inline CSS, classes, or attributes, are not allowed and will be removed by the catalog web app. 
 
-**[sources/build.sh](https://github.com/googlefonts/OswaldFont/blob/master/sources/build.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
+Sample rendering:
+![Description HTML Styles Sample Rendering](DESCRIPTION_HTML_STYLES.png)
 
-The files/folders listed above are mandatory. However, we don't mind if you include further folders but they should have a clear purpose e.g `docs`
+**[promo.zip](https://github.com/Omnibus-Type/Texturina/tree/master/documentation)**: In order to tweet about a new release, Google Fonts needs 2-3 pictures, different from the ones used in the README.md. If the Family is variable, an animation is welcome.
 
+**[fonts](https://github.com/Omnibus-Type/Texturina/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`, `fonts/woff2`.
+
+**[sources](https://github.com/Omnibus-Type/Texturina/tree/master/sources):** Directory containing source files and scripts used to build the fonts. Sources must not be kept in another other directory.
+
+**[sources/build.sh](https://github.com/Omnibus-Type/Texturina/blob/master/sources/build-vf.sh):** A build script which builds the font files. We require fonts to be built with fontmake and the fonts should build in one click.
+
+**[requirements.txt](https://github.com/Omnibus-Type/Texturina/blob/master/requirements.txt):** File listing the python packages (and there version if necessary) stored in the virtual env.
+
+**[.gitignore](https://github.com/Omnibus-Type/Texturina/blob/master/.gitignore):** File specifying untracked files that Git should ignore. Sinces fontmake, gftools, fontbakery (and any other python tools you need to build your Family) should be in a virtual environment dedicated to this repository: the .gitignore should contain `env`. Indeed it is better not to push your virtual env and to keep it local. If you use .glyphs sources, `*(Autosave)*` is also a relevant addition.
+
+The files/folders listed above are mandatory. However, we don't mind if you include further folders but they should have a clear purpose e.g `scripts`
 
 ## The google/fonts repo
 
@@ -539,23 +574,30 @@ The `ofl`, `ufl` and `apache` directories contain font families which we refer t
 ```
 .
 ├── DESCRIPTION.en_us.html
-├── FONTLOG.txt
 ├── METADATA.pb
 ├── License (OFL.txt, UFL.txt, License.txt)
-├── FontFamily-Regular.ttf
+└── FontFamily-Regular.ttf
 ```
-
-If the family is a variable font family, another directory called "static must be included. This directory contains static fonts for the family.
-
-
 Each file has the following purpose:
 
 - DESCRIPTION.en_us.html: describes the font family
-- FONTLOG.txt: (optional) lists all the changes which have happened to the family
 - METADATA.pb: contains metadata related to the family
 - License: License for the font family. Valid choices are OFL.txt, UFL.txt, License.txt. If you're unsure what license to use, we recommend OFL.txt
-- \*.ttfs: Family font files.
+- \*.ttf: Family font files.
 
+If the family is a variable font family, another directory called "static" can be included to contain the static fonts for the family: 
+
+```
+.
+├── DESCRIPTION.en_us.html
+├── METADATA.pb
+├── License (OFL.txt, UFL.txt, License.txt)
+├── FontFamily-[wght].ttf
+└── static
+    └── FontFamily-Regular.ttf
+```
+
+This static directory is mandatory *if the statics are manually hinted*, otherwise, adding them is optional.
 
 ## QA
 
@@ -563,34 +605,16 @@ The quality assurance process is fairly strict in comparison to most foundries, 
 
 **Family is already on Google Fonts**
 
+If the Family is already on Google Fonts, the upgrade shouldn't contain regression:
+
 - Family name must be the same
 - No missing encoded glyphs
 - No missing styles/instances
 - Vertical metrics must have the same visual appearance to end users
-
+- Spacing can be improved but it must not create an obvious change of line lenth to end users
 
 **Family is not on Google Fonts**
 
 - Family name must be original. Use https://namecheck.fontdata.com/
 - Family must contain the following [glyphs](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/latin_unique-glyphs.nam)
-- Vertcal metrics should comply to our guide
-
-*TODO M Foley, include these requirements as individual sections.*
-
-### Our process
-
-*TODO*
-
-
-### FAQ
-
-*Fontbakery keeps reporting that my masters are not named correctly?*
-
-If the source file is .glyphs, ...
-
-If the source file is .designspace. Inspect the designspace and see if the Axis map elements are set correctly
-
-*Fontbakery keeps reporting that the usWeightClass is incorrect?*
-
-Are 
-
+- Vertcal metrics should comply to [our guide](https://github.com/googlefonts/gf-docs/tree/master/VerticalMetrics)

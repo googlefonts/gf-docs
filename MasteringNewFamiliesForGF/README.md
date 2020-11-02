@@ -9,8 +9,8 @@
 
 ### Docs
 
-- [Project Checklist](ProjectChecklist.md)
-- [GlyphsApp Quick Start](QuickStartGlyphs.md)
+- [Project Checklist](https://github.com/googlefonts/gf-docs/tree/master/ProjectChecklist)
+- [GlyphsApp Quick Start](https://github.com/googlefonts/gf-docs/tree/master/QuickStartGlyphs)
 
 ## Mastering process
 

@@ -106,7 +106,7 @@ Taken from the upstream repo https://github.com/JulietaUla/Montserrat at commit 
 
 And finally push your branch to google/fonts
 ```
-git push upstream family-name:family-name
+git push origin family-name:family-name
 ```
 
 Finally, go to *github.com/google/fonts* and open the PR from family-name-pr to master. You’ll see a banner at the top of your repo, so click the button and make that PR!
