@@ -480,7 +480,7 @@ Font projects must have the following structure.
 ├── OFL.txt
 ├── README.md
 ├── documentation
-│   ├── DESCRIPTION.en_us.html
+│   ├── readme-images.jpg
 │   └── promo.png
 ├── fonts
 │   ├── ttf
@@ -506,8 +506,6 @@ Each file/dir has the following purpose:
 **[README.md](https://github.com/Omnibus-Type/Texturina/blob/master/README.md):** Contains information about the font family and instructions on how to build the family.
 
 **[documentation](https://github.com/Omnibus-Type/Texturina/tree/master/documentation)**: Directory which contains informations about the Family. You can eventually store there your specimen, the pictures you use for the README.md etc.
-
-**[DESCRIPTION.en_us.html](https://github.com/Omnibus-Type/Texturina/blob/master/documentation/DESCRIPTION.en_us.html):** A small html snippet which describes the family. The text should be concise. This file is used on the main Google Fonts website for each family's "About" section e.g https://fonts.google.com/specimen/Oswald. 
 
 This file must include: 
 
