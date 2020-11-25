@@ -623,3 +623,8 @@ If the Family is already on Google Fonts, the upgrade shouldn't contain regressi
 - Family name must be original. Use https://namecheck.fontdata.com/
 - Family must contain the following [glyphs](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/latin_unique-glyphs.nam)
 - Vertcal metrics should comply to [our guide](https://github.com/googlefonts/gf-docs/tree/master/VerticalMetrics)
+
+## Workflow Tips
+
+* [Set up Git to understand .glyphs files](https://typedrawers.com/discussion/3838/label-differences-when-working-with-git#latest)
+* On macOS, install [homebrew](https://brew.sh) and [cask](https://github.com/Homebrew/homebrew-cask) to make installing and updating tools and apps easier
