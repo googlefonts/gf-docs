@@ -507,18 +507,6 @@ Each file/dir has the following purpose:
 
 **[documentation](https://github.com/Omnibus-Type/Texturina/tree/master/documentation)**: Directory which contains informations about the Family. You can eventually store there your specimen, the pictures you use for the README.md etc.
 
-This file must include: 
-
-- A hypertext link to the repository where the font project files are made available (designer’s GitHub repository).
-- It should have more than 200 characters and less than 1000.
-- All links in it must be properly working.
-- Families with VF axes should always mention which axes they offer in their descriptions.
-- Allowed HTML elements: `a`, `em`, `i`, `strong`, `b`, `p`, `ol`, `ul`, `li`. 
-- Other HTML elements, especiallly inline CSS, classes, or attributes, are not allowed and will be removed by the catalog web app. 
-
-Sample rendering:
-![Description HTML Styles Sample Rendering](DESCRIPTION_HTML_STYLES.png)
-
 **[promo.zip](https://github.com/Omnibus-Type/Texturina/tree/master/documentation)**: In order to tweet about a new release, Google Fonts needs 2-3 pictures, different from the ones used in the README.md. If the Family is variable, an animation is welcome.
 
 **[fonts](https://github.com/Omnibus-Type/Texturina/tree/master/fonts):** Directory containing font binaries or subdirectories for each font format. If your project is going to provide multiple formats, do not include them all in one folder. Create a folder for each format e.g `fonts/otf`, `fonts/ttf`, `fonts/woff2`.
@@ -572,6 +560,19 @@ Each file has the following purpose:
 - METADATA.pb: contains metadata related to the family
 - License: License for the font family. Valid choices are OFL.txt, UFL.txt, License.txt. If you're unsure what license to use, we recommend OFL.txt
 - \*.ttf: Family font files.
+
+The Description file is a small snippet which appears on the specimen page of the API. It must include: 
+
+- A hypertext link to the repository where the font project files are made available (designer’s GitHub repository).
+- It should have more than 200 characters and less than 1000.
+- All links in it must be properly working.
+- Families with VF axes should always mention which axes they offer in their descriptions.
+- Allowed HTML elements: `a`, `em`, `i`, `strong`, `b`, `p`, `ol`, `ul`, `li`. 
+- Other HTML elements, especiallly inline CSS, classes, or attributes, are not allowed and will be removed by the catalog web app. 
+
+Sample rendering:
+![Description HTML Styles Sample Rendering](DESCRIPTION_HTML_STYLES.png)
+
 
 If the family is a variable font family, another directory called "static" can be included to contain the static fonts for the family: 
 
