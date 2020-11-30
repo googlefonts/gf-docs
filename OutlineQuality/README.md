@@ -6,7 +6,7 @@ Make sure your font is ready for mastering by fulfilling this checklist. Design 
 ### Segments
 - [ ] **Mixed outline type :** the outlines of one font must be either PostScript (OpenType Fonts font with CFF compression / .otf) or TrueType (OpenType Fonts with TrueType compression / .ttf). This problem often occurs in sources from Fontlab 5 allows mixed curve type within the same glyph.
 
-- [ ] **Wrong direction:** For PS outlines, the outer-shape goes counter-clockwise, and the inner-shape (or counter-shape) goes clockwise. It is the reverse for TT outlines: outer-shape goes clockwise and counter-shape goes counter-clockwise. We usually use PS curves for design, and they are then converted to TT when exporting TTF fonts. Whatever the chosen outlines, make sure it is consistent across the entire family.
+- [ ] **Wrong direction:** For PS outlines, the outer-shape goes counter-clockwise, and the inner-shape (or counter-shape) goes clockwise. It is the reverse for TT outlines: outer-shape goes clockwise and counter-shape goes counter-clockwise. We usually use PS curves for design, and they are then converted to TT when exporting TTF fonts. Whatever the chosen outline type, make sure it is consistent across the entire family.
 
 - [ ] **Almost straight:** if a segment is misaligned of one or two units, it may be a mistake from the designer. This small offset can cause a big misinterpretation from the rasterizer at small ppm sizes.
 
@@ -20,7 +20,7 @@ Make sure your font is ready for mastering by fulfilling this checklist. Design 
 
 - [ ] **Overlaying :** It disturbs rendering, interpolation and variation.
   
-- [ ] **Overlapping:** The crossing of two independent contours is not such a problem in VF (although small overlaps are preferred) and generally merged during the generation of static binaries. If you want to control the result of the merging, it is better to do it yourself. If not, try to keep them in a small overlapped area. Also try not to overlap more than 2 contours in the same area (contour crossing a contour itself crossing another contour, like asterisk, creates confusion during generation and rendering). In any case, try to avoid overlapping shapes which cross a plain shape and a closed counter-shape (typically, Oslash should be manually merged for example).
+- [ ] **Overlapping:** The crossing of two independent contours is not such a problem in VF and generally merged during the generation of static binaries. If you want to control the result of the merging, it is better to do it yourself. If not, try to keep them in *not too big but not too small* overlapped area. Also try not to overlap more than 2 contours in the same area (contour crossing a contour itself crossing another contour, like asterisk, creates confusion during generation and rendering). Rendering issues in variable fonts also happen when you have two shapes overlaping + overlaying contours. Eg. The top bar of E entering the vertical stem and having a part of their segments above each other: it would be better to merge them, and open the corner.
 
 - [ ] **Self-crossing:** Often known as open-corners, it is very helpful while designing and recommended for nice interpolations. They will be preserved for VF fonts and merged during generation to static binaries. To better control the result, pay attention to the size of it (not too big, not too small) as well as not leaving portions of it outside the main shape like the stem, since it can cause unwanted rendering issues. If you want to control the result of the merging, do it yourself if not, same advises as above.
 
@@ -30,14 +30,14 @@ Make sure your font is ready for mastering by fulfilling this checklist. Design 
 
 - [ ] **Missing on extremes:** Points at X and Y extremes of the paths are required for hinting reasons since they attach hints to the extremum of the stem. Also, having nodes in both in x and y extremes points of the paths will control better the curves and probably reduce the necessity of extra nodes.
 
-- [ ] **Fractional coordinates:**
+- [ ] **Fractional coordinates:** Leads to rounding errors.
 
-- [ ] **Broken smooth connection:** Ensure the right type of node according to the connection, smooth (between to curve segments) or sharp (between a curve and a line segment; or two line segments)
+- [ ] **Broken smooth connection:** Ensure the right type of node according to the connection, smooth (between two curve segments) or sharp (between a curve and a line segment; or two line segments)
 
 ### Off-curve points (handles)
 - [ ] **Almost straight:**
 - [ ] **Broken smooth connection:**
-- [ ] **Inside node:** 
+- [ ] **Inside the node:** Also known as "zero handle" because its coordinates from the node is (0,0). Off-curve points should either have different coordinates from the node or should be removed. They can be misinterpeted by the rasterizer otherwise.
 
 
 ## Compounds, components, composites
