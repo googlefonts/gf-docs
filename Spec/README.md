@@ -386,9 +386,11 @@ fvar instances and STAT entry particles must be based on the following tables.
 
 | name  | opsz coordinate value |
 |-------|-----------------------|
-| XXpt  | XX                    |
+| Xpt   | X                     |
 
-*XX can be any value* 
+X can be any **integer number value*. 
+
+"Display" or "Banner" or "Micro" are not allowed. 
 
 [MS Spec opsz info](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxistag_opsz)
 
