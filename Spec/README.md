@@ -427,13 +427,10 @@ We have imposed this restriction for the following reasons:
 
 ### STAT Table
 
-All variable fonts must contain a STAT table (style attributes table). This table has several features but a key benefit is it will enable desktop applications to have better font menus. Currently, most font menus only offer a single drop down menu to select a font style. A STAT table enables us to have a drop down menu for each variable font axis. This allows users to select fonts styles which are much more complex than our named instances allow.
+All variable fonts must contain a STAT table (style attributes table). This table has several features but a key benefit is it will enable desktop applications to have better font menus. Currently, most font menus only offer a single drop down menu to select a font style. A STAT table enables us to have a drop down menu for each variable font axis.
 
-Creating good STAT tables is complex. Fortunately we have created a gftools script called `gftools fix-vf-meta` which will create STAT tables for the following types of variable font families:
-- A family which consists of a single font which only has a weight axis e.g [Maven Pro](https://fonts.google.com/specimen/Maven+Pro?query=maven+pro)
-- A family which consists of two fonts, Roman and Italic, which both only contain a weight axis e.g [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto+mo)
+Creating good STAT tables is complex. Fortunately, we have created a gftools script called `[gftools gen-stat](https://github.com/googlefonts/gftools/blob/master/bin/gftools-gen-stat.py)` which will generate STAT tables for a family automatically based on our [Axis Registry](https://github.com/google/fonts/tree/master/axisregistry).
 
-If you need to create a STAT table for a font which has multplie axes, you must use DaMa [statmake](https://github.com/daltonmaag/statmake) or write a Python script. We have used statmake on [Roboto](https://github.com/TypeNetwork/Roboto/blob/master/sources/Roboto.stylespace) and [Inconsolata](https://github.com/googlefonts/Inconsolata/blob/master/sources/stat.stylespace). We recommend studying their .stylespace files in order to better understand their implementation. If you would like to write a Python script instead, you can study [Literata's](https://github.com/googlefonts/literata/blob/master/sources/gen_stat.py).
 
 At the time of writing (2020-06-20), no desktop applications use the STAT table. However, Indesign, Sketch and other pro type setting applications provide sliders for users to select individual axis locations.
 
