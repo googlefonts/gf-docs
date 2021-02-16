@@ -2,7 +2,7 @@
 
 A guide to fixing fonts stored in the [google/fonts](https://github.com/google/fonts) repository.
 
-For adding new families see [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md).
+For adding new families see [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/main/ProjectChecklist.md).
 
 ## Rules
 
@@ -84,10 +84,10 @@ Changes implemented in upstream,
 
 ## 6. METADATA.pb must be regenerated for each PR if a font has been modified
 
-Each family folder contains a [METADATA.pb](https://github.com/google/fonts/blob/master/ofl/montserrat/METADATA.pb) file, which uses the [Protobuf format](https://developers.google.com/protocol-buffers/).
+Each family folder contains a [METADATA.pb](https://github.com/google/fonts/blob/main/ofl/montserrat/METADATA.pb) file, which uses the [Protobuf format](https://developers.google.com/protocol-buffers/).
 These metadata files are used for each family on [fonts.google.com](https://fonts.google.com). They contain information about which codepages the family supports, what category the family is, who the author is etc.
 
-The script [./tools/add_font.py](https://github.com/google/fonts/blob/master/tools/add_font.py) will generate these files.
+The script [./tools/add_font.py](https://github.com/google/fonts/blob/main/tools/add_font.py) will generate these files.
 Once you've replaced the fonts in the family folder, execute the script:
 
     python add_font.py /path/to/familyfolder --update

@@ -1,4 +1,4 @@
-# A quick guide to mastering new families for Google Fonts.
+# A quick guide to finalizing new families for Google Fonts.
 
 ## Useful resources
 
@@ -9,10 +9,10 @@
 
 ### Docs
 
-- [Project Checklist](https://github.com/googlefonts/gf-docs/tree/master/ProjectChecklist)
-- [GlyphsApp Quick Start](https://github.com/googlefonts/gf-docs/tree/master/QuickStartGlyphs)
+- [Project Checklist](https://github.com/googlefonts/gf-docs/tree/main/ProjectChecklist)
+- [GlyphsApp Quick Start](https://github.com/googlefonts/gf-docs/tree/main/QuickStartGlyphs)
 
-## Mastering process
+## Finalizing process
 
 ### Repo layout
 
@@ -41,7 +41,7 @@ Note that the `/docs` folder is special, because its contents is directly availa
 
 Check each glyph is good. A simple way to do this is copy all glyphs in GlyphsApp into a tab.
 
-![All glyphs of a font open in a tab of GlyphsApp](assets/Mastering0.png 'All glyphs of a font open in a tab of GlyphsApp')
+![All glyphs of a font open in a tab of GlyphsApp](assets/Finalizing0.png 'All glyphs of a font open in a tab of GlyphsApp')
 
 ### Update Metadata so it's correct
 
@@ -49,19 +49,19 @@ Inside Glyphsapp with all open .glyphs sources execute the following:
 
 Run Script > Google Fonts > QA. Fix everything until it clears
 
-![Google Fonts QA Script](assets/Mastering1.png 'Google Fonts QA Script')
+![Google Fonts QA Script](assets/Finalizing1.png 'Google Fonts QA Script')
 
 ### Double Check designer/meta info
 
 Ensure copyright, author names etc are correct.
 
-![GlyphsApp font info window](assets/Mastering2.png 'GlyphsApp font info window')
+![GlyphsApp font info window](assets/Finalizing2.png 'GlyphsApp font info window')
 
 ### Generate TTFs and check with Fontbakery
 
-![Checking TTF font files with FontBakery in the command line](assets/Mastering3.png 'Checking TTF font files with FontBakery in the command line')
+![Checking TTF font files with FontBakery in the command line](assets/Finalizing3.png 'Checking TTF font files with FontBakery in the command line')
 
-Fix all FAILS/ERRORs until capcake appears. If error cannot be cleared, post issue to [https://github.com/googlefonts/fontbakery](https://github.com/googlefonts/fontbakery)
+Fix all **FAIL**s / **ERROR**s until the cupcake appears. If problems cannot be cleared, post an issue to [https://github.com/googlefonts/fontbakery](https://github.com/googlefonts/fontbakery)
 
 ### Push changes to git!
 

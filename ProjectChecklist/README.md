@@ -203,10 +203,10 @@ Install the very latest version from git master:
 ##### pyfontaine
 
 Python package for analysing binary font files for script and language support.
-Install the very latest version from git master:
+Install the very latest version from git main:
 
     sudo CFLAGS=-I/usr/local/opt/icu4c/include LDFLAGS=-L/usr/local/opt/icu4c/lib pip install pyicu;
-    sudo pip install git+git://github.com/davelab6/pyfontaine.git;
+    sudo pip install git+git://github.com/googlefonts/pyfontaine.git;
 
 ##### Homebrew
 
@@ -229,7 +229,7 @@ FontForge offers a python module that can be useful.
 Autohinter for TTF files.
 [freetype.org/ttfautohint](http://freetype.org/ttfautohint/) and [manual](http://freetype.org/ttfautohint/doc/)
 
-Install the latest version of ttfautohint from git master:
+Install the latest version of ttfautohint from git main:
 
     brew install --HEAD ttfautohint --with-qt;
 
@@ -274,7 +274,7 @@ When run and no output appears, it means the file is good.
 ##### fontbakery
 
 Font checking and fixing tools.
-Install the very latest version from git master:
+Install the very latest version from git main:
 
     mkdir -p ~/src/github.com/googlefonts;
     cd ~/src/github.com/googlefonts;
@@ -285,7 +285,7 @@ Install the very latest version from git master:
 ##### fontmake
 
 New UFO and Glyphs compiler (which is still experimental, but the libre font movement is adopting so please do use and test.)
-Install the very latest version from git master:
+Install the very latest version from git main:
 
     mkdir -p ~/src/github.com/googlei18n;
     cd ~/src/github.com/googlei18n;
@@ -814,7 +814,7 @@ However, to work with many designs (such as multi-script projects) it requires s
 
 In July 2016, Khaled Hosny and Kalapi Gajjar proposed two new vertical metrics schemes which are now recommended ([discussion](https://groups.google.com/forum/#!topic/googlefonts-discuss/W4PHxnLk3JY).)
 
-The GF team adopted Kalapi's schema for new releases only, [documented here](https://github.com/googlefonts/gf-docs/blob/master/VerticalMetrics.md).
+The GF team adopted Kalapi's schema for new releases only, [documented here](https://github.com/googlefonts/gf-docs/blob/main/VerticalMetrics.md).
 
 Khaled's scheme is recommended for projects that followed Raph's 2011 recommendation; in most cases it doesn't create any visible repositioning in any browsers, but testing this is required for each family that is updated.
 
@@ -899,7 +899,7 @@ There are currently 3 milestones for Latin glyphs:
 * Support the 600 "Google Latin Plus" set
 * Support the 1,000 "Google Latin Pro" set
 
-See <https://github.com/googlefonts/gftools/tree/master/Lib/gftools/encodings/GF%20Glyph%20Sets> for more details
+See <https://github.com/googlefonts/gftools/tree/main/Lib/gftools/encodings/GF%20Glyph%20Sets> for more details
 
 #### Figure Sets
 

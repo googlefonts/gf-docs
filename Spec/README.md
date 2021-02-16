@@ -70,7 +70,7 @@ The following resources should bring you up to speed.
 
 ### Tooling
 
-Google Fonts has its own freely-available tools, which will help you master (generate from source files) and check/test your families. All our tools are written in Python.
+Google Fonts has its own freely-available tools, which will help you finalize (generate from source files) and check your families. All our tools are written in Python.
 
 Our tools can be installed using the following terminal commands:
 
@@ -96,7 +96,7 @@ Google Fonts is used in approximately a third of all websites (citation needed, 
 
 #### How we achieve this
 
-- All our font production tools can be run from the commandline. This allows us to write [shell scripts](https://github.com/googlefonts/mavenproFont/blob/master/sources/build.sh) to generate font families.
+- All our font production tools can be run from the commandline. This allows us to write [shell scripts](https://github.com/googlefonts/mavenproFont/blob/main/sources/build.sh) to generate font families.
 - We use [fontmake](https://github.com/googlefonts/fontmake) to build our fonts.
 - If we need to post process generated fonts, we use our `gftools` fix scripts.
 - All of our tools are written in Python. We distribute these tools using [pypi/pip](https://pypi.org/). This allows us to use specific versions of each package. This ensures we're able to get the same results for each build.
@@ -177,7 +177,7 @@ Set to `0` (Installable embedding)
 
 ## Font Vertical Metrics
 
-See https://github.com/googlefonts/gf-docs/tree/master/VerticalMetrics
+See https://github.com/googlefonts/gf-docs/tree/main/VerticalMetrics
 
 ### CJK Vertical Metrics
 
@@ -429,7 +429,7 @@ We have imposed this restriction for the following reasons:
 
 All variable fonts must contain a STAT table (style attributes table). This table has several features but a key benefit is it will enable desktop applications to have better font menus. Currently, most font menus only offer a single drop down menu to select a font style. A STAT table enables us to have a drop down menu for each variable font axis.
 
-Creating good STAT tables is complex. Fortunately, we have created a gftools script called `[gftools gen-stat](https://github.com/googlefonts/gftools/blob/master/bin/gftools-gen-stat.py)` which will generate STAT tables for a family automatically based on our [Axis Registry](https://github.com/google/fonts/tree/master/axisregistry).
+Creating good STAT tables is complex. Fortunately, we have created a gftools script called `[gftools gen-stat](https://github.com/googlefonts/gftools/blob/main/bin/gftools-gen-stat.py)` which will generate STAT tables for a family automatically based on our [Axis Registry](https://github.com/google/fonts/tree/main/axisregistry).
 
 
 At the time of writing (2020-06-20), no desktop applications use the STAT table. However, Indesign, Sketch and other pro type setting applications provide sliders for users to select individual axis locations.
@@ -605,8 +605,8 @@ If the Family is already on Google Fonts, the upgrade shouldn't contain regressi
 **Family is not on Google Fonts**
 
 - Family name must be original. Use https://namecheck.fontdata.com/
-- Family must contain the following [glyphs](https://github.com/googlefonts/gftools/blob/master/Lib/gftools/encodings/latin_unique-glyphs.nam)
-- Vertcal metrics should comply to [our guide](https://github.com/googlefonts/gf-docs/tree/master/VerticalMetrics)
+- Family must contain the following [glyphs](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/encodings/latin_unique-glyphs.nam)
+- Vertcal metrics should comply to [our guide](https://github.com/googlefonts/gf-docs/tree/main/VerticalMetrics)
 
 ## Workflow Tips
 

@@ -66,8 +66,8 @@ Font engineers submit a PR which is then reviewed by Marc and/or me on Tuesdays 
 *—This can be done directly in the PR*
 
 2. Then Marc and/or I check the QA the content of PR to validate it or not. The status label is updated accordingly (Ready to push, need upstream resolution, regresion…).
-3. When it is merged, it goes automatically in the column "In transit". Then, we should check the font in the dev sandbox, but it is often buggy tbh. If the product is well displayed with no errors or bugs, it can go to Sandbox: we add it to the [to_sandbox.txt file](https://github.com/google/fonts/blob/master/to_sandbox.txt). If not, it is blocked, ie a new PR is needed to fix it. 
-4. Once or every 2 weeks, an API engineer is checking the to_sandbox list, and push the list to Sandbox. Once done, Marc and/or I check manually if the font (or the designer information etc.) appears in Sandbox, and if it is working correctly. If yes, it can be added to the [to_production.txt file](https://github.com/google/fonts/blob/master/to_production.txt). If not, it is blocked, ie a new PR is needed to fix it.
+3. When it is merged, it goes automatically in the column "In transit". Then, we should check the font in the dev sandbox, but it is often buggy tbh. If the product is well displayed with no errors or bugs, it can go to Sandbox: we add it to the [to_sandbox.txt file](https://github.com/google/fonts/blob/main/to_sandbox.txt). If not, it is blocked, ie a new PR is needed to fix it. 
+4. Once or every 2 weeks, an API engineer is checking the to_sandbox list, and push the list to Sandbox. Once done, Marc and/or I check manually if the font (or the designer information etc.) appears in Sandbox, and if it is working correctly. If yes, it can be added to the [to_production.txt file](https://github.com/google/fonts/blob/main/to_production.txt). If not, it is blocked, ie a new PR is needed to fix it.
 5. Once or every 2 weeks, an API engineer is checking the to_production list, and push the list to GF API. Once done, Marc and/or I check manually if the entire list got through and display correctly.
 
 In order for the process to be transparent and efficient, we add the labels below.
@@ -92,9 +92,9 @@ In order for the process to be transparent and efficient, we add the labels belo
 
 #### Status after merging
 - **Blocked**: blocked once merged, has to be fixed with new PR
-- **to_sandbox**: PR merged, can be added to [to_sandbox.txt](https://github.com/google/fonts/blob/master/to_sandbox.txt) will be visible in Sandbox within 1-2 weeks
+- **to_sandbox**: PR merged, can be added to [to_sandbox.txt](https://github.com/google/fonts/blob/main/to_sandbox.txt) will be visible in Sandbox within 1-2 weeks
 - **In sandbox**: Visible in sandbox
-- **to_production:** Ready for publication, can be added to [to_production.txt](https://github.com/google/fonts/blob/master/to_production.txt), will go to prod within 1-2 weeks
+- **to_production:** Ready for publication, can be added to [to_production.txt](https://github.com/google/fonts/blob/main/to_production.txt), will go to prod within 1-2 weeks
 - **Live:** Published!
 
 #### Other

@@ -49,11 +49,12 @@ git remote add upstream https://github.com/google/fonts.git
 
 ### Syncing our repo
 
-When you are ready to make a new pull request, you’ll want to make sure your master branch is in sync with the upstream.
+When you are ready to make a new pull request, you’ll want to make sure your main branch is in sync with the upstream.
 
 ```
-git checkout master
-git pull upstream master
+git checkout main
+git fetch upstream
+git rebase upstream/main
 ```
 
 With our repository now synced, we can create a new branch. For simplicity, it's recommended to name branches the same as the family name.
@@ -106,10 +107,10 @@ Taken from the upstream repo https://github.com/JulietaUla/Montserrat at commit 
 
 And finally push your branch to google/fonts
 ```
-git push origin family-name:family-name
+git push origin family-name
 ```
 
-Finally, go to *github.com/google/fonts* and open the PR from family-name-pr to master. You’ll see a banner at the top of your repo, so click the button and make that PR!
+Finally, go to *github.com/google/fonts* and open the PR from `family-name-pr` to `main`. You’ll see a banner at the top of your repo, so click the button and make that PR!
 
 
 ---

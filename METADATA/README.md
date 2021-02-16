@@ -137,7 +137,7 @@ Example:
 ### `designer`
 
 Full name of the type designers or foundries who designed the fonts. 
-Each value typically matches a string in the `designer` key of `info.pb` files in the library repo [/catalog/designers](https://github.com/google/fonts/tree/master/catalog/designers) tree.
+Each value typically matches a string in the `designer` key of `info.pb` files in the library repo [/catalog/designers](https://github.com/google/fonts/tree/main/catalog/designers) tree.
 
 Examples:
 

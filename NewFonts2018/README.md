@@ -4,7 +4,7 @@ This guide from May 2018 explains how to upload new font families to Google Font
 
 ## Uploading
 
-1. Make sure your font family has its own Github repo and complies with the [checklist](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
+1. Make sure your font family has its own Github repo and complies with the [checklist](https://github.com/googlefonts/gf-docs/blob/main/ProjectChecklist.md)
 2. Create your own fork of https://github.com/google/fonts and clone your fork locally
 3. Get a [BrowserStack "open source" account](https://www.browserstack.com/opensource)
 4. Download and install [gfdispatcher]().
@@ -25,8 +25,8 @@ Note that (1) could be made more simple with a set of Font Bakery checks for rep
 6. If the user is happy with the pr, he can resend the pr to google/fonts
 7. google/fonts PR gets reviewed by GF team
 8. PR is merged by GF team
-9. google/fonts master branch is pushed to GF sandbox API and Directory servers and checked
-10. google/fonts master branch is pushed to GF production API and Directory servers
+9. google/fonts `main` branch is pushed to GF sandbox API and Directory servers and checked
+10. google/fonts `main` branch is pushed to GF production API and Directory servers
 
 
 ## What makes for a successful pull request?

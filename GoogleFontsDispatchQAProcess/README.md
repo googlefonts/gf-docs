@@ -24,7 +24,7 @@ to [Google Fonts](https://github.com/google/fonts/). We also outlined a proposed
   - If issues, ask author to fix
   - For high priority families, do fixes; In future, for high priority families, have a way to keep Google Onboarding Manager and author updated daily on what needs to happen next, and have "deadlines" for fixing them
   -  MF: Package into dir on google/fonts
-  - Generate new metadata.pb, [https://github.com/googlefonts/gftools/blob/master/bin/gftools-add-font.py](https://github.com/googlefonts/gftools/blob/master/bin/gftools-add-font.py)
+  - Generate new metadata.pb, [https://github.com/googlefonts/gftools/blob/main/bin/gftools-add-font.py](https://github.com/googlefonts/gftools/blob/main/bin/gftools-add-font.py)
     - Add font category and author fields to metadata
 - MF: Rerun QA tools. Using wrapper script (MF to upload this week)
 - MF: Submit PR
@@ -37,7 +37,7 @@ to [Google Fonts](https://github.com/google/fonts/). We also outlined a proposed
 - MF: Checks repo is the official repo
 - MF: QA upstream.
 - MF: Repackage
-  - Regenerate metadata.pb using, [https://github.com/googlefonts/gftools/blob/master/bin/gftools-add-font.py](https://github.com/googlefonts/gftools/blob/master/bin/gftools-add-font.py)
+  - Regenerate metadata.pb using, [https://github.com/googlefonts/gftools/blob/main/bin/gftools-add-font.py](https://github.com/googlefonts/gftools/blob/main/bin/gftools-add-font.py)
 - MF: Submit PR
 
 

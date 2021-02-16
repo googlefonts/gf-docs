@@ -80,17 +80,17 @@ The last option should be used as a last resort only.
 - Every file/folder with an asterisk is essential.
 - Every folder should should be lowercase only.
 - The **old** folder should contain the original files from the repo you are working on. They should be subfoldered with the sources version number.
-- Implement everything from [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)
-- To test your repo matches the steps mentioned in **[ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)**, run the script **Google Fonts > QA**. Fix all the errors until the script passes.
+- Implement everything from [ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/main/ProjectChecklist.md)
+- To test your repo matches the steps mentioned in **[ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/main/ProjectChecklist.md)**, run the script **Google Fonts > QA**. Fix all the errors until the script passes.
 
 ![alt tag](assets/UpgradingExistingRepositories-gf-glyphs-scripts-qa.png)
 
-- To automatically fix a lot of errors and to make sure the project conforms to the **[ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/master/ProjectChecklist.md)**, run the script **Google Fonts > Fix fonts for GF spec**.
+- To automatically fix a lot of errors and to make sure the project conforms to the **[ProjectChecklist.md](https://github.com/googlefonts/gf-docs/blob/main/ProjectChecklist.md)**, run the script **Google Fonts > Fix fonts for GF spec**.
 
 - Implement everything which is not design intensive from the [Cleanup Checklist](https://docs.google.com/spreadsheets/d/1vFNVR1lf14S1cthPQ59Mav5uZCnWw8_nS3ehKwueUz0/edit#gid=1988585029)
   _- MM compatiblity, anchors, kerning can take several days to implement. These should be fixed by the designer if there is enough time._
 - Fix any issues reported for the family in [google/fonts/issues](https://github.com/google/fonts/issues). Again, some issues involving design or extensions will take too long to implement.
-- Check and fix vertical metrics. Running **Google Fonts > Fix fonts for GF spec** will solve this automatically. For further info in vertical metrics see the [Vertical Metrics document](https://github.com/googlefonts/gf-docs/blob/master/VerticalMetrics.md)
+- Check and fix vertical metrics. Running **Google Fonts > Fix fonts for GF spec** will solve this automatically. For further info in vertical metrics see the [Vertical Metrics document](https://github.com/googlefonts/gf-docs/blob/main/VerticalMetrics.md)
 - Round up the .glyph's file version number by +1.000. eg v2.1000 -> v3.000
 - Push upgraded repo to your github account
 - Send repo link to designer to work on. Link should be included in your daily work log on the [Google Fonts Group Discussion board](https://groups.google.com/forum/#!forum/googlefonts-discuss).
@@ -133,13 +133,13 @@ _These will need further updating to reflect the new state of the project_
 
 #### commit 4
 
-_Generated .glyphs files from the extremes of MM .vfb file_
+_Generated `.glyphs` files from the extremes of MM .vfb file_
 
 _I used this script in [Fontlab](https://github.com/schriftgestalt/Glyphs-Scripts/blob/master/Glyphs%20Export.py). '\_' in file name to denote it is a temporary file. We will delete these later, once we have them combined into 1 glyphs file'_
 
 #### commit 5
 
-_Cabin: Both temporary glyphs files have been combined into 1 master .glyphs file._
+_Cabin: Both temporary glyphs files have been combined into 1 master `.glyphs` file._
 
 _Temp files also deleted_
 
@@ -221,7 +221,7 @@ _Cabin.glyphs: Fixed all errors reported in Preflight font script._
 
 ![alt tag](assets/UpgradingExistingRepositories-font-preflight-test2.png)
 
-_We now have a clean repo, 1 master .glyphs file with all masters and instances, correct vertical metrics, Better OT features. Luckily the original font was very good quality. Most fonts are not this easy to work on._
+_We now have a clean repo, 1 master `.glyphs` file with all masters and instances, correct vertical metrics, Better OT features. Luckily the original font was very good quality. Most fonts are not this easy to work on._
 
 _I will need to repeat all the steps we did on the fonts for the Italics and Condensed files which existed in the old repo. I will also need to generate some tests fonts and run them through font bakery. I leave the font bakery step till the designers have finished working on the repo._
 
