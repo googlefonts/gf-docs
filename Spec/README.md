@@ -388,7 +388,8 @@ fvar instances and STAT entry particles must be based on the following tables.
 |-------|-----------------------|
 | Xpt   | X                     |
 
-X can be any **integer number value*. 
+X can be any **integer number value**. 
+The default value should not be elided in the STAT table (#83).
 
 "Display" or "Banner" or "Micro" are not allowed. 
 
