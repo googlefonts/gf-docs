@@ -295,6 +295,11 @@ If multiple ID 0s exist, they must match.
 ### `subsets`
 
 List of all character subsets available in Google Fonts API for the given font family. 
+
+These subsets are defined in [github.com/googlefonts/gftools/blob/main/Lib/gftools/encodings](https://github.com/googlefonts/gftools/blob/main/Lib/gftools/encodings) with the exception of the `menu` subset.
+
+The menu subset is the characters of the font family name (defined above) and is used in font picker UIs to render the font name in itself.
+
 29 possible values:
 
 * `arabic`
