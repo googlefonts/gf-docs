@@ -76,8 +76,6 @@ In order for the process to be transparent and efficient, we add the labels belo
 #### PERSONAL BOARDS
 Let's take the example of my board: **[Rosa's Roadmap](https://github.com/google/fonts/projects/3)**. The board shows issues related to each project (one font = one issue. 
 
-![Rosa's Roadmap](![Uploading Capture d’écran 2021-04-14 à 18.32.44.png…])
-
 You can access a lot of the issue's informations from the board. Particularly the first comment, in which you can add the link to the upstream repo and a to-do list to keep an archive of the progress of the project. When a PR is opened, we need to link it to its related issue: then the board is automated to move the issue from "in progress" to "done" when the PR is merged.
 
 ![Issue pannel from the board](https://user-images.githubusercontent.com/12222436/114746522-28a86080-9d50-11eb-9a77-7415cfaa08f5.png)
