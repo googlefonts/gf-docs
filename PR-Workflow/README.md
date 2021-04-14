@@ -23,35 +23,6 @@ For the time being, the Milestones and the Pipeline Overview are redundant and u
 
 In a second time, I plan to create templates for issues to help users in defining them and spare us some research time.
 
-Below is a list of labels dedicated to the issue tracker.
-
-#### Add column
-- **VF New**: The suggested font is variable
-- **Static New**: The suggested font is not variable
-- **Check files**: Upstream repo to check for selection
-
-#### Upgrade column
-- **VF replacement**: Replace statics by a variable font
-- **Expand style/axis**: Expansion of the design space
-- **Expand language support**: Addition of languages and/or scripts
-
-#### Fix column 
-- **Metadata**: Problem in METADATA.pb (date of publication, author name etc.)
-- **License**: License is not opensource or not standard
-- **Description**: Html snippet contains typo or errors
-- **Display bug**: concerns outline, hinting and vertical metrics issues mainly
-
-#### Priority levels (light blue)
-- **Priority 0 - Urgent and Important**
-- **Priority 1 - Quick or Urgent but not Important**
-- **Priority 2 - Important but not Urgent**
-- **Priority 3 - Should happen**
-
-#### Other
-- **Not font issue**: Issue that can't be fix with an updated font
-- **Not GF issue**: Issue that can't be fix by Google Fonts
-- **GF API**: Issue that can't be fix by Google Fonts
-
 ### PRs
 The **[Traffic Jam](https://github.com/google/fonts/projects/1)** project is managed by me. It is meant to follow PR from submission to publication, knowing that its content is supposed to be pushed to 3 different servers: the developper sandbox, the sandbox, and finally Google Font API. 
 
@@ -74,8 +45,9 @@ In order for the process to be transparent and efficient, we add the labels belo
 
 #### Category
 - **New Font**: Font or a font family addition
-- **Font Upgrade**: Fix, update or VF replacement
-- **Description/Metadata**: Modification in a font directory but not the font itself (ie. html snippet or METADATA.pb)
+- **Upgrade**: multiple fixes, upgrade or VF replacement
+- **Fix**: small fix(es) which doesn't need much communication
+- **Description/Metadata/OFL**: Modification in a font directory but not the font itself (ie. html snippet or METADATA.pb)
 - **Catalog**: Designer's information
 - **Axis Registry**: variable axes registration related stuff
 
@@ -102,13 +74,19 @@ In order for the process to be transparent and efficient, we add the labels belo
 - **Need Dave's opinion**: Daves need to answer this
 
 #### PERSONAL BOARDS
-Let's take the example of my board: **[Rosa's Roadmap](https://github.com/google/fonts/projects/3)**. The board list projects to which we link issues and PR, to have a better overview of all actions attempted for this project in the google/fonts repository. 
+Let's take the example of my board: **[Rosa's Roadmap](https://github.com/google/fonts/projects/3)**. The board shows issues related to each project (one font = one issue. 
 
-![Rosa's Roadmap](https://user-images.githubusercontent.com/12222436/104586304-9798ef00-5665-11eb-837c-b3ec6d6477af.png)
+![Rosa's Roadmap](![Uploading Capture d’écran 2021-04-14 à 18.32.44.png…])
 
-Vivi and Yanone organize them as they wish, although, it makes project tracking easier to create at least one card per project, link them to the upstream repo, and add references to related issues and PRs. These boards are of course useless if they are not updated reguarly.
+You can access a lot of the issue's informations from the board. Particularly the first comment, in which you can add the link to the upstream repo and a to-do list to keep an archive of the progress of the project. When a PR is opened, we need to link it to its related issue: then the board is automated to move the issue from "in progress" to "done" when the PR is merged.
+
+![Issue pannel from the board](https://user-images.githubusercontent.com/12222436/114746522-28a86080-9d50-11eb-9a77-7415cfaa08f5.png)
+
+These boards are of course useless if they are not updated reguarly.
 
 
 #### PERSONAL THOUGHTS ON STUFF WE CAN'T REALLY RESOLVE FOR NOW
 
-The prohibition of using third-part plug-in to improve the github projects makes is also painful. Manual stuff could be spared thanks to some plugins — like the interaction between different project boards. It could also help to improve clarity and readability (especially the personal roadmaps which hurt my eyes everytimes).
+The prohibition of using third-part plug-in to improve the github projects makes this workflow more laborious than it could. Manual stuff could be spared thanks to some plugins — like the interaction between different project boards. It could also help to improve clarity and readability.
+
+Finally, the fact that google/fonts repo is watched by a large audience leads to people commenting our actions in a regular basis. Some interventions are welcome and are actually helping, but most of the time it is making our work a bit more harder and the space of a bit more unsafe. After discussing with the team we thought it would be a good idea to create a "code of conduct" where it could be explained that google/fonts is actually a workspace and therefore needs to be respected as such.
