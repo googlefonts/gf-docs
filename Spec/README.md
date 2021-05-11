@@ -433,7 +433,7 @@ All variable fonts must contain a STAT table (style attributes table). This tabl
 Creating good STAT tables is complex. Fortunately, we have created a gftools script called `[gftools gen-stat](https://github.com/googlefonts/gftools/blob/main/bin/gftools-gen-stat.py)` which will generate STAT tables for a family automatically based on our [Axis Registry](https://github.com/google/fonts/tree/main/axisregistry).
 
 
-At the time of writing (2020-06-20), no desktop applications use the STAT table. However, Indesign, Sketch and other pro type setting applications provide sliders for users to select individual axis locations.
+At the time of writing (2021-05-11), only one desktop application use the STAT table: Microsoft Office for Mac (version 16.46, February 2021 update). However, Indesign, Sketch and other pro type setting applications provide sliders for users to select individual axis locations.
 
 We recommend reading the [MS STAT table spec](https://docs.microsoft.com/en-us/typography/opentype/spec/stat).
 
