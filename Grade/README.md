@@ -1,8 +1,10 @@
 # How to design Grade axis masters
 
+By David Berlow
+
 _“OMG, I wish I knew about this before jumping into Grades. I had a feeling that there was a trick”_ – Ilya Ruderman
 
-What is Grade?
+### What is Grade?
 
 A grade axis (`GRAD`), is a valuable tool in typography for correcting output versus the specification or to satisfy a preference for lighter or dark text, without changing the layout, either horizontally, or the vertical relations of alignments.
 
@@ -20,7 +22,7 @@ _Line 3: What line 1 must look like in order to correct the appearance_
 
 _Line 4: Weight the user has selected to use with a correction from the grade axis._
 
-2. How does Font Bureau make them?
+### How does Font Bureau make them?
 
 Start by making a copy of the variable font’s default font, mentally or programmatically locking the advance widths and kerning to the default’s values.
 
@@ -37,6 +39,8 @@ Once values have been selected for min and or max, the letter drawing for a Lati
 1. The contour of the grade min must remain at or within the contour of the default, and
 
 2. The contour of the grade max must remain at or beyond the contour of the default.
+
+### Caveats
 
 There are few if any exceptions to these rules.
 
