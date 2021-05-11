@@ -89,10 +89,10 @@ Below are lots of examples of grade masters drawn with various issues (before, l
 
 <table>
 <th>before</th><th>after</th>
-<tr><td><img align="left" width="100%" src="images/9.png"> </td><td><img width="100%" src="images/10.png"></tr>
-<tr><td><img align="left" width="100%" src="images/11.png"></td><td><img width="100%" src="images/12.png"></tr>
-<tr><td><img align="left" width="100%" src="images/13.png"></td><td><img width="100%" src="images/14.png"></tr>
-<tr><td><img align="left" width="100%" src="images/15.png"></td><td><img width="100%" src="images/16.png"></tr>
-<tr><td><img align="left" width="100%" src="images/17.png"></td><td><img width="100%" src="images/18.png"></tr>
-<tr><td><img align="left" width="100%" src="images/19.png"></td><td><img width="100%" src="images/20.png"></tr>
+<tr><td><img align="left" width="100%" src="images/9.png"> </td><td><img width="100%" src="images/10.png"></td></tr>
+<tr><td><img align="left" width="100%" src="images/11.png"></td><td><img width="100%" src="images/12.png"></td></tr>
+<tr><td><img align="left" width="100%" src="images/13.png"></td><td><img width="100%" src="images/14.png"></td></tr>
+<tr><td><img align="left" width="100%" src="images/15.png"></td><td><img width="100%" src="images/16.png"></td></tr>
+<tr><td><img align="left" width="100%" src="images/17.png"></td><td><img width="100%" src="images/18.png"></td></tr>
+<tr><td><img align="left" width="100%" src="images/19.png"></td><td><img width="100%" src="images/20.png"></td></tr>
 </table>
