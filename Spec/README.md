@@ -241,32 +241,53 @@ Font filenames must be based on the following schema:
 
 The filename must not contain anything else.
 
+| Family Name            | Thin                      
+| Family Name            | ExtraLight                
+| Family Name            | Light                     
+| Family Name            | Regular                   
+| Family Name            | Medium                    
+| Family Name            | SemiBold                  
+| Family Name            | Bold                      
+| Family Name            | ExtraBold                 
+| Family Name            | Black                     
+|                        |                           
+| Family Name            | Thin Italic               
+| Family Name            | ExtraLight Italic         
+| Family Name            | Light Italic              
+| Family Name            | Italic                    
+| Family Name            | Medium Italic             
+| Family Name            | SemiBold Italic           
+| Family Name            | Bold Italic               
+| Family Name            | ExtraBold Italic          
+| Family Name            | Black Italic              
 
 ### Supported Styles
 
 Google’s static fonts API supports up to 18 styles in one family: up to 9 weights (Thin–Black), + their matching Italics. The table below lists each style’s specific name table and bit settings.
 
-| Filename                        | Family Name (ID 1, Mac) | Subfamily Name (ID 2, Mac) | Family Name (ID 1, Win) | Subfamily Name (ID 2, Win) | Typographic Family Name (ID 16) | Typo Subfamily Name (ID 17) | OS/2 usWeightClass | OS/2 fsSelection | hhea macStyle |
+`fontmake` doesn’t produce platform 1 (Mac) name entries any more. The respective columns below are for reference, but are optional.
+
+| Filename                        | Family Name (ID 1, Win) | Subfamily Name (ID 2, Win) | **optional:** Family Name (ID 1, Mac) | **optional:** Subfamily Name (ID 2, Mac) | Typographic Family Name (ID 16) | Typo Subfamily Name (ID 17) | OS/2 usWeightClass | OS/2 fsSelection | hhea macStyle |
 |---------------------------------|------------------------|---------------------------|------------------------|---------------------------|-------------------------------------|---------------------------------|--------------------|---------------------|----------------|
-| FamilyName-Thin.ttf             | Family Name            | Thin                      | Family Name Thin       | Regular                   | Family Name                         | Thin                            | 100                | bit 6               |                |
-| FamilyName-ExtraLight.ttf       | Family Name            | ExtraLight                | Family Name ExtraLight | Regular                   | Family Name                         | ExtraLight                      | 200                | bit 6               |                |
-| FamilyName-Light.ttf            | Family Name            | Light                     | Family Name Light      | Regular                   | Family Name                         | Light                           | 300                | bit 6               |                |
+| FamilyName-Thin.ttf             | Family Name Thin       | Regular                   | Family Name            | Thin                      | Family Name                         | Thin                            | 100                | bit 6               |                |
+| FamilyName-ExtraLight.ttf       | Family Name ExtraLight | Regular                   | Family Name            | ExtraLight                | Family Name                         | ExtraLight                      | 200                | bit 6               |                |
+| FamilyName-Light.ttf            | Family Name Light      | Regular                   | Family Name            | Light                     | Family Name                         | Light                           | 300                | bit 6               |                |
 | FamilyName-Regular.ttf          | Family Name            | Regular                   | Family Name            | Regular                   |                                     |                                 | 400                | bit 6               |                |
-| FamilyName-Medium.ttf           | Family Name            | Medium                    | Family Name Medium     | Regular                   | Family Name                         | Medium                          | 500                | bit 6               |                |
-| FamilyName-SemiBold.ttf         | Family Name            | SemiBold                  | Family Name SemiBold   | Regular                   | Family Name                         | SemiBold                        | 600                | bit 6               |                |
+| FamilyName-Medium.ttf           | Family Name Medium     | Regular                   | Family Name            | Medium                    | Family Name                         | Medium                          | 500                | bit 6               |                |
+| FamilyName-SemiBold.ttf         | Family Name SemiBold   | Regular                   | Family Name            | SemiBold                  | Family Name                         | SemiBold                        | 600                | bit 6               |                |
 | FamilyName-Bold.ttf             | Family Name            | Bold                      | Family Name            | Bold                      |                                     |                                 | 700                | bit 5               | bit 0          |
-| FamilyName-ExtraBold.ttf        | Family Name            | ExtraBold                 | Family Name ExtraBold  | Regular                   | Family Name                         | ExtraBold                       | 800                | bit 6               |                |
-| FamilyName-Black.ttf            | Family Name            | Black                     | Family Name Black      | Regular                   | Family Name                         | Black                           | 900                | bit 6               |                |
+| FamilyName-ExtraBold.ttf        | Family Name ExtraBold  | Regular                   | Family Name            | ExtraBold                 | Family Name                         | ExtraBold                       | 800                | bit 6               |                |
+| FamilyName-Black.ttf            | Family Name Black      | Regular                   | Family Name            | Black                     | Family Name                         | Black                           | 900                | bit 6               |                |
 |                                 |                        |                           |                        |                           |                                     |                                 |                    |                     |                |
-| FamilyName-ThinItalic.ttf       | Family Name            | Thin Italic               | Family Name Thin       | Italic                    | Family Name                         | Thin Italic                     | 100                | bit 0               | bit 1          |
-| FamilyName-ExtraLightItalic.ttf | Family Name            | ExtraLight Italic         | Family Name ExtraLight | Italic                    | Family Name                         | ExtraLight Italic               | 200                | bit 0               | bit 1          |
-| FamilyName-LightItalic.ttf      | Family Name            | Light Italic              | Family Name Light      | Italic                    | Family Name                         | Light Italic                    | 300                | bit 0               | bit 1          |
+| FamilyName-ThinItalic.ttf       | Family Name Thin       | Italic                    | Family Name            | Thin Italic               | Family Name                         | Thin Italic                     | 100                | bit 0               | bit 1          |
+| FamilyName-ExtraLightItalic.ttf | Family Name ExtraLight | Italic                    | Family Name            | ExtraLight Italic         | Family Name                         | ExtraLight Italic               | 200                | bit 0               | bit 1          |
+| FamilyName-LightItalic.ttf      | Family Name Light      | Italic                    | Family Name            | Light Italic              | Family Name                         | Light Italic                    | 300                | bit 0               | bit 1          |
 | FamilyName-Italic.ttf           | Family Name            | Italic                    | Family Name            | Italic                    |                                     |                                 | 400                | bit 0               | bit 1          |
-| FamilyName-MediumItalic.ttf     | Family Name            | Medium Italic             | Family Name Medium     | Italic                    | Family Name                         | Medium Italic                   | 500                | bit 0               | bit 1          |
-| FamilyName-SemiBoldItalic.ttf   | Family Name            | SemiBold Italic           | Family Name SemiBold   | Italic                    | Family Name                         | SemiBold Italic                 | 600                | bit 0               | bit 1          |
+| FamilyName-MediumItalic.ttf     | Family Name Medium     | Italic                    | Family Name            | Medium Italic             | Family Name                         | Medium Italic                   | 500                | bit 0               | bit 1          |
+| FamilyName-SemiBoldItalic.ttf   | Family Name SemiBold   | Italic                    | Family Name            | SemiBold Italic           | Family Name                         | SemiBold Italic                 | 600                | bit 0               | bit 1          |
 | FamilyName-Bold.ttf             | Family Name            | Bold Italic               | Family Name            | Bold Italic               |                                     |                                 | 700                | bit 5 + bit 0       | bit 0 + bit 1  |
-| FamilyName-ExtraBold.ttf        | Family Name            | ExtraBold Italic          | Family Name ExtraBold  | Italic                    | Family Name                         | ExtraBold Italic                | 800                | bit 0               | bit 1          |
-| FamilyName-Black.ttf            | Family Name            | Black Italic              | Family Name Black      | Italic                    | Family Name                         | Black Italic                    | 900                | bit 0               | bit 1          |
+| FamilyName-ExtraBold.ttf        | Family Name ExtraBold  | Italic                    | Family Name            | ExtraBold Italic          | Family Name                         | ExtraBold Italic                | 800                | bit 0               | bit 1          |
+| FamilyName-Black.ttf            | Family Name Black      | Italic                    | Family Name            | Black Italic              | Family Name                         | Black Italic                    | 900                | bit 0               | bit 1          |
 
 
 If a family has styles which are not in the above table, they should be released as a separate/new family. To do this, append any Unsupported style (e.g Condensed) to the family name, so it becomes part of the family name, rather than part of the style name. We frequently use this approach for [Condensed](https://fonts.google.com/?query=condensed) and [smallcap](https://fonts.google.com/?query=sc) sibling families.
