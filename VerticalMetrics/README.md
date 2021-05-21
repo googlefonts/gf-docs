@@ -28,7 +28,7 @@ This rule can be voided if a font is being upgraded and previously had inconsist
 
 *For brevity, we'll refer to the 3 sets of metrics as Typo, Hhea, Win.* 
 
-### 4. Win Ascent and Win Descent values must be the same as the family's tallest/deepest yMin and yMax bbox values
+### 4. Win Ascent and Win Descent values must be the same as the family's tallest/deepest yMin and yMax bbox values (rounded up)
 The Microsoft [OpenType specification](https://www.microsoft.com/typography/otspec/os2.htm#wa). Recommends the following:
 >If any clipping is unacceptable, then the value should be set to yMax’.
 
@@ -36,16 +36,30 @@ The Microsoft [OpenType specification](https://www.microsoft.com/typography/otsp
 
 By changing these values, the line height will be increased in MS applications. This is can lead to very loose line heights if the bbox is exceedingly tall. This mainly occurs in families featuring Vietnamese, Devanagari and Arabic or other tall scripts. To counteract this, we enable [Use Typo Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) and set the Typo values to match the previous Win values. By swapping the sets, we should retain the previous line heights in Windows as well as remove the clipping.
 
+We want them to be rounded up to avoid clipping at small sizes.
+
 ### 5. [Use_Typo_Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) must be enabled
 This will force MS Applications to use the OS/2 Typo values instead of the Win values. By doing this, we can freely set the Win values to avoid clipping and control the line height with the typo values. It has the added benefit of future line height compatibility. When a new script is added, we simply change the Win values to the new yMin and yMax, without needing to worry if the line height have changed.
 
 ### 6. If the family is being updated, the line height must visually match the previous release.
 Some applications do not allow users to control the line height/leading of their fonts. Word processors and text editors are common culprits. It is essential their documents do not reflow.
 
-### 7. Hhea and Typo metrics should match
+### 7. Hhea and Typo metrics should be equal
 Hhea metrics are used in Mac OS X, whilst Microsoft uses Typo when Use_Typo_Metrics is enabled. They should ideally be identical.
 
 This rule can be voided if a font is being upgraded and previously had inconsistent values.
+
+### 8. LineGap values must be 0
+The LineGap value is a space added to the lineheight created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment. It will be added under the descender height in most desktop apps, will be shared above the Ascender height and under the descender height in web browsers, and ignored in MS Word if use_typo_metrics is enabled. For better linespacing consistentcy accross platforms, (typo/hhea)linegap values must be 0.
+
+### 9. Caps should be centered if the font "main" script has uppercases (like Latin, Greek, Cyrillic)
+Web designers will thank you if you managed to have the same space above and under the uppercase letters: typoAscender-CapsHeight=-typoAscender.
+
+### 10. Typo/HheaAscender value should be higher than Agrave's y-max
+Indeed, recent Mac OS native apps like TextEdit are guessing the first text baseline according to this letter, if typo/hheaAscender is lower than the highest point. This is to prevent croping the top of the glyph in the app window (like in older version of it).
+
+### 11. General lineheight could be UPM * 120%
+120% of the text size is conventional linespacing and this is what Indesign does by default. This is if you want to have even more compatible v-metrics. But higher values like 130% also has good result.
 
 ---
 
@@ -63,7 +77,7 @@ Marc Foley (@m4rc1e) has outlined a [vertical metric schema](https://github.com/
 
 Set these values to be the same across all masters to ensure that output instances have equal vertical metrics:
 
-- `TypoAscender` and `hheaAscender` are set to height of tallest uppercase glyph with single accent (probably Â or Å)
+- `TypoAscender` and `hheaAscender` are set to height of tallest uppercase glyph with single accent (probably À)
 - `typoLineGap` and `hheaLineGap` set to 0
 - `TypoDescender` and `hheaDescender` set to lowest a-z letter (p, j, q)
 - `winAscent` and `winDecent` set to `yMax` and `yMin` (absolute highest and lowest point in the font)
@@ -90,7 +104,7 @@ A new family has the following qualities:
     - Hhea Ascender = `1092` (Typo Ascender)
     - Hhea Descender = `-216` (Typo Descender)
     - Hhea LineGap = `0`. (Typo LineGap)
-    - Win Ascent = `1116`. (Font bbox yMax)
+    - Win Ascent = `1120`. (Font bbox yMax rounded up)
     - Win Descent = `320`. (*absolute value* of Font bbox yMin – a positive integer)
 
 2. Be sure to copy these same metric values to all of the masters in the family
