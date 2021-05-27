@@ -28,18 +28,22 @@ This rule can be voided if a font is being upgraded and previously had inconsist
 
 *For brevity, we'll refer to the 3 sets of metrics as Typo, Hhea, Win.* 
 
-### 4. Win Ascent and Win Descent values must be the same as the family's tallest/deepest yMin and yMax bbox values (rounded up)
+### 4. WinAscent and WinDescent values must be the same as the family's tallest/deepest yMin and yMax bbox values
 The Microsoft [OpenType specification](https://www.microsoft.com/typography/otspec/os2.htm#wa). Recommends the following:
 >If any clipping is unacceptable, then the value should be set to yMax’.
 
-[Overpass issue #33](https://github.com/RedHatBrand/Overpass/issues/33) demonstrates what happens in MS applications when the Win Ascent and Descent are not set correctly.
+[Overpass issue #33](https://github.com/RedHatBrand/Overpass/issues/33) demonstrates what happens in MS applications when the WinAscent and Descent are not set correctly.
 
 By changing these values, the line height will be increased in MS applications. This is can lead to very loose line heights if the bbox is exceedingly tall. This mainly occurs in families featuring Vietnamese, Devanagari and Arabic or other tall scripts. To counteract this, we enable [Use Typo Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) and set the Typo values to match the previous Win values. By swapping the sets, we should retain the previous line heights in Windows as well as remove the clipping.
 
-We want them to be rounded up to avoid clipping at small sizes.
-
 ### 5. [Use_Typo_Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) must be enabled
-This will force MS Applications to use the OS/2 Typo values instead of the Win values. By doing this, we can freely set the Win values to avoid clipping and control the line height with the typo values. It has the added benefit of future line height compatibility. When a new script is added, we simply change the Win values to the new yMin and yMax, without needing to worry if the line height have changed.
+This will force MS Applications to use the Typo values instead of the Win values. By doing this, we can freely set the Win values to avoid clipping and control the line height with the typo values. It has the added benefit of future line height compatibility. When a new script is added, we simply change the Win values to the new yMin and yMax, without needing to worry if the line height have changed. Note that the use_typo_metric flag is also called: fsSelection bit 7 because of its actual name in the OS/2 table:
+
+<img width="378" alt="What it looks like with ttx" src="https://user-images.githubusercontent.com/12222436/119845011-359ca000-bf09-11eb-85b2-6eacdebedeac.png">
+
+- In GlyphsApp, set `Use Typo Metrics` custom parameter set to `true` in the **Font** tab of **Font Info**.
+- In RoboFont, this is under **Font Info > OpenType > OS/2 Table > fsSelection > USE_TYPO_METRICS**.
+
 
 ### 6. If the family is being updated, the line height must visually match the previous release.
 Some applications do not allow users to control the line height/leading of their fonts. Word processors and text editors are common culprits. It is essential their documents do not reflow.
@@ -50,20 +54,28 @@ Hhea metrics are used in Mac OS X, whilst Microsoft uses Typo when Use_Typo_Metr
 This rule can be voided if a font is being upgraded and previously had inconsistent values.
 
 ### 8. LineGap values must be 0
-The LineGap value is a space added to the lineheight created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment. It will be added under the descender height in most desktop apps, will be shared above the Ascender height and under the descender height in web browsers, and ignored in MS Word if use_typo_metrics is enabled. For better linespacing consistentcy accross platforms, (typo/hhea)linegap values must be 0.
+The LineGap value is a space added to the lineheight created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment. It will be added under the descender height in most desktop apps, will be shared above the Ascender height and under the descender height in web browsers, and ignored in MS Word if use_typo_metrics is disabled. For better linespacing consistency accross platforms, (typo/hhea)linegap values must be 0.
 
-### 9. Caps should be centered if the font "main" script has uppercases (like Latin, Greek, Cyrillic)
-Web designers will thank you if you managed to have the same space above and under the uppercase letters: typoAscender-CapsHeight=-typoAscender.
+### 9. Caps should be centered if the font's primary script has uppercaseses letterforms such as like Latin, Greek and Cyrillic
+Web designers will thank you if you managed to have the same space above and under the uppercase letters: typoAscender-CapsHeight=(-)typoDescender.
 
-### 10. Typo/HheaAscender value should be higher than Agrave's y-max
-Indeed, recent Mac OS native apps like TextEdit are guessing the first text baseline according to this letter, if typo/hheaAscender is lower than the highest point. This is to prevent croping the top of the glyph in the app window (like in older version of it).
+### 10. typo/hheaAscender value should be greater than Agrave's yMax
+Some Mac applications such as TextEdit will position the first line of text by, either, using the height of the Agrave, or by using the font’s hheaAscender (whichever is taller). To keep the positioning consistent across a family, we require that the hheaAscender is greater than the tallest Agrave in the family. See this issue for further info, https://github.com/googlefonts/fontbakery/issues/3170.
 
-### 11. General lineheight could be UPM * 120%
-120% of the text size is conventional linespacing and this is what Indesign does by default. This is if you want to have even more compatible v-metrics. But higher values like 130% also has good result.
+### 11. The sum of the font’s vertical metric values (absolute) should be 20-30% greater than the font’s UMP.
+
+By default, DTP applications such as Indesign will set the line height to be 20% greater than the font’s size (10pt size / 12pt leading). For consistency, we recommend setting the vertical metric values so their sum is in a similar range e.g
+
+UPM: `1000`
+(typo/hhea)Ascenders: `900`
+(typo/hhea)Descenders: `-300`
+Total: ascender + abs(descenders) = `1200`
+
+Exceptions can be made if the font’s primary script isn’t Latin, Greek or Cyrillic. Some scripts such as Devanagari contain very tall and shallow glyphs. It may make more sense for the sum of the metrics to exceed 130% to avoid interline glyph collisions.
 
 ---
 
-## Examples:
+## Concrete cases:
 
 Setting vertical metrics usually falls into the following two categories:
 
@@ -73,39 +85,36 @@ Setting vertical metrics usually falls into the following two categories:
 
 ### 1. Calculating the vertical metrics for a new family
 
-Marc Foley (@m4rc1e) has outlined a [vertical metric schema](https://github.com/googlefonts/fontbakery/issues/2164#issuecomment-436595886) which is ideal for new releases (see further below for vertical metrics in upgraded families).
-
 Set these values to be the same across all masters to ensure that output instances have equal vertical metrics:
 
-- `TypoAscender` and `hheaAscender` are set to height of tallest uppercase glyph with single accent (probably À)
+- `typoAscender` and `hheaAscender` set higher than À
 - `typoLineGap` and `hheaLineGap` set to 0
-- `TypoDescender` and `hheaDescender` set to lowest a-z letter (p, j, q)
+- `TypoDescender` and `hheaDescender` set to the lowest a-z letter (p, j, q, g) or under
 - `winAscent` and `winDecent` set to `yMax` and `yMin` (absolute highest and lowest point in the font)
-- `fsSelection` bit 7 enabled 
-  - In GlyphsApp, set `Use Typo Metrics` custom parameter set to `true` in the **Font** tab of **Font Info**.
-  - In RoboFont, this is under **Font Info > OpenType > OS/2 Table > fsSelection > USE_TYPO_METRICS**.
+- `use_typo_metrics` is enabled 
 
-Expected result: vertical metrics should be around 130% of UPM. Anything greater, and the metrics may look too loose.
+Expected result: vertical metrics should be around 120-130% of UPM. Anything greater, and the metrics may look too loose.
 
 **Example**
 
 A new family has the following qualities:
-- UPM is 1000
-- Tallest uppercase glyph (Bold Å, in this family) has a height of `1092`
-- Lowest lowercase glyph a-z (Bold g, in this family) has a lowest point of `-216`
-- yMax is `1116`
-- yMin is `-320`
+- UPM is `1000`
+- À yMax (bold for this family) = `940`
+- a-z yMin (`g` bold in this family) = `235`
+- Caps height (`H`or `Z` bbox height) = `730`
+- yMax = `1116`
+- yMin = `-320`
 
-1. Set the default values, following Marc's schema:
+1. Set the default values, following the schema above:
 
-    - Typo Ascender = `1092`. Set to our Cap height
-    - Typo Descender = `-216`. Typo Ascender - upm
-    - Typo LineGap = `0`
-    - Hhea Ascender = `1092` (Typo Ascender)
-    - Hhea Descender = `-216` (Typo Descender)
-    - Hhea LineGap = `0`. (Typo LineGap)
-    - Win Ascent = `1120`. (Font bbox yMax rounded up)
-    - Win Descent = `320`. (*absolute value* of Font bbox yMin – a positive integer)
+    - typoAscender = `965`. (UPM * 1.2 - CapsHeight) / 2 + CapsHeight (which is greater than Agrave, perfect.)
+    - typoDescender = `-235`. (UPM * 1.2 - CapsHeight) / 2 (which is equal to lowest descender letterform)
+    - typoLineGap = `0`
+    - hheaAscender = `965` (typoAscender)
+    - hheaDescender = `-235` (typoDescender)
+    - hheaLineGap = `0` (typoLineGap)
+    - winAscent = `1116` (Font bbox yMax)
+    - winDescent = `320` (*absolute value* of Font bbox yMin ie. a positive integer)
 
 2. Be sure to copy these same metric values to all of the masters in the family
 3. Enable Use_Typo_Metrics
@@ -119,32 +128,32 @@ Imagine we have a previous v1.000 release. We're now adding Vietnamese. The vers
 
 v1.000 had the following family vertical metrics:
 
-- Typo Ascender = 800
-- Typo Descender = -200
-- Typo LineGap = 200
-- Hhea Ascender = 800
-- Hhea Descender = -200
-- Hhea LineGap = 200
-- Win Ascent = 1000
-- Win Descent = 200
+- typoAscender = `800`
+- typoDescender = `-200`
+- typoLineGap = `200`
+- hheaAscender = `800`
+- hheaDescender = `-200`
+- hheaLineGap = `200`
+- winAscent = `1000`
+- winDescent = `200`
 
 *Notice each set set adds up to 1200, if the negative integers are converted to positive. This should lead to consistent metrics across each platform*
 
 There are two cases which can occur.
 
 #### I. Use_Typo_Metrics was already enabled in the v1.000 release.
-The Win Ascent and Win Descent simply need to reflect the new yMin and yMax values.
+The Win values simply need to reflect the new yMin and yMax values.
 
 1. v2.000 vertical metrics:
 
-    - Typo Ascender = 800
-    - Typo Descender = -200
-    - Typo LineGap = 200
-    - Hhea Ascender = 800
-    - Hhea Descender = -200
-    - Hhea LineGap = 200
-    - **Win Ascent = 1100. Font bbox yMax**
-    - **Win Descent = 300. Font bbox yMin (positive integer)**
+    - typoAscender = 800
+    - typoDescender = -200
+    - typoLineGap = 200
+    - hheaAscender = 800
+    - hheaDescender = -200
+    - hheaLineGap = 200
+    - **WinAscent = 1100. Font bbox yMax**
+    - **WinDescent = 300. Font bbox yMin (positive integer)**
 
 
 #### II. Use_Typo_Metrics was not enabled in the previous release.
@@ -153,20 +162,20 @@ The Typo Metrics need to inherit the v1.000 Win values. The Win Ascent and Win D
 
 1. v2.000 vertical metrics:
 
-    - **Typo Ascender = 1000. Old Win Ascent**
-    - **Typo Descender = -200. Old negative Win Ascent**
-    - **Typo LineGap = 0. Win Metrics has no LineGap parameter so we set this to 0**
-    - Hhea Ascender = 800
+    - **typoAscender = 1000. Old Win Ascent**
+    - **typoDescender = -200. Old negative Win Ascent**
+    - **typoLineGap = 0. Win Metrics has no LineGap parameter so we set this to 0**
+    - **hheaAscender = 1000 (set as new Typo Ascender)**
     - Hhea Descender = -200
-    - Hhea LineGap = 200
-    - **Win Ascent = 1100. Font bbox yMax**
-    - **Win Descent = 300. Font bbox yMin (positive integer)**
+    - **hheaLineGap = 0 (set as new Typo Descender)**
+    - **winAscent = 1100. Font bbox yMax**
+    - **winDescent = 300. Font bbox yMin (positive integer)**
 
 2. Repeat process for each weight/style if values are not unique in v1.000
 3. Enable Use_Typo_Metrics
 
 
-If the font was previously hosted on fonts.google.com, you can test the upgraded vertical metrics visually match by using [GF Regression](https://github.com/googlefonts/gfregression).
+If the font was previously hosted on fonts.google.com, you can test the upgraded vertical metrics visually match by using [GF Regression](https://github.com/googlefonts/gfregression). You can also use gftools gen-html with the command `gftools gen-html diff --font-before font1.ttf --font-after font2.ttf` if you want to compare two fonts locally.
 
 
 ![GF Regression vertical metrics test](assets/VerticalMetrics-gfregression-test.png)
