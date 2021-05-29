@@ -116,7 +116,7 @@ The order of the keys does not strictly matter, but the order in this example is
 
 ### `name`
 
-Family name used to call the family's fonts from the Google Fonts API, and shown in the catalog ](fonts.google.com)](https://fonts.google.com). 
+Family name used to call the family's fonts from the Google Fonts API, and shown in the catalog [fonts.google.com](https://fonts.google.com). 
 Example:
 
 * `name: "ABeeZee"`
