@@ -62,10 +62,16 @@ We expect font developers to understand the following:
 The following resources should bring you up to speed.
 
 - [Microsoft OpenType Specification](https://docs.microsoft.com/en-us/typography/opentype/spec/) (skim read! focus on what each table does)
+- [Fonts and Layout](https://simoncozens.github.io/fonts-and-layout) online book
 - [Glyphsapp Tutorials](https://glyphsapp.com/tutorials)
 - [Learn the workings of Git, not just the commands](https://developer.ibm.com/technologies/web-development/tutorials/d-learn-workings-git/)
 - [Shell scripting basics](https://supportweb.cs.bham.ac.uk/docs/tutorials/docsystem/build/tutorials/unixscripting/unixscripting.html)
 - [What is pip](https://realpython.com/what-is-pip/)
+- Simon Cozens' blog, particularly ["How Do I Learn This Stuff"](https://simoncozens.github.io/how-do-I-learn-this-stuff)
+- Dave Crossland's [Amazon Booklist for Type and Typography](https://www.amazon.com/hz/wishlist/ls/2FX3U5FJZ3IK0/)
+- [Design With FontForge](http://designwithfontforge.com)
+- [SIL FDBP](http://silnrsi.github.io/FDBP) general recommendations from SIL
+- [SIL Font Dev](https://silnrsi.github.io/silfontdev) recommendations for SIL's own font projects
 
 
 ### Tooling
@@ -81,6 +87,12 @@ pip install fontmake
 ```
 We recommend installing our tools inside a Python [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
+Other tools you may find helpful:
+
+* https://github.com/fonttools/fonttools/tree/main/Snippets
+* https://github.com/ftCLI/ftCLI
+* https://github.com/silnrsi/pysilfont
+* https://github.com/simoncozens/font-engineering
 
 ### Scalable font production
 
@@ -91,7 +103,7 @@ Google Fonts is used in approximately a third of all websites (citation needed, 
 - Fonts can be built on any platform since we use opensource tools
 - Projects are kept in version control
 - We fix issues before upgrading
-- We use CI ([Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)) for build and testing purposes.
+- We use CI ([Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)) for build and testing purposes, [applied to fonts](https://simoncozens.github.io/tdd-for-otl/)
 - We have testers with font domain knowledge
 
 #### How we achieve this
@@ -365,6 +377,11 @@ If the family consists of two VFs, one for Italic, the other for Roman. The font
 
 Google Fonts supports all [Microsoft registered axes](https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg).
 
+Axes form a "design space" and you should understand this concept.
+
+* https://superpolator.com/designspace.html
+* https://simoncozens.github.io/userspace-and-designspace
+
 
 ### Axis particles
 
@@ -634,3 +651,5 @@ If the Family is already on Google Fonts, the upgrade shouldn't contain regressi
 
 * [Set up Git to understand .glyphs files](https://typedrawers.com/discussion/3838/label-differences-when-working-with-git#latest)
 * On macOS, install [homebrew](https://brew.sh) and [cask](https://github.com/Homebrew/homebrew-cask) to make installing and updating tools and apps easier
+* Use [thefuck](https://github.com/nvbn/thefuck) to quickly fix typos when working on the command line
+
