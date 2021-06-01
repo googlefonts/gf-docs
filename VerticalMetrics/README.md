@@ -8,7 +8,7 @@ We don't want this because they all do it differently.
 ### 2. Vertical metrics must be consistent across a family
 Every font in a family must share the same vertical metric values.
 
-This rule can be voided if a font is being upgraded and previously had inconsistent family metrics. If this is the case, the aim should be to visually match the linespacing of each font, but fix any clipping issues caused by incorrect Win Ascent, Win Descent values.
+This rule can be voided if a font is being upgraded and previously had inconsistent family metrics. If this is the case, the aim should be to visually match the linespacing of each font, but fix any clipping issues caused by incorrect WinAscent, WinDescent values.
 
 ### 3. The following vertical metric parameters must be set for each font in a family
 
@@ -37,7 +37,7 @@ The Microsoft [OpenType specification](https://www.microsoft.com/typography/otsp
 By changing these values, the line height will be increased in MS applications. This is can lead to very loose line heights if the bbox is exceedingly tall. This mainly occurs in families featuring Vietnamese, Devanagari and Arabic or other tall scripts. To counteract this, we enable [Use Typo Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) and set the Typo values to match the previous Win values. By swapping the sets, we should retain the previous line heights in Windows as well as remove the clipping.
 
 ### 5. [Use_Typo_Metrics](https://www.microsoft.com/typography/otspec/os2.htm#fss) must be enabled
-This will force MS Applications to use the Typo values instead of the Win values. By doing this, we can freely set the Win values to avoid clipping and control the line height with the typo values. It has the added benefit of future line height compatibility. When a new script is added, we simply change the Win values to the new yMin and yMax, without needing to worry if the line height have changed. Note that the use_typo_metric flag is also called: fsSelection bit 7 because of its actual name in the OS/2 table:
+This will force MS Applications to use the Typo values instead of the Win values. By doing this, we can freely set the Win values to avoid clipping and control the line height with the typo values. It has the added benefit of future line height compatibility. When a new script is added, we simply change the Win values to the new yMin and yMax, without needing to worry if the line height have changed. Note that the Use_Typo_Metric flag is also called: fsSelection bit 7 because of its actual name in the OS/2 table:
 
 <img width="378" alt="What it looks like with ttx" src="https://user-images.githubusercontent.com/12222436/119845011-359ca000-bf09-11eb-85b2-6eacdebedeac.png">
 
@@ -54,10 +54,10 @@ Hhea metrics are used in Mac OS X, whilst Microsoft uses Typo when Use_Typo_Metr
 This rule can be voided if a font is being upgraded and previously had inconsistent values.
 
 ### 8. LineGap values must be 0
-The LineGap value is a space added to the lineheight created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment. It will be added under the descender height in most desktop apps, will be shared above the Ascender height and under the descender height in web browsers, and ignored in MS Word if use_typo_metrics is disabled. For better linespacing consistency accross platforms, (typo/hhea)linegap values must be 0.
+The LineGap value is a space added to the lineheight created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment. It will be added under the descender height in most desktop apps, will be shared above the Ascender height and under the descender height in web browsers, and ignored in MS Word if Use_Typo_Metrics is disabled. For better linespacing consistency accross platforms, (typo/hhea)LineGap values must be 0.
 
-### 9. Caps should be centered if the font's primary script has uppercaseses letterforms such as like Latin, Greek and Cyrillic
-Web designers will thank you if you managed to have the same space above and under the uppercase letters: typoAscender-CapsHeight=(-)typoDescender.
+### 9. Uppercases should be centered if the font's primary script has uppercaseses letterforms such as like Latin, Greek and Cyrillic
+Web designers will thank you if you managed to have the same space above and under the uppercase letters: typoAscender - CapsHeight = abs(typoDescender).
 
 ### 10. typo/hheaAscender value should be greater than Agrave's yMax
 Some Mac applications such as TextEdit will position the first line of text by, either, using the height of the Agrave, or by using the font’s hheaAscender (whichever is taller). To keep the positioning consistent across a family, we require that the hheaAscender is greater than the tallest Agrave in the family. See this issue for further info, https://github.com/googlefonts/fontbakery/issues/3170.
@@ -89,7 +89,7 @@ Set these values to be the same across all masters to ensure that output instanc
 
 - `typoAscender` and `hheaAscender` set higher than À
 - `typoLineGap` and `hheaLineGap` set to 0
-- `TypoDescender` and `hheaDescender` set to the lowest a-z letter (p, j, q, g) or under
+- `typoDescender` and `hheaDescender` set to the lowest a-z letter (p, j, q, g) or under
 - `winAscent` and `winDecent` set to `yMax` and `yMin` (absolute highest and lowest point in the font)
 - `use_typo_metrics` is enabled 
 
@@ -108,7 +108,7 @@ A new family has the following qualities:
 1. Set the default values, following the schema above:
 
     - typoAscender = `965`. (UPM * 1.2 - CapsHeight) / 2 + CapsHeight (which is greater than Agrave, perfect.)
-    - typoDescender = `-235`. (UPM * 1.2 - CapsHeight) / 2 (which is equal to lowest descender letterform)
+    - typoDescender = `-235`. (UPM * 1.2 - CapsHeight) / 2 (which is equal to deepest letterform)
     - typoLineGap = `0`
     - hheaAscender = `965` (typoAscender)
     - hheaDescender = `-235` (typoDescender)
