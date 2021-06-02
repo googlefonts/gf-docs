@@ -54,10 +54,10 @@ Hhea metrics are used in Mac OS X, whilst Microsoft uses Typo when Use_Typo_Metr
 This rule can be voided if a font is being upgraded and previously had inconsistent values.
 
 ### 8. LineGap values must be 0
-The LineGap value is a space added to the lineheight created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment. It will be added under the descender height in most desktop apps, will be shared above the Ascender height and under the descender height in web browsers, and ignored in MS Word if Use_Typo_Metrics is disabled. For better linespacing consistency accross platforms, (typo/hhea)LineGap values must be 0.
+The LineGap value is a space added to the lineheight created by the union of the (typo/hhea)Ascender and (typo/hhea)Descender. It is handled differently according to the environment. This leadind value will be added above the text line in most desktop apps. It will be shared above *and* under in web browsers, and ignored in Windows if Use_Typo_Metrics is disabled. For better linespacing consistency accross platforms, (typo/hhea)LineGap values must be 0.
 
-### 9. Uppercases should be centered if the font's primary script has uppercaseses letterforms such as like Latin, Greek and Cyrillic
-Web designers will thank you if you managed to have the same space above and under the uppercase letters: typoAscender - CapsHeight = abs(typoDescender).
+### 9. Uppercases should be centered if the font's primary script has uppercases letterforms such as Latin, Greek and Cyrillic
+Web designers will thank you if you managed to have the same space above and under capitals: typoAscender - CapsHeight = abs(typoDescender). It will make easier for them the setting of padding in buttons for example.
 
 ### 10. typo/hheaAscender value should be greater than Agrave's yMax
 Some Mac applications such as TextEdit will position the first line of text by, either, using the height of the Agrave, or by using the font’s hheaAscender (whichever is taller). To keep the positioning consistent across a family, we require that the hheaAscender is greater than the tallest Agrave in the family. See this issue for further info, https://github.com/googlefonts/fontbakery/issues/3170.
@@ -71,7 +71,20 @@ UPM: `1000`
 (typo/hhea)Descenders: `-300`
 Total: ascender + abs(descenders) = `1200`
 
-Exceptions can be made if the font’s primary script isn’t Latin, Greek or Cyrillic. Some scripts such as Devanagari contain very tall and shallow glyphs. It may make more sense for the sum of the metrics to exceed 130% to avoid interline glyph collisions.
+Exceptions are usually made if the font’s primary script isn’t Latin, Greek or Cyrillic. Some scripts such as Devanagari contain very tall and shallow glyphs. It may make more sense for the sum of the metrics to exceed 130% to avoid interline glyph collisions.
+
+### Note:
+Please keep in mind that this calculation is to be set according to the specificities of each font. 
+
+- `20%` is for compatibility with DTP app, but it can be often to tight if your font is covering more languages than basic Latin, Greek and Cyrillic, or if you have a particular design with short ascenders for example. 
+
+- The choice of tha Agrave is purely based on the behaviour of some applications, it is not based on some general rules of design.
+
+- Google Fonts is trying to push designers to include proper support of the mark_to_mark feature allowing combination of diacritics, through a system of anchors, to diplay non-encoded accented glyphs. Pay attention to your anchor placement so if you combine breve and acute for eg. you don't end up with a severe interline glyph clashing. Or adapt your vertical metrics with a certain measure, to find the best compromise.
+
+- Google Fonts wishes to update fonts to expand glyhpsets, and therefore language support, and therefore accessibility. If your intention is to have, for example, Vietnamese coverage or Thai script in a next update, you can already anticipate the vertical metrics to avoid regressions later.
+
+For more info about the relationship between diacritics ad line height, you can read this document: (to do: link Viviana's doc).
 
 ---
 
@@ -89,7 +102,7 @@ Set these values to be the same across all masters to ensure that output instanc
 
 - `typoAscender` and `hheaAscender` set higher than À
 - `typoLineGap` and `hheaLineGap` set to 0
-- `typoDescender` and `hheaDescender` set to the lowest a-z letter (p, j, q, g) or under
+- `typoDescender` and `hheaDescender` set lower than the deepest descender of the primary script.
 - `winAscent` and `winDecent` set to `yMax` and `yMin` (absolute highest and lowest point in the font)
 - `use_typo_metrics` is enabled 
 
@@ -97,18 +110,18 @@ Expected result: vertical metrics should be around 120-130% of UPM. Anything gre
 
 **Example**
 
-A new family has the following qualities:
+A new Latin family has the following qualities:
 - UPM is `1000`
-- À yMax (bold for this family) = `940`
-- a-z yMin (`g` bold in this family) = `235`
+- yMax of tallest `A grave` in the familly (bold for this example) = `940`
+- yMin of deepest a-z letter (`g` bold in this family) = `235`
 - Caps height (`H`or `Z` bbox height) = `730`
-- yMax = `1116`
-- yMin = `-320`
+- Family's yMax = `1116` (Bold `A breve hookabove` for this family)
+- Family's yMin = `-320` (ExtraLight `c cedilla` for this family)
 
 1. Set the default values, following the schema above:
 
-    - typoAscender = `965`. (UPM * 1.2 - CapsHeight) / 2 + CapsHeight (which is greater than Agrave, perfect.)
-    - typoDescender = `-235`. (UPM * 1.2 - CapsHeight) / 2 (which is equal to deepest letterform)
+    - typoAscender = `965`. (`UPM * 1.2 - CapsHeight) / 2 + CapsHeight` which is greater than Agrave, perfect.)
+    - typoDescender = `-235`. (`UPM * 1.2 - CapsHeight) / 2` which is equal to deepest letterform)
     - typoLineGap = `0`
     - hheaAscender = `965` (typoAscender)
     - hheaDescender = `-235` (typoDescender)
@@ -157,17 +170,17 @@ The Win values simply need to reflect the new yMin and yMax values.
 
 
 #### II. Use_Typo_Metrics was not enabled in the previous release.
-The Typo Metrics need to inherit the v1.000 Win values. The Win Ascent and Win Descent also need to reflect the new yMin and yMax values.
+The Typo Metrics need to inherit the v1.000 Win values. The WinAscent and WinDescent also need to reflect the new yMin and yMax values.
 
 
 1. v2.000 vertical metrics:
 
-    - **typoAscender = 1000. Old Win Ascent**
-    - **typoDescender = -200. Old negative Win Ascent**
+    - **typoAscender = 1000. Old WinAscent**
+    - **typoDescender = -200. Old negative WinAscent**
     - **typoLineGap = 0. Win Metrics has no LineGap parameter so we set this to 0**
-    - **hheaAscender = 1000 (set as new Typo Ascender)**
+    - **hheaAscender = 1000 (set as new TypoAscender)**
     - Hhea Descender = -200
-    - **hheaLineGap = 0 (set as new Typo Descender)**
+    - **hheaLineGap = 0 (consistent with typoLineGap)**
     - **winAscent = 1100. Font bbox yMax**
     - **winDescent = 300. Font bbox yMin (positive integer)**
 
@@ -182,6 +195,7 @@ If the font was previously hosted on fonts.google.com, you can test the upgraded
 *Play's vertical metrics being tested, left: Local version, right: fonts.google.com version*
 
 Useful Links:
+- [Glyphs' app tuto for vertical metrics](https://glyphsapp.com/learn/vertical-metrics)
 - [Kalapi vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/KoMyM2CfAwAJ)
 - [Khaled vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MYgVlQMjAwAJ)
 
