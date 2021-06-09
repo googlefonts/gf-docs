@@ -187,6 +187,14 @@ Current `1.230`, new `1.231`
 Set to `0` (Installable embedding)
 
 
+## Font Horizontal Metrics
+
+Regular space and non-breaking space should have the same (positive) width.
+GlyphsApp has [Sidebearing arithmetic](https://glyphsapp.com/tutorials/spacing) which allows you to set the non-breaking space to always equal the space.
+
+Your family should have appropriate kerning.
+Class-based GPOS kerning is best.
+
 ## Font Vertical Metrics
 
 See https://github.com/googlefonts/gf-docs/tree/main/VerticalMetrics
