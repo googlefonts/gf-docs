@@ -78,13 +78,13 @@ Please keep in mind that this calculation is to be set according to the specific
 
 - `20%` is for compatibility with DTP app, but it can be often to tight if your font is covering more languages than basic Latin, Greek and Cyrillic, or if you have a particular design with short ascenders for example. 
 
-- The choice of tha Agrave is purely based on the behaviour of some applications, it is not based on some general rules of design.
+- The choice of the Agrave is purely based on the behaviour of some applications, it is not based on some general rules of design.
 
-- Google Fonts is trying to push designers to include proper support of the mark_to_mark feature allowing combination of diacritics, through a system of anchors, to diplay non-encoded accented glyphs. Pay attention to your anchor placement so if you combine breve and acute for eg. you don't end up with a severe interline glyph clashing. Or adapt your vertical metrics with a certain measure, to find the best compromise.
+- Google Fonts is trying to push designers to include proper support of the mark_to_mark feature allowing combination of diacritics and diplay of non-encoded accented glyphs. Pay attention to your anchor placement so, if you combine breve and acute for example, you don't end up with a severe interline glyph clashing. Or adapt your vertical metrics with a certain measure, to find the best compromise.
 
 - Google Fonts wishes to update fonts to expand glyhpsets, and therefore language support, and therefore accessibility. If your intention is to have, for example, Vietnamese coverage or Thai script in a next update, you can already anticipate the vertical metrics to avoid regressions later.
 
-For more info about the relationship between diacritics ad line height, you can read this document: (to do: link Viviana's doc).
+For more info about the relationship between diacritics and line height, you can read this document: (to do: link Viviana's doc).
 
 ---
 
