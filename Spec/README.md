@@ -513,9 +513,7 @@ If you are reading this before you have created your project Github repo, use th
 
 [github.com/googlefonts/Unified-Font-Repository](https://github.com/googlefonts/Unified-Font-Repository)
 
-Simon Cozens has made a 1 minute video to show how quick this way to start is:
-
-[twitter.com/simoncozens/status/1405267459028905984])(https://twitter.com/simoncozens/status/1405267459028905984)
+Simon Cozens has made a [1 minute video](https://twitter.com/simoncozens/status/1405267459028905984) to show how quick this way to start is.
 
 Font projects must have the following structure.
 
