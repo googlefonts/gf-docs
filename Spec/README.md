@@ -509,6 +509,14 @@ Font projects must be hosted on Github and must not be private. We don't mind if
 
 ### Upstream Repo Structure
 
+If you are reading this before you have created your project Github repo, use the new "template repo" to start with everything set up for you.
+
+[github.com/googlefonts/Unified-Font-Repository](https://github.com/googlefonts/Unified-Font-Repository)
+
+Simon Cozens has made a 1 minute video to show how quick this way to start is:
+
+[twitter.com/simoncozens/status/1405267459028905984])(https://twitter.com/simoncozens/status/1405267459028905984)
+
 Font projects must have the following structure.
 
 ```
