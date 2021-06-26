@@ -62,14 +62,14 @@ Web designers will thank you if you managed to have the same space above and und
 ### 10. typo/hheaAscender value should be greater than Agrave's yMax
 Some Mac applications such as TextEdit will position the first line of text by, either, using the height of the Agrave, or by using the font’s hheaAscender (whichever is taller). To keep the positioning consistent across a family, we require that the hheaAscender is greater than the tallest Agrave in the family. See this issue for further info, https://github.com/googlefonts/fontbakery/issues/3170.
 
-### 11. The sum of the font’s vertical metric values (absolute) should be 20-30% greater than the font’s UMP.
+### 11. The sum of the font’s vertical metric values (absolute) should be 20-30% greater than the font’s UPM.
 
-By default, DTP applications such as Indesign will set the line height to be 20% greater than the font’s size (10pt size / 12pt leading). For consistency, we recommend setting the vertical metric values so their sum is in a similar range e.g
+By default, DTP applications such as Indesign will set the line height to be 20% greater than the font’s size (10pt size / 12pt leading). For consistency, we recommend setting the vertical metric values so their sum is in a similar range, for example:
 
-UPM: `1000`
-(typo/hhea)Ascenders: `900`
-(typo/hhea)Descenders: `-300`
-Total: ascender + abs(descenders) = `1200`
+- UPM: `1000`
+- (typo/hhea)Ascenders: `900`
+- (typo/hhea)Descenders: `-300`
+- Total: ascender + abs(descenders) = `1200`
 
 Exceptions are usually made if the font’s primary script isn’t Latin, Greek or Cyrillic. Some scripts such as Devanagari contain very tall and shallow glyphs. It may make more sense for the sum of the metrics to exceed 130% to avoid interline glyph collisions.
 
