@@ -496,7 +496,7 @@ If you do not trademark your project name:
 If you do trademark your project name:
 
 * Declare trademarks in font metadata
-* License your trademarks for redistribution in a TRADEMARKS.md file ([example](https://github.com/mooniak/ayanna-font/blob/master/TRADEMARKS.md))
+* License your trademarks for redistribution in a TRADEMARKS.md file
 * Explicitly permit Google to use the trademarks. Contact Dave Crossland via email to learn how
 
 #### Create and name your repository
