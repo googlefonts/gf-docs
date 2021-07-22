@@ -1,6 +1,6 @@
 # Outline Quality Checklist
 
-Design is not particularly judged here, we are talking from the point of view of the technical aspects of a font, i.e: preserved legibility at small sizes, proper rendering/displaying on screen, user experience etc. Since Google Fonts takes backward compatibility seriously this is a quite conservative approach; you wouldn't need all of that if your font is used in a recent environment.
+We call the outlines the sum of contours and components of a source file. Design is not particularly judged here, we are talking from the point of view of the technical aspects of a font, i.e: preserving legibility at small sizes, proper rendering/display on screen, user experience etc. Since Google Fonts takes backward compatibility seriously this is a quite conservative approach.
 
 - OTF-CFF fonts compression: doesn't support components. All contours overlapping another will be considered as counter-shapes, resulting is very bad rendering of the font. All outlines get decomposed and merged during export.
 - OTF-TFF font compression: support components, supposedly overlapping outlines and nested components (until 4 degrees of nesting). 
