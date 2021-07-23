@@ -1,1 +1,1 @@
-# Setting up variable fonts
+# Setting up static fonts

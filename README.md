@@ -45,6 +45,8 @@ This is a construction site, [old spec are here](http://github.com/googlefonts/g
 ### Onboarding Fonts into Google Fonts
 
 * [QA process](Onboarding/QAProcess)
+    - New fonts
+    - Existing Fonts
 * [Bug and hotfix](Onboarding/BugHotfix)
 * [Ship to GF](Onboarding/Shipping)
     - General workflow (issues, PR, labels)
@@ -54,5 +56,5 @@ This is a construction site, [old spec are here](http://github.com/googlefonts/g
 ### Miscellaneous (blog)
 
 * [Grade](Miscellaneous/Grade)
-* [Spaning and Kerning](Miscellaneous/SpacingKerning)
+* [Spacing and Kerning](Miscellaneous/SpacingKerning)
 * [Latin diacritics](Miscellaneous/LatinDiacritics)
