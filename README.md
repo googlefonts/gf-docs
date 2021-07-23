@@ -51,6 +51,7 @@ This is a construction site, [old spec are here](http://github.com/googlefonts/g
     - General workflow (issues, PR, labels)
     - Validation process
     - METADATA.pb
+    - Designer profile
     
 ### Miscellaneous (blog)
 
