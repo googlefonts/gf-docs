@@ -25,7 +25,6 @@ This is a construction site, [old spec are here](http://github.com/googlefonts/g
 	- Monospace fonts
 	- Variable fonts
 * [Charset and Glyphset](GetReady/CharsetGlyphset)
-* [Outline Quality](GetReady/OutlineQuality)
 * [Vertical Metrics](GetReady/VerticalMetrics)
 * [Setting up static fonts](GetReady/StaticsSettings)
     - Naming
@@ -57,4 +56,5 @@ This is a construction site, [old spec are here](http://github.com/googlefonts/g
 
 * [Grade](Miscellaneous/Grade)
 * [Spacing and Kerning](Miscellaneous/SpacingKerning)
+* [Outline Quality](Miscellaneous/OutlineQuality)
 * [Latin diacritics](Miscellaneous/LatinDiacritics)
