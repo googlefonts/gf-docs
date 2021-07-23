@@ -1,6 +1,10 @@
-# How to Check Fonts Install and Work
-
-Test in the latest stable versions.
+# Local Testing and proofing
+To do : 
+- add a table of content
+- update with the latest Mac Word VF support stuff.
+- update with dome proffing tips using gftools
+- Make a table to avoid repeating stuff between Mac and Windows
+- add images
 
 ## Apple macOS
 
@@ -24,7 +28,8 @@ MS Word, Powerpoint, LibreOffice Writer, LibreOffice Impress
 - [ ] Fonts are displayed correctly (basic alphabet)
 - [ ] Kerning works (just display few kerning pairs to see if it works)
   * In MS Word, kerning is applied to the text _as an option_, it is not a parameter that you activate for all your documents. Find it in the advanced parameters of Fonts settings: you have to check the box and specify a minimum text size to apply kerning (5pt for Mac, and 8pt for Windows)
-- [ ] Letters with components work
+- [ ] Glyphs with components work
+- [ ] Glyphs with special layers work
 - [ ] Combining characters (ligures, conjucnts) work
 
 #### External layout apps
@@ -79,7 +84,8 @@ MS Word, Powerpoint, LibreOffice Writer, LibreOffice Impress
 - [ ] Fonts are displayed correctly (basic alphabet)
 - [ ] Kerning works (just display few kerning pairs to see if it works)
   * In MS Word, kerning is applied to the text _as an option_, it is not a parameter that you activate for all your documents. Find it in the advanced parameters of Fonts settings: you have to check the box and specify a minimum text size to apply kerning (5pt for Mac, and 8pt for Windows)
-- [ ] Letters with components work
+- [ ] Glyphs with components work
+- [ ] Glyphs with special layers work
 - [ ] Combining characters (ligures, conjucnts) work
 
 Remember to remove fonts from the user fonts folder at the end of testing.

@@ -1,5 +1,10 @@
-# Vertical Metrics:
+# Vertical Metrics
 
+* [Requirements](#requirements)
+* [Concrete cases](#concrete-cases)
+* [Useful Tools](#useful-tools)
+
+## Requirements
 Throughout countless threads and discussions, the following rules have been established.
 
 ### 1. Vertical metrics must not be calculated by the font editor automatically
@@ -73,7 +78,7 @@ By default, DTP applications such as Indesign will set the line height to be 20%
 
 Exceptions are usually made if the font’s primary script isn’t Latin, Greek or Cyrillic. Some scripts such as Devanagari contain very tall and shallow glyphs. It may make more sense for the sum of the metrics to exceed 130% to avoid interline glyph collisions.
 
-### Note:
+### Note
 Please keep in mind that this calculation is to be set according to the specificities of each font. 
 
 - `20%` is for compatibility with DTP app, but it can be often to tight if your font is covering more languages than basic Latin, Greek and Cyrillic, or if you have a particular design with short ascenders for example. 
@@ -88,7 +93,7 @@ For more info about the relationship between diacritics and line height, you can
 
 ---
 
-## Concrete cases:
+## Concrete cases
 
 Setting vertical metrics usually falls into the following two categories:
 
@@ -199,7 +204,7 @@ Useful Links:
 - [Kalapi vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/KoMyM2CfAwAJ)
 - [Khaled vertical metrics schema](https://groups.google.com/d/msg/googlefonts-discuss/W4PHxnLk3JY/MYgVlQMjAwAJ)
 
-## Useful Tools:
+## Useful Tools
 ### Glyphsapp Scripts
 - [gf-glyphs-scripts](https://github.com/googlefonts/gf-glyphs-scripts) 'QA' script includes several vertical metrics checks. 'Fix fonts for GF spec' will automatically update a family's vertical metrics so they visually match a previous release (if it exists). It will also set the values so no clipping will occur on Windows platforms.
 
