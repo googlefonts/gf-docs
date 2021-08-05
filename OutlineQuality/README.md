@@ -31,9 +31,9 @@ The on-curve points are connecting segments together, hence we call them nodes. 
 
 - [ ] **Overlaying :** overlaying horizontal segments mostly disturb rendering. 
   
-- [ ] **Overlapping:** A lot of OS and apps still don't display correctly overlapping contours of static TTF fonts. To preserve your design, we recomend to merge the decomposed contours during the export. If you want to control the result of the merging, it is better to do it yourself. If not, try to keep them in *not too big but not too small* overlapped area. Also try not to overlap more than 2 contours in the same area (contour crossing a contour itself crossing another contour, like asterisk, creates confusion during generation and rendering).
+- [ ] **Overlapping:** A lot of OS and apps still don't display correctly overlapping contours of static TTF fonts. To preserve your design, we recomend to merge the decomposed contours during the export. If you want to control the result of the merging, it is better to do it yourself. Try to not overlap more than two separated closed contours.
 
-- [ ] **Self-crossing:** Often known as open-corners, it is very helpful while designing and recommended for nice interpolations. They will be preserved for VF fonts and merged during generation to static binaries. To better control the result, pay attention to the size of it (not too big, not too small) as well as not leaving portions of it outside the main shape like the stem, since it can cause unwanted rendering issues. If you want to control the result of the merging, do it yourself if not, same advises as above.
+- [ ] **Self-crossing:** Often known as open-corners, it is very helpful while designing and recommended for nice interpolations. They will be preserved for VF fonts and merged during generation to static binaries. To better control the result, pay attention to the size of it (not too big, not too small) as well as not leaving portions of it outside the main shape like the stem, since it can cause unwanted rendering issues. If you want to control the result of the merging, do it yourself if not, same advises as above. Also try not to cross more than 2 contours in the same area (contour crossing a contour itself crossing another contour, like asterisk, creates confusion during generation and rendering).
 
 ### On-curve points (nodes)
 
