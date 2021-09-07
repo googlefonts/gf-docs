@@ -478,7 +478,9 @@ We recommend reading the [MS STAT table spec](https://docs.microsoft.com/en-us/t
 
 ### Instantiated Static Fonts
 
-When a variable font is onboarded to Google Fonts, we will provide instantiated static fonts for legacy applications. Thus, bear in mind Google’s API will automatically create all the 100x weights along the used range of the axis when producing static fonts, whether or not they are included in the designer's original design space.
+The fonts API is a system used by millions of people, with lots of different software, and so the system tries to support them all as best as it can - especially with 'backwards compatible' changes that do not "break" existing usage.
+
+As we are in a transition period where some software is VF capable and others are not, or, the old versions of the newly VF capable software remains in use, according to that principle of backwards compatibility, when a variable font is onboarded to Google Fonts, the API provides "fallbacks", static fonts derived from the variable font, for legacy software. And, according to the systematization principle, the system goes along the axis, and derives a static font at each of the nine 100 values, if the axis covers that value (whether or not they are included in the designer's original design space), and names it accordingly. Those static font files are included in the download ZIP file alongside the VF font file, and they are served as web fonts to web browsers not capable of using VFs.
 
 
 ## VF Hinting
