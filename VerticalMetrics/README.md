@@ -121,7 +121,7 @@ A new Latin family has the following qualities:
 1. Set the default values, following the schema above:
 
     - typoAscender = `965`. (`UPM * 1.2 - CapsHeight) / 2 + CapsHeight` which is greater than Agrave, perfect.)
-    - typoDescender = `-235`. (`UPM * 1.2 - CapsHeight) / 2` which is equal to deepest letterform)
+    - typoDescender = `-235`. (`UPM * 1.2 - CapsHeight) / -2` which is equal to deepest letterform)
     - typoLineGap = `0`
     - hheaAscender = `965` (typoAscender)
     - hheaDescender = `-235` (typoDescender)
