@@ -614,7 +614,7 @@ The Description file is a small snippet which appears on the specimen page of th
 - All links in it must be properly working.
 - Families with VF axes should always mention which axes they offer in their descriptions.
 - Allowed HTML elements: `a`, `em`, `i`, `strong`, `b`, `p`, `ol`, `ul`, `li`. 
-- Other HTML elements, especiallly inline CSS, classes, or attributes, are not allowed and will be removed by the catalog web app. 
+- Other HTML elements, especially inline CSS, classes, or attributes, are not allowed and will be removed by the catalog web app. 
 
 Sample rendering:
 ![Description HTML Styles Sample Rendering](DESCRIPTION_HTML_STYLES.png)
