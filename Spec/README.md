@@ -610,7 +610,7 @@ Each file has the following purpose:
 The Description file is a small snippet which appears on the specimen page of the API. It must include: 
 
 - A hypertext link to the repository where the font project files are made available (designer’s GitHub repository).
-- It should have more than 200 characters and less than 1000.
+- It should have more than 200 characters and less than 2000 (including HTML code).
 - All links in it must be properly working.
 - Families with VF axes should always mention which axes they offer in their descriptions.
 - Allowed HTML elements: `a`, `em`, `i`, `strong`, `b`, `p`, `ol`, `ul`, `li`. 
