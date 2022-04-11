@@ -497,7 +497,24 @@ If you do trademark your project name:
 
 * Declare trademarks in font metadata
 * License your trademarks for redistribution in a TRADEMARKS.md file
-* Explicitly permit Google to use the trademarks. Contact Dave Crossland via email to learn how
+* Explicitly permit Google to use the trademarks. Email <fonts@google.com> with an email like this:
+
+> Dear Google Fonts
+>
+> We would like our font project "Font Family Name" to be included in Google Fonts and other Google products.
+>
+> I hereby grant permission in perpetuity to Google LLC and affiliates to use the following trademarks, and Reserved Font Names declared in the SIL Open Font License notices, for the following font family names:
+> 
+> Font Family Name
+> Font Family Name Mono
+> Font Family Name Sans
+>
+> Best regards,
+>
+> Firstname Othername
+>
+> Job Title, Organization 
+
 
 #### Create and name your repository
 
