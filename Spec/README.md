@@ -64,7 +64,7 @@ The following resources should bring you up to speed.
 - [Microsoft OpenType Specification](https://docs.microsoft.com/en-us/typography/opentype/spec/) (skim read! focus on what each table does)
 - [Fonts and Layout](https://simoncozens.github.io/fonts-and-layout) online book
 - [Glyphsapp Tutorials](https://glyphsapp.com/tutorials)
-- [Learn the workings of Git, not just the commands](https://developer.ibm.com/technologies/web-development/tutorials/d-learn-workings-git/)
+- [Learn the workings of Git, not just the commands](https://developer.ibm.com/tutorials/d-learn-workings-git/)
 - [Shell scripting basics](https://supportweb.cs.bham.ac.uk/docs/tutorials/docsystem/build/tutorials/unixscripting/unixscripting.html)
 - [What is pip](https://realpython.com/what-is-pip/)
 - Simon Cozens' blog, particularly ["How Do I Learn This Stuff"](https://simoncozens.github.io/how-do-I-learn-this-stuff)
