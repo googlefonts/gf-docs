@@ -169,7 +169,7 @@ Current `1.230`, new `2.000`
 
 If a new character set is inserted, SIGNIFICANT should be incremented e.g:
 
-Current `1.230`, new `1.330`
+Current `1.230`, new `1.300`
 
 
 If a few new glyphs are added, MINOR should be incremented e.g:
