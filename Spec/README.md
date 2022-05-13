@@ -1,5 +1,7 @@
 # Google Fonts Docs (WIP)
 
+# This document is now deprecated, and new fresh docs will be published soon.
+
 ## Contents
 
 **[Getting started](#getting-started)**
