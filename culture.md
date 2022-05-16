@@ -1,18 +1,10 @@
-<div>
-
 # Libre Font Culture
-
-</div>
 
 > <span class="icon">🐹</span>  The design community and the tech community traditionally have very different cultures. Designer culture often involves the work of a single artist-designer and insists on protecting their artwork, while software developers generally cannot operate in such a solitary fashion: their work, even if it is copyrighted, is often based on the work of others and more subject to fragmented authorship.
 
 Since fonts are software, Google Fonts works at the intersection of the two communities and, for many reasons, has embraced the Libre software culture to promote the creation, development, and distribution of typefaces. This culture encourages participation and learning while facilitating sharing and collaboration through the openness of the work and a more flexible licensing schema.
 
 It is helpful for type designers to understand the typical operation of a software project. This page aims to help type designers involved in starting or participating in Libre Font projects to know how libre software projects operate.
-
-</div>
-
-**Table of content**
 
 ## Four Freedoms
 
@@ -69,5 +61,3 @@ These are some links where you could find more detailed information about this C
 -   [Open Source Guide](https://opensource.guide/how-to-contribute/)
 -   SIL's [Font Development Best Practices](http://silnrsi.github.io/FDBP/en-US/index.html) with Technical Guidance Regarding Font Development And Production
 -   The [Open Source Initiative](https://opensource.org/docs/osd)
-
-</div>
