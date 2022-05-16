@@ -1,16 +1,8 @@
-<div>
-
 # google/fonts repository explained
-
-</div>
 
 > <span class="icon">🦉</span>  [google/fonts](https://github.com/google/fonts) is the GitHub repository that is used as a staging area to upload font families to [Google Fonts](https://fonts.google.com/). The first step to contributing your font to Google Fonts is to submit your contribution as a Pull Request to google/fonts.
 
 This section will help users understand which are the directories, files, and python modules included in the Google/Fonts repository and how they are related.
-
-</div>
-
-**Table of content**
 
 ## google/fonts repository explained
 
@@ -101,5 +93,3 @@ As with the axis registry, [the Lang directory](https://github.com/googlefonts/l
 
 -   `to_sandbox.txt` is a list of font directories or designer directories to be pushed to sandbox.
 -   `to_production.txt` is a list of fonts directories or designer directories to be pushed to production. Once the elements (fonts, bio, etc) have been checked and validated in sandbox, they can be sent to the API so users can have access to them. We can only push to production something that was first pushed to sandbox.
-
-</div>
