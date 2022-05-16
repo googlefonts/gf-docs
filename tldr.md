@@ -2,8 +2,6 @@
 
 > <span class="icon">🦉</span>  This document aims to specify all the requirements to contribute to Google Fonts. It ranges from the general knowledge required to contextualize the what and why of some of the requirements and the specifics regarding technical aspects with some suggestions on how to comply with them. Therefore, it covers different levels of information for both newcomers and more experienced contributors. If you are already familiar with some of the concepts, please feel free to jump to the other bits that you may be looking for.
 
-</div>
-
 ## Introduction
 
 -   **Libre Fonts Culture**
