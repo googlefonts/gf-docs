@@ -1,18 +1,8 @@
-<div>
-
 # Overall font files requirements
 
-</div>
-
 > <span class="icon">🦥</span>  The following guidelines apply to all fonts, regardless of their format.
-
 Then, depending on the format, we have different specifications for static and variable fonts. Please [read the guidelines for static fonts](statics.md) and the [guidelines for variable fonts](variable.md).
-
 It is recommended to read [the guidelines to add or upgrade font in Google Fonts](onboarding.md) before continuing.
-
-</div>
-
-**Table of content**
 
 ## Font copyright and license
 
@@ -146,5 +136,3 @@ Find all the glyphsets definition and filter lists in the [Glyphsets repository]
 ## Stylistic Sets
 
 The Google Fonts API currently does not support the inclusion of OpenType *Stylistic Set* features. Fonts that absolutely need them need to be published as a separate family with the stylistic feature added to the family name.
-
-</div>
