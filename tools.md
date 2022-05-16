@@ -1,28 +1,16 @@
-<div>
-
 # **Tools and Dependencies**
-
-</div>
 
 > <span class="icon">🐰</span>  Fonts published to Google Fonts comply with Libre Fonts standards, so Google Fonts requires that fonts can be produced with open source tools. This ensures at least the first three [freedoms](culture.md). Before starting your project, you should set up a working environment with all the tools you will need in development.
 
 This guide will help users set up their environment to build the fonts with open source tools that Google Fonts is helping to develop.
 
-</div>
-
-**Table of contents**
-
 ## Required knowledge
 
 Font developers are expected to understand the following:
 
-<div class="indented">
-
 -   Shell scripting (usually bash).
 -   How to manage Python packages/tools using `pip`.
 -   A basic understanding of the command-line. Users should be able to traverse directories and understand the commands `cd`, `ls`, `mv`, `cp`.
-
-</div>
 
 See the [useful links](tools.md) section at the bottom of the page to bring you up to speed.
 
@@ -228,4 +216,3 @@ export BSTACK_ACCESS_KEY="key"
 -   [Terminal command shortcuts in Mac](https://support.apple.com/fr-fr/guide/terminal/trmlshtcts/mac)
 -   [Python Tutorials](https://realpython.com)
 
-</div>
