@@ -4,6 +4,8 @@
 > <span class="icon">🦉</span>  `DESCRIPTION.en_us.html` contains the information that appears in the `#About` section on any specimen page of [Google Fonts](https://fonts.google.com) in order to give further information about the font family.
 > This file will be created by the team member who will be onboarding the font. Thus the actual file a designer should write carefully would be the [README.md](readme.md) file as the information provided in it is crucial to building a good About section.
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 

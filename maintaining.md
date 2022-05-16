@@ -5,6 +5,8 @@
 > This guide will help designers to adopt good habits while maintaining their work within a GitHub repository.
 </div>
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 

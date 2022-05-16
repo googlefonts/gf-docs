@@ -13,6 +13,8 @@
 > -   Font tables and font formats
 > -   Command line tools
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 

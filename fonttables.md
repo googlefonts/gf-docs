@@ -1,4 +1,5 @@
 # The font tables explained
+{:.no_toc}
 
 > <span class="icon">🦦</span>  Understanding the what are the font tables and what they do is a core skill in font engineering.
 > **You can view the name tables using these tools:**
@@ -9,10 +10,12 @@
 > -   <https://fontdrop.info/#/> → in the “data” tab
 > -   [https://fontgauntlet.com](https://fontgauntlet.com/) → if you click on the small search icon next to the font name
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 
-## **Required tables**
+## Required tables
 
 -   `cmap` Character to glyph mapping
 -   `head` Font header
@@ -23,7 +26,7 @@
 -   `OS/2` OS/2 and Windows specific metrics
 -   `post` PostScript information
 
-## **TT outlines tables**
+## TT outlines tables
 
 -   `cvt `Control Value Table (optional table)
 -   `fpgm` Font program (optional table) 
@@ -32,17 +35,17 @@
 -   `prep` CVT Program (optional table)
 -   `gasp` Grid-fitting/Scan-conversion (optional table)
 
-## **CFF outlines tables**
+## CFF outlines tables
 
 -   `CFF `Compact Font Format 1.0
 -   `CFF2` Compact Font Format 2.0
 -   `VORG` Vertical Origin (optional table)
 
-## **SVG outlines tables**
+## SVG outlines tables
 
 -   `SVG `The SVG (Scalable Vector Graphics) table
 
-## **Bitmap glyphs tables**
+## Bitmap glyphs tables
 
 -   `EBDT` Embedded bitmap data
 -   `EBLC` Embedded bitmap location data
@@ -51,7 +54,7 @@
 -   `CBLC` Color bitmap location data
 -   `sbix` Standard bitmap graphics
 
-## **Advance typographic tables**
+## Advance typographic tables
 
 -   `BASE` Baseline data
 -   `GDEF` Glyph definition data
@@ -60,7 +63,7 @@
 -   `JSTF` Justification data
 -   `MATH` Math layout data
 
-## **VF Tables**
+## VF Tables
 
 -   `avar` Axis variations
 -   `cvar` CVT variations (TrueType outlines only)
@@ -71,7 +74,7 @@
 -   `STAT` Style attributes (required for variable fonts, optional for non-variable fonts)
 -   `VVAR` Vertical metrics variations
 
-## **Color fonts tables**
+## Color fonts tables
 
 -   `COLR` Color table
 -   `CPAL` Color palette table
@@ -80,7 +83,7 @@
 -   `sbix` Standard bitmap graphics
 -   `SVG `The SVG (Scalable Vector Graphics) table
 
-## **Other opentype tables**
+## Other opentype tables
 
 -   `DSIG` Digital signature
 -   `hdmx` Horizontal device metrics

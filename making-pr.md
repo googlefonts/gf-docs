@@ -13,6 +13,8 @@
 >
 > As a general rule, **GF requires users to open an issue before submitting anything through a PR**. The PR is the formality that achieve a project, not its starting point. GF uses the issue tracker to define an agenda, generate statistics to estimate the work done, but also to archive decisions. Anything that is going out of GF standards, needs to be documented somewhere, and the issue tracker is here for that purpose. If your font isn’t submitted through an issue first, your PR may never be merged.
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 
@@ -35,21 +37,9 @@
 
 Before making a pull request to [google/fonts](https://github.com/google/fonts) (aka the source repo), you will need to have your own copies of the google/fonts repository: one hosted *remotely* on git server (the fork), one *locally* on your own machine (the clone of your fork). The forked repo will then be the “origin” remote of your local repo and therefore will be linked to each other.
 
-<div id="52d466de-99e6-4047-9a72-0042bdf42b9f" class="column-list">
-
-<div id="cae50088-9629-4d3f-9725-b5b43098ae36" class="column" style="width:31.25%">
-
-<figure>
+<figure style="float:left">
 <img src="https://lh3.googleusercontent.com/0igaOH8GUJH7ktvFPOALF7wsI_UFD98SWnVlMUXutzbg2wEyS_KKGK7AzoGrCoT1lQj5-hDOnp4JO7J9Oyv_NM6O30QFLL35GjIC0vp_w6SdNVqIOAEuyvd2Qa7pr3cwwMz3-khp" style="width:192px" />
 </figure>
-
-<figure>
-<img src="https://lh6.googleusercontent.com/awoP2Rp-mKfotp9DnTIcE0uSfaA1gsH74y4S6zyz03ysA6rZaVLM-boKC7nJTHHu6gfflnCj868UOgwysvBJ1dRGY99R93fT8L_9CKhiKJKCNVPi_BgyN5oZe5uvrz3Nisl6F76p" style="width:192px" />
-</figure>
-
-</div>
-
-<div id="1a684a63-fc48-4641-8ff3-186610d61778" class="column" style="width:68.75%">
 
 1.  **Fork** the [google/fonts](https://github.com/google/fonts) repo so you have your own copy.
 2.  **Clone your fork** to a sensible place on your computer.
@@ -62,10 +52,6 @@ If the upstream has changes, you need to **pull** them locally, and then have yo
 6.  **Push** into the `main branch` of the `origin repo`.
 
 Now all remotes are connected with your local repo and they are all in sync.
-
-</div>
-
-</div>
 
 ## Making a pull request to GF
 
@@ -95,38 +81,24 @@ Now that you have the general scheme in mind, let’s dive into more details. Yo
 3.  Add (or replace) the font files inside the font directory.
 4.  Add (or replace) the [license OFL.txt](license.md).
 5.  Run `gftools add-font`. You can do that from the root directory of your local clone of the Google Fonts repository. The argument expected is the path of the font family directory:
-
     ``` code
     gftools add-font ofl/fontname
     ```
-
-    **Note:**
-
-    -   If you add a font, this will create 2 files: a dummy description for the font in HTML format, and a `METADATA.pb` file which gives instructions to the API.
-
-    
-
-    -   If you upgrade the font, it will simply update `METADATA.pb`.
+>    **Note:**
+>     -   If you add a font, this will create 2 files: a dummy description for the font in HTML format, and a `METADATA.pb` file which gives instructions to the API.
+>    -   If you upgrade the font, it will simply update `METADATA.pb`.
 6.  Open [DESCRIPTION.en_us.html](description.md) and update it.
 7.  Open and check if [METADATA.pb](metadata.md) is not saying anything absurd.
 8.  When you are happy with everything, commit and push to the origin’s branch (same branch name you already created) with this message: `<FontName> : <font-version> added`.
 
     E.g: <https://github.com/google/fonts/pull/4146>
-
-    **Note:**
-
-    If you have permissions to contribute to `google/fonts` repo (such as team members), we recommend you to push directly on a new `google/fonts` branch. This will allow the CI to work properly.
+>   **Note:** If you have permissions to contribute to `google/fonts` repo (such as team members), we recommend you to push directly on a new `google/fonts` branch. This will allow the CI to work properly.
 9.  Then go to <https://github.com/google/fonts/pulls>, and create a “new pull request.”
 10. Unless your branch is part of the `google/fonts` repository (i.e. you are a team member), you will have to compare across forks; choose the branch of your fork containing the font you want to submit, then click on `Create a pull request`.
 11. The title of the PR will be the message above, if not, please re-enter: `<FontName> : <font-version> added`. Don’t forget to add a body text following this schema: `Taken from the upstream repo <repo-url> at commit <commit-url>`.
-
-    **Note:**
-
-    -   Add a short description of the PR, especially if the font is an upgrade, we want to know what we shall be reviewing.
-
-    
-
-    -   If you are an official onboarder, please add the PR into the Traffic Jam project and don’t forget the labels. Refer to the [Onboarder Workflow Guide](onboarder-workflow.md) for more details.
+> **Note:**
+>    -   Add a short description of the PR, especially if the font is an upgrade, we want to know what we shall be reviewing.
+>    -   If you are an official onboarder, please add the PR into the Traffic Jam project and don’t forget the labels. Refer to the [Onboarder Workflow Guide](onboarder-workflow.md) for more details.
 12. Press the green button and there you go – you have made a PR!
 
 ### Make a PR with the Packager

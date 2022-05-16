@@ -4,6 +4,8 @@
 > <span class="icon">🐰</span>  Google Fonts used to accept open-source licenses such as OFL, UFL and APACHE2. It has been a few years now that only OFL licenses are accepted.
 > This page will give users some important requirements about the OFL license, as well as a template to copy-paste into their repo.
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 

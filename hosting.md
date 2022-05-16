@@ -7,6 +7,8 @@ Using Git is essential to track the history of a project.
 **GitHub**
 Is one of the various web providers of Git services (Bitbucket, GitLab, to name a few). Google Fonts requires to use GitHub since it includes various other features to help administer the workflow of a project that further simplify working and collaborating via Git.
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 

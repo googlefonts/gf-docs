@@ -5,6 +5,8 @@
 > Since fonts are software, Google Fonts works at the intersection of the two communities and, for many reasons, has embraced the Libre software culture to promote the creation, development, and distribution of typefaces. This culture encourages participation and learning while facilitating sharing and collaboration through the openness of the work and a more flexible licensing schema.
 > It is helpful for type designers to understand the typical operation of a software project. This page aims to help type designers involved in starting or participating in Libre Font projects to know how libre software projects operate.
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 
