@@ -1,16 +1,12 @@
-<div>
-
 # Maintaining your font repo
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🐰</span>  A font is not finished just because it has been released. From time to time, you may want to update your design; users may find and report issues with the font that need to be addressed, or Google may commission you to update your own or someone else’s font.
-
-This guide will help designers to adopt good habits while maintaining their work within a GitHub repository.
-
+> This guide will help designers to adopt good habits while maintaining their work within a GitHub repository.
 </div>
 
-**Table of content**
+* TOC goes here
+{:toc}
 
 ## Recommendations
 
@@ -56,5 +52,3 @@ Here are a few principles regarding font maintenance and upgrades:
 
 -   [Managing release with GitHub](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 -   [Using key words in GitHub](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
-
-</div>

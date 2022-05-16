@@ -1,24 +1,20 @@
-<div>
-
 # Making a PR to Google Fonts
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🐸</span>  In order to submit a new family or an upgrade of an existing family on [fonts.google.com](https://fonts.google.com/), we must add or update the files held in the [google/fonts](https://github.com/google/fonts) repository. This guide will help users submit Pull Requests (PR) which can then be reviewed and merged by a team member.
+>
+> Before submitting your pull request, make sure you have read the following documentations:
+>
+> -   [Contributing to GF](production.md)
+> -   [Main contribution cases](onboarding.md)
+> -   [Font files requirements](requirements.md)
+>
+> The PR process requires a good understanding of GitHub and command line tools. If this isn’t you, we suggest simply opening an issue using the `Add Font` or the `Update Font` template in the [issue tracker](https://github.com/google/fonts/issues), and waiting for a team member to ship the font for you.
+>
+> As a general rule, **GF requires users to open an issue before submitting anything through a PR**. The PR is the formality that achieve a project, not its starting point. GF uses the issue tracker to define an agenda, generate statistics to estimate the work done, but also to archive decisions. Anything that is going out of GF standards, needs to be documented somewhere, and the issue tracker is here for that purpose. If your font isn’t submitted through an issue first, your PR may never be merged.
 
-Before submitting your pull request, make sure you have read the following documentations:
-
--   [Contributing to GF](production.md)
--   [Main contribution cases](onboarding.md)
--   [Font files requirements](requirements.md)
-
-The PR process requires a good understanding of GitHub and command line tools. If this isn’t you, we suggest simply opening an issue using the `Add Font` or the `Update Font` template in the [issue tracker](https://github.com/google/fonts/issues), and waiting for a team member to ship the font for you.
-
-As a general rule, **GF requires users to open an issue before submitting anything through a PR**. The PR is the formality that achieve a project, not its starting point. GF uses the issue tracker to define an agenda, generate statistics to estimate the work done, but also to archive decisions. Anything that is going out of GF standards, needs to be documented somewhere, and the issue tracker is here for that purpose. If your font isn’t submitted through an issue first, your PR may never be merged.
-
-</div>
-
-**Table of content**
+* TOC goes here
+{:toc}
 
 ## Prerequisites
 
@@ -60,7 +56,8 @@ Before making a pull request to [google/fonts](https://github.com/google/fonts) 
 3.  At this stage, your `local clone` is only tracking its **origin remote** (aka your `fork` of [google/fonts](https://github.com/google/fonts)). It means that if you **fetch** changes from all remotes, you will only be able to **pull** the changes that happened on your `fork`. To be sure you receive the latest updates from google/fonts (aka the **“upstream” remote**), you need your `local clone` to be linked to it. Add [google/fonts](https://github.com/google/fonts) as a remote and call it “upstream”.
 4.  **Fetch** from the `main branch` of the `upstream repo`.
 
-    If the upstream has changes, you need to **pull** them locally, and then have your `origin remote` also in sync:
+If the upstream has changes, you need to **pull** them locally, and then have your `origin remote` also in sync:
+
 5.  **Pull** from the **upstream repo** (into the `main branch` of your `local clone`).
 6.  **Push** into the `main branch` of the `origin repo`.
 
@@ -80,8 +77,7 @@ They are several workflows possible, but we recommend this one when it comes to 
 
 1.  Create a local branch, make changes, and commit the changes.
 2.  Push the commits to a branch of the same name to the origin remote (your fork).
-
-    Note that if you have contributing permission (you are a GF team member), you can directly create a branch on `google/fonts` and make a PR from this branch instead of from your fork’s branch.
+>    Note that if you have contributing permission (you are a GF team member), you can directly create a branch on `google/fonts` and make a PR from this branch instead of from your fork’s branch.
 3.  Make a pull request to `google/fonts` either from the branch on your fork, or, if you are a team member, from the branch you made on the upstream.
 4.  Then we will review it, and eventually merge it.
 
@@ -93,14 +89,9 @@ Now that you have the general scheme in mind, let’s dive into more details. Yo
 
 1.  Create a branch that has the name of the font family (all lowercase, no spaces).
 2.  If you are adding a new family, you will have to create a new directory in the `ofl/` folder. Name it after the font family name (all lowercase, no spaces, no hyphens).
-
-    **Note:**
-
-    -   If you have, for example, MyFont and MyFontCondensed, this is 2 families: remember that GF only accepts weight styles. So this is also 2 font directories, and **2** separate PRs. Read more about the [Font Files requirements](requirements.md) to know more about the [supported styles for static](https://www.notion.so/Static-font-files-requirements-71d00ce1fbd44d72bf4e24b430abf2a2) and [variable fonts](variable.md).
-
-    
-
-    -   If you upgrade a font, then simply go to the existing directory of said font.
+> **Note:**
+>  -   If you have, for example, MyFont and MyFontCondensed, this is 2 families: remember that GF only accepts weight styles. So this is also 2 font directories, and **2** separate PRs. Read more about the [Font Files requirements](requirements.md) to know more about the [supported styles for static](https://www.notion.so/Static-font-files-requirements-71d00ce1fbd44d72bf4e24b430abf2a2) and [variable fonts](variable.md).
+> -   If you upgrade a font, then simply go to the existing directory of said font.
 3.  Add (or replace) the font files inside the font directory.
 4.  Add (or replace) the [license OFL.txt](license.md).
 5.  Run `gftools add-font`. You can do that from the root directory of your local clone of the Google Fonts repository. The argument expected is the path of the font family directory:
@@ -141,5 +132,3 @@ Now that you have the general scheme in mind, let’s dive into more details. Yo
 ### Make a PR with the Packager
 
 Good news! Google Fonts also has a tool that packages the font and makes the pull request to google/fonts repo for users with *contributor access* (team members). It uses the SSH protocol, which is why you would need to set up Git with an SSH key if you are a team member. For more info about `gftools packager` and its usage, read [this documentation](package.md).
-
-</div>
