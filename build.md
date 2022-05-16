@@ -1,31 +1,20 @@
-<div>
-
 # Build the fonts
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🦕</span>  This chapter aims to guide designers in the building of their font binaries using open-source tools.
+> Everything related to font file settings is detailed in these three chapters:
+> -   [Overall font file requirements](requirements.md)
+> -   [Specifics to static fonts](statics.md)
+> -   [Specifics to variable fonts](variable.md)
+> For practicality, the above information won’t be repeated in this chapter. If you read “you should follow the recommendation” or “respect the requirements” etc, please refer to the three chapters above. You will also understand this chapter better if you have read those first.
+> We recommend you install all the tools in a virtual environment, to avoid conflict between packages. Further information is detailed in this chapter:
+> -   [Tools and Dependencies](tools.md)
+> For the rest of this chapter, it would be better if you have basic knowledge of:
+> -   Font tables and font formats
+> -   Command line tools
 
-Everything related to font file settings is detailed in these three chapters:
-
--   [Overall font file requirements](requirements.md)
--   [Specifics to static fonts](statics.md)
--   [Specifics to variable fonts](variable.md)
-
-For practicality, the above information won’t be repeated in this chapter. If you read “you should follow the recommendation” or “respect the requirements” etc, please refer to the three chapters above. You will also understand this chapter better if you have read those first.
-
-We recommend you install all the tools in a virtual environment, to avoid conflict between packages. Further information is detailed in this chapter:
-
--   [Tools and Dependencies](tools.md)
-
-For the rest of this chapter, it would be better if you have basic knowledge of:
-
--   Font tables and font formats
--   Command line tools
-
-</div>
-
-**Table of content**
+* TOC goes here
+{:toc}
 
 ## Fontmake
 
@@ -33,13 +22,9 @@ For the rest of this chapter, it would be better if you have basic knowledge of:
 
 Fontmake makes use of a variety of Python libraries to build TTF fonts from UFO or Glyphs source files:
 
-<div class="indented">
-
 -   [glyphsLib](https://github.com/googlefonts/glyphsLib) to convert `.glyphs` files into UFO format;
 -   [ufo2ft](https://github.com/googlefonts/ufo2ft) to turn the UFOs into FontTools objects;
 -   [FontTools](https://github.com/fonttools/fonttools) is responsible for exporting the actual font binaries.
-
-</div>
 
 You don’t have to understand this very well to start working with the tools, but it can come in handy if you have a bug to report, or if you want to understand the relationship between the different libraries. See “[What happens when you build a variable font (using the open source tool chain)](https://simoncozens.github.io/compiling-variable-fonts/)” for more details.
 
@@ -303,5 +288,3 @@ Unfortunately, the Builder yet can’t do everything. You will have to use a ext
 -   To hint OTF: use **[AFDKO](https://github.com/adobe-type-tools/afdko)**.
 -   To subset the font: use **[Fonttools’ subsetter](https://fonttools.readthedocs.io/en/latest/subset/index.html)**.
 -   If you are using any other font format than `.glyphs` and `.ufo`: the build script should contain a step that converts the sources to UFO. Use **[Fontlab to UFO](https://pypi.org/project/vfb2ufo3/)** or **[FontForge to UFO](https://github.com/fontforge/sfd2ufo)** for example.
-
-</div>

@@ -1,22 +1,15 @@
-<div>
-
 # Authors and Contributors
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🦤</span>  Authors and contributors are people or industries participating into a project either because they paid for it, they employed people who created and produced it, or because they are the people who made it.
+> -   The list of authors generally includes the creators and all the possible copyright holders (such as the company employing the actual creators). This may differ according to the copyright laws of the author’s country; better to inform yourself if the project was commissioned by an instiution or a company.
+> -   The list of contributors generally includes everyone who participated in the project to a large degree: producers, engineers, developers etc. (including non–copyright-holders).
+> The AUTHORS.txt file is mandatory for font’s repository aimed to be published in Google Fonts:
+> -   The AUTHORS.txt file is used from an important legal point of view: the copyright string in the License file point out to this file. No modification can be made to the license unless all copyright holders agreed to it.
+> -   Google Fonts use the AUTHORS.txt file to know who to credit in the \#About section of the specimen page. Without this file, the font may be wrongly attributed.
 
--   The list of authors generally includes the creators and all the possible copyright holders (such as the company employing the actual creators). This may differ according to the copyright laws of the author’s country; better to inform yourself if the project was commissioned by an instiution or a company.
--   The list of contributors generally includes everyone who participated in the project to a large degree: producers, engineers, developers etc. (including non–copyright-holders).
-
-The AUTHORS.txt file is mandatory for font’s repository aimed to be published in Google Fonts:
-
--   The AUTHORS.txt file is used from an important legal point of view: the copyright string in the License file point out to this file. No modification can be made to the license unless all copyright holders agreed to it.
--   Google Fonts use the AUTHORS.txt file to know who to credit in the \#About section of the specimen page. Without this file, the font may be wrongly attributed.
-
-</div>
-
-**Table of content**
+* TOC goes here
+{:toc}
 
 ## Crediting authors
 
@@ -57,5 +50,3 @@ You can find a template in [GFPT](https://github.com/googlefonts/googlefonts-pro
 Bob Tester <hello@bobtester.com>
 Maggie Techno <maggietechno@company.com>
 ```
-
-</div>

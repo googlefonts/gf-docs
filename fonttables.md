@@ -1,27 +1,16 @@
-<div>
-
 # The font tables explained
 
-</div>
-
 > <span class="icon">🦦</span>  Understanding the what are the font tables and what they do is a core skill in font engineering.
+> **You can view the name tables using these tools:**
+> -   [Font Table Viewer](https://glyphsapp.com/tools/fonttableviewer)
+> -   [DTL OT Master](https://www.fontmaster.nl/otmaster.html)
+> -   [ttx](https://fonttools.readthedocs.io/en/latest/ttx.html), a practical command line tool of [fonttools](https://github.com/fonttools/fonttools).
+> **Some font testing web pages allow you to view a selection of tables:**
+> -   <https://fontdrop.info/#/> → in the “data” tab
+> -   [https://fontgauntlet.com](https://fontgauntlet.com/) → if you click on the small search icon next to the font name
 
-<div>
-
-**You can view the name tables using these tools:**
-
--   [Font Table Viewer](https://glyphsapp.com/tools/fonttableviewer)
--   [DTL OT Master](https://www.fontmaster.nl/otmaster.html)
--   [ttx](https://fonttools.readthedocs.io/en/latest/ttx.html), a practical command line tool of [fonttools](https://github.com/fonttools/fonttools).
-
-**Some font testing web pages allow you to view a selection of tables:**
-
--   <https://fontdrop.info/#/> → in the “data” tab
--   [https://fontgauntlet.com](https://fontgauntlet.com/) → if you click on the small search icon next to the font name
-
-</div>
-
-</div>
+* TOC goes here
+{:toc}
 
 ## **Required tables**
 
@@ -104,5 +93,3 @@
 -   `VDMX` Vertical device metrics
 -   `vhea` Vertical Metrics header
 -   `vmtx` Vertical Metrics
-
-</div>

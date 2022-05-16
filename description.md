@@ -1,16 +1,11 @@
-<div>
-
-# D**escription file**
-
-</div>
+# Description file
+{:.no_toc}
 
 > <span class="icon">🦉</span>  `DESCRIPTION.en_us.html` contains the information that appears in the `#About` section on any specimen page of [Google Fonts](https://fonts.google.com) in order to give further information about the font family.
+> This file will be created by the team member who will be onboarding the font. Thus the actual file a designer should write carefully would be the [README.md](readme.md) file as the information provided in it is crucial to building a good About section.
 
-This file will be created by the team member who will be onboarding the font. Thus the actual file a designer should write carefully would be the [README.md](readme.md) file as the information provided in it is crucial to building a good About section.
-
-</div>
-
-**Table of content**
+* TOC goes here
+{:toc}
 
 ## Requirements
 
@@ -20,9 +15,10 @@ This file will be created by the team member who will be onboarding the font. Th
 -   **All links in it must be properly working.**
 -   **It must include a hypertext link to the upstream repository** — where the font project files are made available (designer’s GitHub repository). You can copy the following line, and copy it at the bottom of the description file (don’t forget to adjust the URL):
 
-    ``` code
-    To contribute, see <a href="https://github.com/owner/fontname">github.com/owner/fontname</a>
-    ```
+``` code
+To contribute, see <a href="https://github.com/owner/fontname">github.com/owner/fontname</a>
+```
+
 -   **Text should be updated when the font is upgraded** to let people know what changed.
 
     <span style="border-bottom:0.05em solid">Example:</span>
@@ -30,7 +26,7 @@ This file will be created by the team member who will be onboarding the font. Th
     > This font was upgraded in July 2021 to expand language coverage. It is now supporting Greek and Cyrillic.
 -   **We only accept** **`.en_us`** **extension**, but you can definitely add a translation to the description in the case when the font is primarily targeting an audience reading a non-latin script.
 
-    See [Zen+Antique#about](https://fonts.google.com/specimen/Zen+Antique#about) as an example, provided by this file [DESCRIPTION.en_us.html](https://github.com/google/fonts/blob/main/ofl/zenantique/DESCRIPTION.en_us.html).
+See [Zen+Antique#about](https://fonts.google.com/specimen/Zen+Antique#about) as an example, provided by this file [DESCRIPTION.en_us.html](https://github.com/google/fonts/blob/main/ofl/zenantique/DESCRIPTION.en_us.html).
 
 ## Example
 
@@ -96,5 +92,3 @@ while Katakana and Kanji are slightly heavier, which gives the unique rhythm and
 > *Zen Antique* には、古風な雰囲気の二種類の漢字を含む日本語書体があります。 文字によって画線の太さに変化があり、ひらがなと欧文は細め、カタカナと漢字は太めで、フォントに独特のリズムと味わいを与えています。 また、*[Zen Antique Soft](https://fonts.google.com/specimen/Zen+Antique+Soft?subset=japanese)* では、角が少し丸くなっています。
 >
 > このプロジェクトに参加して貢献したい方は、次の URL をご参照ください。*[github.com/googlefonts/zen-antique](https://github.com/googlefonts/zen-antique)*
-
-</div>

@@ -1,8 +1,11 @@
 # google/fonts repository explained
+{:.no_toc}
 
 > <span class="icon">🦉</span>  [google/fonts](https://github.com/google/fonts) is the GitHub repository that is used as a staging area to upload font families to [Google Fonts](https://fonts.google.com/). The first step to contributing your font to Google Fonts is to submit your contribution as a Pull Request to google/fonts.
-
 This section will help users understand which are the directories, files, and python modules included in the Google/Fonts repository and how they are related.
+
+* TOC goes here
+{:toc}
 
 ## google/fonts repository explained
 
