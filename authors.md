@@ -8,6 +8,8 @@
 > -   The AUTHORS.txt file is used from an important legal point of view: the copyright string in the License file point out to this file. No modification can be made to the license unless all copyright holders agreed to it.
 > -   Google Fonts use the AUTHORS.txt file to know who to credit in the \#About section of the specimen page. Without this file, the font may be wrongly attributed.
 
+## Table of contents
+{:.no_toc}
 * TOC goes here
 {:toc}
 
