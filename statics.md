@@ -1,24 +1,18 @@
-<div>
-
 # Static fonts specifics
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🐓</span>  “Static” fonts is a way of saying traditional, *non-variable* fonts.
+> Before going further, make sure you read carefully [the documentation common to any font format](requirements.md). And please refer to the [requirements about Variable Fonts](variable.md) if you are developping a VF.
+> Note that GF only onboards OTF-TTF files: `.ttf` — so TrueType fonts only! The upstream repo can of course contain OTF-CFF `.otf` fonts, as well as webfonts `.woff2`. GF redirects users to the upstream repo to find these files if they are not satisfied with the one served by the API.
+> Even if the statics are available in the upstream repository, GF may not onboard them:
+> -   If a VF exists and the statics are autohinted, then only the variable font is onboarded. The API will generate statics fonts by instanciating the VF: they will be served to browsers which doesn’t support the variable font technology, and they will be available in a downloadable zip file (`download family` button in any specimen pages).
+> -   If a VF exists and the statics are manually hinted, then both formats are onboarded.
+> -   If there is no VF, then the statics available upstream will be onboarded.
 
-Before going further, make sure you read carefully [the documentation common to any font format](requirements.md). And please refer to the [requirements about Variable Fonts](variable.md) if you are developping a VF.
-
-Note that GF only onboards OTF-TTF files: `.ttf` — so TrueType fonts only! The upstream repo can of course contain OTF-CFF `.otf` fonts, as well as webfonts `.woff2`. GF redirects users to the upstream repo to find these files if they are not satisfied with the one served by the API.
-
-Even if the statics are available in the upstream repository, GF may not onboard them:
-
--   If a VF exists and the statics are autohinted, then only the variable font is onboarded. The API will generate statics fonts by instanciating the VF: they will be served to browsers which doesn’t support the variable font technology, and they will be available in a downloadable zip file (`download family` button in any specimen pages).
--   If a VF exists and the statics are manually hinted, then both formats are onboarded.
--   If there is no VF, then the statics available upstream will be onboarded.
-
-</div>
-
-**Table of content**
+## Table of contents
+{:.no_toc}
+* TOC goes here
+{:toc}
 
 ## Supported Styles
 
@@ -51,9 +45,8 @@ If the style name matches the RIBBI convention (ie. `ID 2 = ID 17`), then `name 
 
 In Glyphs.app, the `Family Name` in font info (or the `Localised Family Name` in the instance), and the `Style Name` fields are meant to generate the `name ID 16/17`, or `name ID 1/2` if the naming matches RIBBI convention. Although, the export tool can guess it right only if you set the style linking bits correctly as explained below.
 
-Note for OTF-CFF fonts:
-
-Some fonts with a CSS `font-weight` property of 100 or 200 then the `usWeightClass` value may be 250, as values of 249 or less in CFF fonts suffered from blurry rendering on older versions of Windows — but in 2020 this is no longer necessary.
+> Note for OTF-CFF fonts:
+> Some fonts with a CSS `font-weight` property of 100 or 200 then the `usWeightClass` value may be 250, as values of 249 or less in CFF fonts suffered from blurry rendering on older versions of Windows — but in 2020 this is no longer necessary.
 
 ## Style linking
 
@@ -148,8 +141,6 @@ Fontmake does not support manual hinting from Glyphs. You can use use [VTT](htt
 -   [OpenType Spec about the name table](https://docs.microsoft.com/en-us/typography/opentype/spec/name)
 -   [Glyphs.app naming tutorial](https://glyphsapp.com/learn/naming)
 
-<div>
-
 **You can view the name tables using these tools:**
 
 -   [Font Table Viewer](https://glyphsapp.com/tools/fonttableviewer)
@@ -160,7 +151,3 @@ Fontmake does not support manual hinting from Glyphs. You can use use [VTT](htt
 
 -   <https://fontdrop.info/#/> → in the “data” tab
 -   [https://fontgauntlet.com](https://fontgauntlet.com/) → if you click on the small search icon next to the font name
-
-</div>
-
-</div>

@@ -1,19 +1,15 @@
-<div>
-
 # Variable fonts specifics
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🦥</span>  The variable font technology has existed for a long time, but the format is actually quite recent (2014? 2016?). It took time for OS and Apps to support this format, and some still didn’t make the step. In general, GF doesn’t quite recommend the use of variable fonts in documents made to be printed.
+> Before proceeding, make sure:
+> -   you read the [requirements for all font files](requirements.md)
+> -   you read the specific [requirements for static fonts](https://www.notion.so/Static-fonts-specifics-a5e23e14cea8482e9594a40948b2c30b)
 
-Before proceeding, make sure:
-
--   you read the [requirements for all font files](requirements.md)
--   you read the specific [requirements for static fonts](https://www.notion.so/Static-fonts-specifics-a5e23e14cea8482e9594a40948b2c30b)
-
-</div>
-
-**Table of content**
+## Table of contents
+{:.no_toc}
+* TOC goes here
+{:toc}
 
 ## New vs Pre-existing fonts
 

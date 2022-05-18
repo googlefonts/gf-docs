@@ -1,14 +1,12 @@
-<div>
-
 # METADATA file
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🐸</span>  The `METADATA.pb` files found in the Google Fonts 'library repo' ([github.com/google/fonts](https://github.com/google/fonts)) are [Protocol Buffers](http://en.wikipedia.org/wiki/Protocol_buffers) metadata files that contains some information about the font files served by Google Fonts, some of which typically corresponds to font file internal metadata.
 
-</div>
-
-**Table of content**
+## Table of contents
+{:.no_toc}
+* TOC goes here
+{:toc}
 
 ## History
 
@@ -339,5 +337,3 @@ repository_url: "https://github.com/username/projectname"
 archive_url: "https://github.com/username/projectname/releases/download/v2.200/projectname-2.200.zip"
 }
 ```
-
-</div>

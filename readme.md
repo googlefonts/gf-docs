@@ -1,23 +1,17 @@
-<div>
-
 # README file
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🦦</span>  The README.md is a page you find at the root of any repository. It is the first readable text that a user can see when arriving in the repository on GitHub’s website.
+> This page will help designers to write a good README file.
+> -   GF wants to encourage you to share anything you think may be interesting or relevant about your typeface—the inspiration, process, challenges you encountered, etc. So this is your moment. You can go wild and write a complete article if you feel like it.
+> -   Take into account that this file will be taken as the base information that would be used to create the [Description file](description.md) that feeds the `#About` section of the specimen page of your font(s) on `fonts.google.com/Family+Name#about`.
+>    Eg. **Roboto** <https://fonts.google.com/specimen/Roboto#about>
+>    As a designer, you don’t have to care much about creating the description file, as the actual team member who will onboard the font will be able to do it if your `README.md` is well developed.
 
-This page will help designers to write a good README file.
-
--   GF wants to encourage you to share anything you think may be interesting or relevant about your typeface—the inspiration, process, challenges you encountered, etc. So this is your moment. You can go wild and write a complete article if you feel like it.
--   Take into account that this file will be taken as the base information that would be used to create the [Description file](description.md) that feeds the `#About` section of the specimen page of your font(s) on `fonts.google.com/Family+Name#about`.
-
-    Eg. **Roboto** <https://fonts.google.com/specimen/Roboto#about>
-
-    As a designer, you don’t have to care much about creating the description file, as the actual team member who will onboard the font will be able to do it if your `README.md` is well developed.
-
-</div>
-
-**Table of content**
+## Table of contents
+{:.no_toc}
+* TOC goes here
+{:toc}
 
 ## What to include
 
@@ -89,4 +83,3 @@ You may get inspire by these examples to build up your `README.md`. Please note 
 
 -   [About Readmes](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 
-</div>

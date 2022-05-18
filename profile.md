@@ -1,18 +1,15 @@
-<div>
-
 # Designer Profile
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🦥</span>  This guide is a technical review of the different requirements related to the [catalog/designers](https://github.com/google/fonts/tree/main/catalog/designers) directory in the [google/fonts](https://github.com/google/fonts) repo.
+> Each credited entity on Google Fonts should have a registered profile in [google/fonts/catalog/designers](https://github.com/google/fonts/tree/main/catalog/designers). This profile appears in the [about](https://fonts.google.com/specimen/Praise?sort=date#about) section of the specimen page.
+> You can request the addition or modification of your name, bio, and image using [this form](https://docs.google.com/forms/d/e/1FAIpQLSeMwHN8J213ZaxHrr5lHCrX56HY_NjGrWB8o604g98YxuMrdA/viewform).
 
-Each credited entity on Google Fonts should have a registered profile in [google/fonts/catalog/designers](https://github.com/google/fonts/tree/main/catalog/designers). This profile appears in the [about](https://fonts.google.com/specimen/Praise?sort=date#about) section of the specimen page.
 
-You can request the addition or modification of your name, bio, and image using [this form](https://docs.google.com/forms/d/e/1FAIpQLSeMwHN8J213ZaxHrr5lHCrX56HY_NjGrWB8o604g98YxuMrdA/viewform).
-
-</div>
-
-**Table of content**
+## Table of contents
+{:.no_toc}
+* TOC goes here
+{:toc}
 
 ## How to write the biography
 
@@ -27,7 +24,7 @@ You can request the addition or modification of your name, bio, and image using 
 
 ### About section - Foundry information
 
-**What to include:    **  
+**What to include:**
 
 -   Foundry name and location
 -   Short description
@@ -40,7 +37,7 @@ You can request the addition or modification of your name, bio, and image using 
 
 ### About section - Designer information
 
-**What to include:**      
+**What to include:**
 
 -   Designer’s name and location
 -   Short bio
@@ -53,7 +50,7 @@ You can request the addition or modification of your name, bio, and image using 
 
 ## Registering a designer profile
 
-You wrote a biography and you are happy with it. Now you want it to be added to Google Fonts so it appears in the \#About section of font family linked to that bio. As a designer or a foundry, you would just have [to submit it through this form](https://docs.google.com/forms/d/1HinKkdCPbHTaiXxakeaUpDo1qsW3P9ZFemK65yWkru0/edit), and a team member will register the profile for you.
+You wrote a biography and you are happy with it. Now you want it to be added to Google Fonts so it appears in the `#About` section of the font family linked to that bio. As a designer or a foundry, you would just have [to submit it through this form](https://docs.google.com/forms/d/1HinKkdCPbHTaiXxakeaUpDo1qsW3P9ZFemK65yWkru0/edit), and a team member will register the profile for you.
 
 As a developer or a team member, you may want to know the process for registering or updating a new profile. You will find below all the necessary information to that effect.
 
@@ -155,5 +152,3 @@ As a developer or a team member, you may want to know the process for registerin
     
 
     -   Don’t forget to add the labels `Designer profile` and `Ready for review`, and add the PR to Traffic Jam (cf [The onboarder workflow guide](onboarder-workflow.md)). A team member will review the PR and merge it. Once done, it should appear on the platform in 2-4 weeks.
-
-</div>

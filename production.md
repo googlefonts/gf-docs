@@ -1,14 +1,12 @@
-<div>
-
 # Production requirements
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🐰</span>  [Google Fonts](https://fonts.google.com/) (GF) designates in fact two things. First, it is a *directory* of fonts, which can be downloaded and used locally on your machine. Second, [Google Fonts](https://fonts.google.com/) is also an *API* that delivers a web service: this means a website can request fonts, and Google Fonts delivers them to the website. In that second case, the fonts are hosted by Google Fonts and not by the website’s own server. This section will help users to understand the implications of publishing fonts on the Google Fonts platform, and will review the basic font production considerings and requirements that are mandatory for any Font to be included in the Catalog.
 
-</div>
-
-**Table of content**
+## Table of contents
+{:.no_toc}
+* TOC goes here
+{:toc}
 
 ## Fonts are massively distributed
 
@@ -38,5 +36,3 @@ Fonts to be onboarded to Google Fonts are expected to abide by the following req
 -   **CI ([Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html)) should be used for build and testing purposes,** **[applied to fonts](https://simoncozens.github.io/tdd-for-otl/).** GF main repository [github.com/google/fonts](https://github.com/google/fonts) uses CI. When new fonts are pushed, the CI will run a test suite (`gftools qa`, which is a wrapper around [Fontbakery](https://github.com/googlefonts/fontbakery) and various other proofing scripts), and the results will be reviewed.
 -   **Issues and reported Fails should be fixed before publishing or upgrading.**
 -   **Reviewers of the PRs should have knowledge about typography and font software.**
-
-</div>

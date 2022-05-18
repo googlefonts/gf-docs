@@ -1,8 +1,4 @@
-<div>
-
 # Refining your typeface
-
-</div>
 
 <div class="page-body">
 
@@ -37,5 +33,3 @@
     -   [Cyrillize It!: A Guide on Cyrillic Typographyfor Graphic Designers](https://books.google.com.co/books/about/Cyrillize_It.html?id=M0KBzgEACAAJ&redir_esc=y)
 
 “The Unicode Standard” (Richard Ishida) is written for a general audience and “is good”.
-
-</div>

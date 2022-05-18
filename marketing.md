@@ -1,16 +1,13 @@
-<div>
-
 # Promo / Marketing
-
-</div>
+{:.no_toc}
 
 > <span class="icon">🦕</span>  When a font is released for the first time on Google Fonts, or if it benefited from a major upgrade, we will tweet to promote it from [@googlefonts](https://twitter.com/googlefonts).
+> In order to tweet about a new release, Google Fonts requires 2-3 expressive images different from the ones used in the [README file](readme.md), which usually correspond to a sample image with a different size. If the Family is variable, an animation is welcome. See [this tweet](https://twitter.com/googlefonts/status/1487038395918565377) as an example.
 
-In order to tweet about a new release, Google Fonts requires 2-3 expressive images different from the ones used in the [README file](readme.md), which usually correspond to a sample image with a different size. If the Family is variable, an animation is welcome. See [this tweet](https://twitter.com/googlefonts/status/1487038395918565377) as an example.
-
-</div>
-
-**Table of content**
+## Table of contents
+{:.no_toc}
+* TOC goes here
+{:toc}
 
 ## What the designer should provide
 
@@ -29,5 +26,3 @@ In order to tweet about a new release, Google Fonts requires 2-3 expressive imag
 -   Link to a mini website if available.
 
 The person onboarding the project will collect images from the documentation directory, include them in a drive folder, write a little tweet according to a simple template, and then it will be reviewed and published when the font is released on the live server.
-
-</div>
