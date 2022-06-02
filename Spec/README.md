@@ -1,6 +1,8 @@
-# Google Fonts Docs (WIP)
+# Google Fonts Docs
 
-# This document is now deprecated, and new fresh docs will be published soon.
+# This document is now deprecated.
+# This is the new documentation:
+# https://googlefonts.github.io/gf-guide/
 
 ## Contents
 
